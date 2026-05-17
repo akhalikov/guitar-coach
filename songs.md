@@ -1,79 +1,87 @@
 # Songs
 
-What's being learned, what's in the rotation, what's coming.
-
-> **Note:** Artur has a song list in a Notion page. Paste it into the relevant sections below the next time the coach asks. Until then, the sections below have starter recommendations for a brand-new electric player.
+Index of all songs. Each song has a dedicated file in `songs/` with chords, tone settings, practice focus, pentatonic for improv, and links to lessons and backing tracks.
 
 ## Currently learning
 
-*(songs being actively worked on this week)*
+*(songs being actively worked on this week — pick from the foundation 5 to start)*
 
-— (none yet — first song picked after A, D, E chords are usable)
+— (none yet — first session will pick the first target)
 
 ## In rotation
 
-*(songs Artur can play end-to-end and wants to keep in shape)*
+*(songs you can play end-to-end and want to keep in shape)*
 
 — (none yet)
 
-## Wishlist
+---
 
-*(songs Artur wants to learn, ordered roughly by feasibility at current level)*
+## The plan (from Notion)
 
-— (empty — fill in from Notion or as inspiration strikes)
+### 🎯 Foundation 5 — criteria for completion
+
+These are the five songs that, when played cleanly end-to-end, mean the foundation is laid. From the Notion plan.
+
+| # | Song | Key | Why it's here |
+|---|---|---|---|
+| 1 | [Knockin' on Heaven's Door](songs/01-knocking-on-heavens-door.md) | G major | Simple chords, slow tempo, rhythm & tone |
+| 2 | [Smoke on the Water](songs/02-smoke-on-the-water.md) | G minor | Iconic riff, tight under a metronome |
+| 3 | [Enter Sandman](songs/03-enter-sandman.md) | E minor | Palm muting, power chords, gallop rhythm |
+| 4 | [Miserlou](songs/04-miserlou.md) | E Phrygian Dominant | Fast alternate picking on one string |
+| 5 | [Stand By Me](songs/05-stand-by-me.md) | G major | Em in context, faster strumming than Knockin' |
+
+### 🎼 Composition group (continuing)
+
+| # | Song | Key | New skill |
+|---|---|---|---|
+| 6 | [Hurt — Johnny Cash](songs/06-hurt.md) | A minor | Arpeggio (fingerpicking or pick) |
+
+### 🎶 Improvisation group — all in E minor, all under the same Em pentatonic
+
+The six songs below share Em → C → G → D progression (or close) and the same E minor pentatonic position. The goal of this group is to practice **vocal phrasing** improv over backing tracks — finding melodies on the fretboard that imitate the vocal lines.
+
+| # | Song | Key |
+|---|---|---|
+| 7 | [Watching Over Me — Iced Earth](songs/07-watching-over-me.md) | E minor |
+| 8 | [Vykhoda Net (Выхода Нет) — Splean](songs/08-vyhoda-net.md) | E minor |
+| 9 | [Zombie — The Cranberries](songs/09-zombie.md) | E minor |
+| 10 | [Still Loving You — Scorpions](songs/10-still-loving-you.md) | E minor |
+| 11 | [About Today — The National](songs/11-about-today.md) | E minor 🎯 *the song that started it all* |
+| 12 | [Ain't No Sunshine — Bill Withers](songs/12-aint-no-sunshine.md) | A minor (works with Em pentatonic) |
 
 ---
 
-## Starter song recommendations by Grade
+## What "foundation laid" means
 
-These are tried-and-tested beginner songs sequenced by chord requirements. Pick from these until Artur's Notion wishlist is in.
+From the Notion plan, the foundation is laid when you can:
 
-### Songs for Grade 1, Modules 1–2 (A, D, E + Em, Am)
+- Play **Knockin' on Heaven's Door** — cleanly, in time, end to end
+- Play **Stand By Me** — cleanly, in time, end to end
+- Play **Smoke on the Water** — tight, under a metronome
+- Play **Enter Sandman** — main riff with palm muting, in tempo
+- Play **Miserlou** — opening riff cleanly at a moderate tempo
 
-- **"Knockin' on Heaven's Door"** — Bob Dylan (G D Am, G D C — use Em & D substitutions early)
-- **"Three Little Birds"** — Bob Marley (A D E — perfect for the first three open chords)
-- **"Bad Moon Rising"** — CCR (D A G — bouncy, fun, simple)
-- **"Stand By Me"** — Ben E. King (A F#m D E — F#m later, use the A & D version)
-- **"Brown Eyed Girl"** — Van Morrison (G C D Em — Grade 1 Module 3 friendly)
-
-### Songs for Grade 1, Module 3+ (G, C, D7, G7 added)
-
-- **"Wonderwall"** — Oasis (Em7, G, D, A7sus4 — iconic; capo on 2)
-- **"Hey There Delilah"** — Plain White T's (D F#m — easy on electric clean)
-- **"Horse with No Name"** — America (Em D6/9 — only 2 chords, all about strumming)
-- **"Wish You Were Here"** — Pink Floyd (Em G D Am C — Grade 1 finale candidate)
-
-### Songs for Grade 2 (F chord, power chords, palm mute)
-
-- **"Sweet Home Alabama"** — Lynyrd Skynyrd (D C G — easy chords, signature riff)
-- **"Smells Like Teen Spirit"** — Nirvana (F5 B♭5 A♭5 D♭5 — power chords, palm mute)
-- **"Seven Nation Army"** — White Stripes (riff-based, single-note line, then power chords)
-- **"Wonderful Tonight"** — Eric Clapton (G D C Em — F sneaks in some versions)
-- **"Time of Your Life"** — Green Day (G C D Em — classic; F mini-barre in chorus)
-
-### Songs for Grade 3 (barre chords, blues, pentatonic)
-
-- **"Sunshine of Your Love"** — Cream (riff + barre chords)
-- **"Pride and Joy"** — Stevie Ray Vaughan (12-bar blues in E — minor pentatonic playground)
-- **"Hey Joe"** — Hendrix (C G D A E — barre chords or open, your choice)
-- **"Black Magic Woman"** — Santana (Dm Am — minor pentatonic improv home base)
-- **"La Grange"** — ZZ Top (A blues — shuffle rhythm, minor pentatonic)
+And alongside that:
+- Can practice 30 minutes **without fighting the guitar**
+- *Hear* when something is off — and know how to fix it
 
 ---
 
 ## How to pick the next song
 
-The skill suggests songs based on:
+The coach suggests songs based on:
 
-1. **What chords/techniques Artur knows right now** (from `progress.md`)
-2. **What Artur wants to play** (from the wishlist below)
-3. **Variety** — don't stack 3 songs in the same key
+1. **What chords/techniques you know right now** (from `progress.md`)
+2. **Which song is next in the planned order** (foundation 5 → composition → improvisation group)
+3. **What you feel like playing** today — variety beats grinding one song
 
-A song stays in "Currently learning" for ~1 week, then either moves to "In rotation" (if Artur can play it through) or gets shelved with a note about what's blocking it.
+A song stays in "Currently learning" for ~1–2 weeks, then either moves to "In rotation" (you can play it through) or gets shelved with a note about what's blocking it.
 
-## Logging notes
+## Logging milestones per song
 
-When a song hits a milestone, mention it briefly in the day's log AND update its status here. Milestones worth noting:
+Per-song `Progress log` sections at the bottom of each `songs/<file>.md` are where dated notes go ("2026-06-02: first clean A→D change", "2026-07-15: end-to-end at 60 BPM"). Don't bury this in daily logs — keep song-specific progress on the song's page so it's easy to skim that song's arc.
+
+Worth noting per song:
 
 - First time through end-to-end (any tempo)
 - First time at target tempo

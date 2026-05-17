@@ -6,8 +6,9 @@ Personal electric guitar coaching setup. This repo is the persistent memory and 
 
 - **`SKILL.md`** — the coaching brain. Defines how Claude runs a practice session, interleaves theory with practice, and logs progress. Read by Claude at the start of every session.
 - **`progress.md`** — current state. Which JustinGuitar module, which theory topic, songs in rotation, what's clicking, what isn't. Updated after every session.
-- **`equipment.md`** — guitars, amp, pedals, accessories.
-- **`songs.md`** — songs being learned, songs in rotation, and a wishlist.
+- **`equipment.md`** — guitars (Tele SH, Strat HSS), amp (Yamaha THR5), pedal (BOSS SD-1), accessories.
+- **`songs.md`** — song index: foundation 5, composition group, improvisation group. Points to per-song files.
+- **`songs/`** — one detail file per song with chords, tone settings (which guitar, pickup position, THR5 settings, SD-1 on/off), key, tempo, focus points, pentatonic for improv, and lesson + backing-track links.
 - **`curriculum/`** — the two curricula being followed:
   - `justinguitar-grades.md` — JustinGuitar Grade 1, 2, and 3 module/lesson outlines (free at [justinguitar.com](https://www.justinguitar.com/guitar-lessons))
   - `theory-book.md` — module/page map for *Music Theory* by Steve Stine (GuitarZoom)
