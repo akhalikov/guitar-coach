@@ -1,32 +1,93 @@
 # guitar-coach
 
-Personal electric guitar coaching setup. This repo is the persistent memory and practice journal for Artur's guitar journey, started December 2025.
+Personal guitar coaching setup. Two coaches under one roof:
 
-## What's in here
+- **Electric guitar** — Squier Tele SH + Strat HSS, Yamaha THR5, BOSS SD-1. Working through **JustinGuitar Grades 1–3** + **Steve Stine's *Music Theory*** in parallel. Started December 2025.
+- **Classical guitar** — Manuel Rodríguez T-65 nylon. Working through **Bradford Werner's *Classical Guitar Method Volume 1***. Started April 2026.
 
-- **`SKILL.md`** — the coaching brain. Defines how Claude runs a practice session, interleaves theory with practice, and logs progress. Read by Claude at the start of every session.
-- **`progress.md`** — current state. Which JustinGuitar module, which theory topic, songs in rotation, what's clicking, what isn't. Updated after every session.
-- **`equipment.md`** — guitars (Tele SH, Strat HSS), amp (Yamaha THR5), pedal (BOSS SD-1), accessories.
-- **`songs.md`** — song index: foundation 5, composition group, improvisation group. Points to per-song files.
-- **`songs/`** — one detail file per song with chords, tone settings (which guitar, pickup position, THR5 settings, SD-1 on/off), key, tempo, focus points, pentatonic for improv, and lesson + backing-track links.
-- **`curriculum/`** — the two curricula being followed:
-  - `justinguitar-grades.md` — JustinGuitar Grade 1, 2, and 3 module/lesson outlines (free at [justinguitar.com](https://www.justinguitar.com/guitar-lessons))
-  - `theory-book.md` — module/page map for *Music Theory* by Steve Stine (GuitarZoom)
-  - `interleaving.md` — how theory topics pair with practice lessons so theory always feels applied
-  - `session-templates.md` — 15-, 25-, and 45-minute session shapes
-- **`logs/YYYY/MM-DD.md`** — dated practice journals. Honest, scannable. What was worked, what clicked, what needs more reps tomorrow.
+Both coaches share the same coaching DNA — direct, honest, technical, slow-first, stay-in-curriculum — but differ in repertoire, gear, technique focus, and theory spine. The shared logic lives in `prompts/base.md`; the instrument-specific stuff lives in `prompts/electric/SKILL.md` and `prompts/classical/SKILL.md`.
 
 ## How a session works
 
-Open this folder with Claude and say something like *"let's practice"* or *"I have 25 minutes"*. Claude reads `SKILL.md` and `progress.md`, proposes a plan (warm-up → technique → song → theory snippet), walks through each block, then writes the session log and updates `progress.md`.
+Open this folder with Claude. Say what you want:
 
-The whole point is: short, daily, honest, and the curriculum stays in charge.
+- *"Let's practice electric"* → the electric coach activates (reads `prompts/electric/SKILL.md` → `prompts/base.md` → `progress/electric.md` → recent electric logs → proposes a plan)
+- *"Let's practice classical"* → the classical coach activates (same loop with classical files)
 
-## The two spines
+The coach proposes a session plan, walks you through it block by block, then writes the daily log and updates the progress file. Saturday weekly reviews fire automatically via scheduled tasks (classical 10:00, electric 18:00).
 
-- **Practice** — JustinGuitar Grades 1–3, in order. Free, well-sequenced beginner course.
-- **Theory** — *Music Theory* by Steve Stine. Read the book separately; Claude pulls one applied concept into each session.
+## File map
 
-## The goal
+```
+guitar-coach/
+├── README.md                                        ← this file
+├── .gitignore                                       ← keeps book PDFs out of git
+│
+├── prompts/                                         ← coaching logic
+│   ├── base.md                                      ← shared coaching DNA (session loop, tone, git policy)
+│   ├── log_templates/
+│   │   ├── daily.md
+│   │   └── weekly.md
+│   ├── electric/SKILL.md                            ← electric coach entry point
+│   └── classical/SKILL.md                           ← classical coach entry point
+│
+├── curriculum/                                      ← reference content per instrument
+│   ├── electric/
+│   │   ├── equipment.md                             ← Tele SH, Strat HSS, THR5, SD-1
+│   │   ├── songs.md                                 ← song index
+│   │   ├── songs/                                   ← per-song detail files
+│   │   ├── justinguitar-grades.md
+│   │   ├── theory-book.md                           ← Steve Stine module/page map
+│   │   ├── interleaving.md                          ← theory ↔ practice pairings
+│   │   └── session-templates.md                     ← 15/25/45 min session shapes
+│   └── classical/
+│       ├── werner-key-instructions.md               ← Werner's foundational rules
+│       ├── werner-vol1-plan.md                      ← lesson-by-lesson plan + current position
+│       ├── pieces/                                  ← future per-piece detail files
+│       └── book/
+│           ├── README.md
+│           └── Classical-Guitar-Method-Vol1-Werner.pdf  ← local-only (gitignored)
+│
+├── progress/                                        ← current state per instrument
+│   ├── electric.md
+│   └── classical.md
+│
+└── logs/                                            ← dated practice journals + recordings
+    ├── README.md
+    ├── electric/YYYY/
+    │   ├── MM-DD.md                                 ← daily logs
+    │   └── MM-DD-week.md                            ← weekly reviews
+    └── classical/
+        ├── recordings/                              ← audio/video/photo takes
+        └── YYYY/
+            ├── MM-DD.md
+            └── MM-DD-week.md
+```
 
-Get fluent on the electric, build a real repertoire, and actually understand what's happening musically — not just memorize shapes. Pass JustinGuitar Grade 3. Read TAB and basic notation comfortably. Improvise a little.
+## The two scheduled tasks
+
+| Task | Cadence | What it does |
+|---|---|---|
+| `classical-guitar-weekly-review` | Saturday 10:00 local | Reads the week's classical logs, writes the weekly review, advances the Werner position marker, prepares a commit block |
+| `electric-guitar-weekly-review` | Saturday 18:00 local | Same for electric — reads week's logs, writes weekly review, ticks completed JG/Stine items, prepares a commit block |
+
+Both tasks run automatically while the Claude app is open. If closed at the scheduled time, they fire on next launch. Manage them from the **Scheduled** section in the Cowork sidebar.
+
+## A note on commits
+
+The Cowork shell sandbox has trouble running git operations on this repo (permission issues on `.git/objects` lock files, no SSH credentials for push). **Both coaches prepare a `bash` block at the end of each session and Artur pastes it into his terminal** — that's the source of truth for commits. See `prompts/base.md` for the convention.
+
+Commits always include the Claude co-author trailer:
+
+```
+<commit subject>
+
+Co-Authored-By: Claude <noreply@anthropic.com>
+```
+
+## Goals
+
+- **Electric:** pass JustinGuitar Grade 3. Read TAB and basic notation. Build a real song repertoire. Improvise a little.
+- **Classical:** complete Werner Vol 1 confidently — every piece memorized, played at tempo with clean tone, dynamics, phrasing. Then assess Vol 2.
+
+Both are multi-year projects. The point is daily practice, honest logging, and trusting the curriculum.

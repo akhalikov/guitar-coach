@@ -1,0 +1,16 @@
+# Werner book PDF — see curriculum/classical/book/README.md
+# The book is © Bradford C. Werner under CC BY-NC-ND 4.0. Download from
+# https://wernerguitareditions.com/products/classical-guitar-method-volume-1
+# Don't commit copies of the PDF.
+curriculum/classical/book/*.pdf
+
+# macOS clutter
+.DS_Store
+
+# Editor swap / temp files
+*.swp
+*~
+.vscode/
+
+# Local recordings are kept — they're part of the practice journal.
+# Don't ignore logs/<instrument>/recordings/.
