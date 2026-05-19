@@ -1,4 +1,4 @@
-# guitar-coach 🎸
+# 🎸 guitar-coach
 
 Personal guitar coaching setup. Two coaches under one roof:
 
@@ -17,7 +17,7 @@ Both coaches share the same coaching DNA:
 But differ in repertoire, gear, technique focus, and theory spine. 
 The shared logic lives in `prompts/base.md`; the instrument-specific stuff lives in `prompts/electric/SKILL.md` and `prompts/classical/SKILL.md`.
 
-## How a session works
+## ⚙️ How a session works
 
 Open this folder with Claude. Say what you want:
 
@@ -26,7 +26,7 @@ Open this folder with Claude. Say what you want:
 
 The coach proposes a session plan, walks you through it block by block, then writes the daily log and updates the progress file. Saturday weekly reviews fire automatically via scheduled tasks (classical 10:00, electric 18:00).
 
-## File map
+## 🗄️ File map
 
 ```
 guitar-coach/
@@ -74,7 +74,7 @@ guitar-coach/
             └── MM-DD-week.md
 ```
 
-## The two scheduled tasks
+## ⏯️ The two scheduled tasks
 
 | Task | Cadence | What it does |
 |---|---|---|
@@ -84,7 +84,7 @@ guitar-coach/
 Both tasks run automatically while the Claude app is open. If closed at the scheduled time, they fire on next launch. 
 Manage them from the **Scheduled** section in the Cowork sidebar.
 
-## Goals
+## 🎯 Goals
 
 - **Electric:** pass JustinGuitar Grade 3. Read TAB and basic notation. Build a real song repertoire. Improvise a little.
 - **Classical:** complete Werner Vol 1 confidently — every piece memorized, played at tempo with clean tone, dynamics, phrasing. Then assess Vol 2.
