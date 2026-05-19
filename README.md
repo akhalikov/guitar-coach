@@ -80,19 +80,8 @@ guitar-coach/
 | `classical-guitar-weekly-review` | Saturday 10:00 local | Reads the week's classical logs, writes the weekly review, advances the Werner position marker, prepares a commit block |
 | `electric-guitar-weekly-review` | Saturday 18:00 local | Same for electric — reads week's logs, writes weekly review, ticks completed JG/Stine items, prepares a commit block |
 
-Both tasks run automatically while the Claude app is open. If closed at the scheduled time, they fire on next launch. Manage them from the **Scheduled** section in the Cowork sidebar.
-
-## A note on commits
-
-The Cowork shell sandbox has trouble running git operations on this repo (permission issues on `.git/objects` lock files, no SSH credentials for push). **Both coaches prepare a `bash` block at the end of each session and Artur pastes it into his terminal** — that's the source of truth for commits. See `prompts/base.md` for the convention.
-
-Commits always include the Claude co-author trailer:
-
-```
-<commit subject>
-
-Co-Authored-By: Claude <noreply@anthropic.com>
-```
+Both tasks run automatically while the Claude app is open. If closed at the scheduled time, they fire on next launch. 
+Manage them from the **Scheduled** section in the Cowork sidebar.
 
 ## Goals
 
