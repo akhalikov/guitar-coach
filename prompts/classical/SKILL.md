@@ -76,9 +76,17 @@ High-level structure (mirrors the book's Part 1 / Part 2 / Part 3 layout):
 - **Stay with pieces** a while after they're "playable" so they settle. Don't just sprint to the next.
 - **Raise the bar each piece:** evenness, tone, phrasing, dynamics.
 
+## Repertoire (pieces)
+
+The pieces index lives in `../../curriculum/classical/pieces/repertoire.md`, organized into three lanes: **Learning** / **Polishing** / **Maintenance** (see `../base.md` → "Repertoire lanes" for full rules). Werner's own advice — *"settle on the current piece before adding another"* and *"stay with pieces after they're playable so they settle"* — maps directly onto the lanes.
+
+Per-piece detail files in `../../curriculum/classical/pieces/<piece>.md` are created when a piece reaches **Polishing**; Learning-phase pieces are tracked in daily logs only. Lane promotions happen automatically in the Saturday weekly review based on the week's evidence.
+
 ## Session structure
 
 Default session: **30–45 minutes**. Build it from these blocks; pick what fits. Every session includes the **mandatory daily core** (~10 min).
+
+**Pick a coaching mode** at session start — `full` / `review-only` / `low-friction` / `recovery` / `bad-day`. Mode table is in `../base.md`. State it before the plan. Each block uses the numbered reflection format (D/A/T/Te scale 1-4, plus the H= hand diagnostic when D or A is 3 or 4). Full format in `../log_templates/daily.md`.
 
 ### Mandatory daily core (~10 min)
 
@@ -174,7 +182,8 @@ Complete Werner Vol 1 confidently — every piece memorized, every piece playabl
 | `../../curriculum/classical/werner-key-instructions.md` | Werner's foundational rules — read first every session |
 | `../../curriculum/classical/werner-vol1-plan.md` | Full lesson-by-lesson plan with the "Current Position" marker |
 | `../../curriculum/classical/book/` | Local Werner PDF (gitignored) + README |
-| `../../curriculum/classical/pieces/` | Future per-piece detail files (parallel to electric/songs/) |
+| `../../curriculum/classical/pieces/repertoire.md` | Pieces index with Learning / Polishing / Maintenance lanes |
+| `../../curriculum/classical/pieces/<piece>.md` | Per-piece detail (created when a piece reaches Polishing) |
 | `../../logs/classical/YYYY/MM-DD.md` | Daily session journals |
 | `../../logs/classical/YYYY/MM-DD-week.md` | Weekly reviews |
 | `../../logs/classical/recordings/` | Audio / video / photo takes |

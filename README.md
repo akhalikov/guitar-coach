@@ -24,55 +24,16 @@ Open this folder with Claude. Say what you want:
 - *"Let's practice electric"* → the electric coach activates (reads `prompts/electric/SKILL.md` → `prompts/base.md` → `progress/electric.md` → recent electric logs → proposes a plan)
 - *"Let's practice classical"* → the classical coach activates (same loop with classical files)
 
-The coach proposes a session plan, walks you through it block by block, then writes the daily log and updates the progress file. Saturday weekly reviews fire automatically via scheduled tasks (classical 10:00, electric 18:00).
+The coach asks how you're feeling (energy / focus / tension / pain, 1–4) to pick a session mode, then proposes a plan, walks you through it block by block, and writes the daily log and updates the progress file. Saturday weekly reviews fire automatically via scheduled tasks (classical 10:00, electric 18:00).
 
-## 🗄️ File map
+## 🗄️ Top-level layout
 
-```
-guitar-coach/
-├── README.md                                        ← this file
-├── .gitignore                                       ← keeps book PDFs out of git
-│
-├── prompts/                                         ← coaching logic
-│   ├── base.md                                      ← shared coaching DNA (session loop, tone, git policy)
-│   ├── log_templates/
-│   │   ├── daily.md
-│   │   └── weekly.md
-│   ├── electric/SKILL.md                            ← electric coach entry point
-│   └── classical/SKILL.md                           ← classical coach entry point
-│
-├── curriculum/                                      ← reference content per instrument
-│   ├── electric/
-│   │   ├── equipment.md                             ← Tele SH, Strat HSS, THR5, SD-1
-│   │   ├── songs.md                                 ← song index
-│   │   ├── songs/                                   ← per-song detail files
-│   │   ├── justinguitar-grades.md
-│   │   ├── theory-book.md                           ← Steve Stine module/page map
-│   │   ├── interleaving.md                          ← theory ↔ practice pairings
-│   │   └── session-templates.md                     ← 15/25/45 min session shapes
-│   └── classical/
-│       ├── werner-key-instructions.md               ← Werner's foundational rules
-│       ├── werner-vol1-plan.md                      ← lesson-by-lesson plan + current position
-│       ├── pieces/                                  ← future per-piece detail files
-│       └── book/
-│           ├── README.md
-│           └── Classical-Guitar-Method-Vol1-Werner.pdf  ← local-only (gitignored)
-│
-├── progress/                                        ← current state per instrument
-│   ├── electric.md
-│   └── classical.md
-│
-└── logs/                                            ← dated practice journals + recordings
-    ├── README.md
-    ├── electric/YYYY/
-    │   ├── MM-DD.md                                 ← daily logs
-    │   └── MM-DD-week.md                            ← weekly reviews
-    └── classical/
-        ├── recordings/                              ← audio/video/photo takes
-        └── YYYY/
-            ├── MM-DD.md
-            └── MM-DD-week.md
-```
+- `prompts/` — coaching logic (shared `base.md` + per-instrument `SKILL.md` + daily/weekly log templates)
+- `curriculum/` — reference content per instrument (lesson plans, songs/pieces, equipment, books)
+- `progress/` — current state per instrument (what's clicking, what's not, where you are)
+- `logs/` — dated practice journals + recordings
+
+For specific paths, see the file map at the bottom of each `SKILL.md` — those are the source of truth (and they're what the coaches actually read).
 
 ## ⏯️ The two scheduled tasks
 

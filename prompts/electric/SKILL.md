@@ -39,18 +39,22 @@ Default 25-minute session. Templates for 15/25/45 min in `../../curriculum/elect
 The basic shape (covered in `../base.md`'s session loop):
 1. Tune & posture (1 min)
 2. Warm-up — chromatic 1-2-3-4 (3 min)
-3. Technique focus — current JustinGuitar drill (10 min)
-4. Song application (7 min)
+3. Technique focus — current JustinGuitar drill (10 min) — has a mini-win target
+4. Song application (7 min) — pull from the **Learning** lane in `../../curriculum/electric/songs.md` by default; **Maintenance** lane in low-friction or bad-day mode
 5. Theory snippet — interleaved with today's practice (3 min)
-6. Wrap & log (1 min)
+6. Wrap & log (1 min) — explicit `repeat` / `advance` / `simplify` decision goes in the log
+
+Each block uses the per-block numbered reflection (D/A/T/Te scale 1-4, plus the H= hand diagnostic when D or A is 3 or 4). Full format in `../log_templates/daily.md`.
+
+**Pick a coaching mode** at session start — `full` / `review-only` / `low-friction` / `recovery` / `bad-day`. Mode table is in `../base.md`. State it before the plan.
 
 ## Songs
 
-The repertoire index lives in `../../curriculum/electric/songs.md`. Each song has a detail file at `../../curriculum/electric/songs/<song>.md` with chords, tone settings (which guitar, pickup position, THR5 settings, SD-1 on/off), key, tempo, focus points, pentatonic for improv, and lesson + backing-track links.
+The repertoire index lives in `../../curriculum/electric/songs.md`, organized into three lanes: **Learning** / **Polishing** / **Maintenance** (see `../base.md` → "Repertoire lanes" for full rules). Each song has a detail file at `../../curriculum/electric/songs/<song>.md` with chords, tone settings (which guitar, pickup position, THR5 settings, SD-1 on/off), key, tempo, focus points, pentatonic for improv, and lesson + backing-track links.
 
 **When working on a song, read its detail file** to get the right gear and tone before guiding the session. The per-song files are the source of truth for tone and practice details.
 
-When a song hits a milestone (first end-to-end, first at tempo, first from memory), log a dated bullet in that song's `Progress log` section — don't bury it in the daily log only.
+When a song hits a milestone (first end-to-end, first at tempo, first from memory, lane promotion), log a dated bullet in that song's `Progress log` section — don't bury it in the daily log only. **Lane promotions** happen automatically in the Saturday weekly review based on the week's evidence; don't wait for Artur to do it manually.
 
 ## Coaching specifics for electric
 

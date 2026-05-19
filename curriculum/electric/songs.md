@@ -1,26 +1,48 @@
-# Songs
+# 🎸 Songs — Electric
 
-Index of all songs. Each song has a dedicated file in `songs/` with chords, tone settings, practice focus, pentatonic for improv, and links to lessons and backing tracks.
+Three lanes per the repertoire convention (see `../../prompts/base.md` → "Repertoire lanes"). Each song has a detail file in `songs/<song>.md` with chords, tone settings, key, tempo, focus, pentatonic for improv, and links.
 
-## Currently learning
+---
 
-*(songs being actively worked on this week — pick from the foundation 5 to start)*
+## Learning
 
-— (none yet — first session will pick the first target)
+*Actively building, fragile. Needs slow practice and full attention. Pull from here first in normal sessions. Aim for **one** song here at a time.*
 
-## In rotation
+— (none yet — first session will pick the first target from the planned order below, almost certainly **Knockin' on Heaven's Door**)
 
-*(songs you can play end-to-end and want to keep in shape)*
+## Polishing
+
+*Playable end-to-end but rough. Working on consistency, feel, dynamics, memory. The longest-tenure lane — most songs live here for a while.*
+
+— (none yet)
+
+## Maintenance
+
+*Solid, just keeping it warm. Pull from here in low-friction and bad-day mode.*
 
 — (none yet)
 
 ---
 
-## The plan (from Notion)
+## Lane rules (quick reference)
 
-### 🎯 Foundation 5 — criteria for completion
+- **One song in Learning at a time.** If two end up there, move the older one to Polishing within ~1 week.
+- **Short session (<20 min):** pull from Learning first.
+- **Low-energy / bad-day mode:** pull from Maintenance first.
+- **Promote Learning → Polishing** when Artur can play end-to-end without restarting (even with imperfections).
+- **Promote Polishing → Maintenance** when it's clean at tempo with dynamics and feel, played from memory.
 
-These are the five songs that, when played cleanly end-to-end, mean the foundation is laid. From the Notion plan.
+Full rules in `../../prompts/base.md` → "Repertoire lanes".
+
+---
+
+## The planned order (from the original Notion plan)
+
+The lanes above are the **active** state. The list below is the **planned sequence** — what song to introduce next when Learning needs filling.
+
+### 🎯 Foundation 5 — the criteria for "foundation laid"
+
+These five songs, played cleanly end-to-end, mean the foundation is laid.
 
 | # | Song | Key | Why it's here |
 |---|---|---|---|
@@ -30,7 +52,7 @@ These are the five songs that, when played cleanly end-to-end, mean the foundati
 | 4 | [Miserlou](songs/04-miserlou.md) | E Phrygian Dominant | Fast alternate picking on one string |
 | 5 | [Stand By Me](songs/05-stand-by-me.md) | G major | Em in context, faster strumming than Knockin' |
 
-### 🎼 Composition group (continuing)
+### 🎼 Composition group (after foundation 5)
 
 | # | Song | Key | New skill |
 |---|---|---|---|
@@ -38,7 +60,7 @@ These are the five songs that, when played cleanly end-to-end, mean the foundati
 
 ### 🎶 Improvisation group — all in E minor, all under the same Em pentatonic
 
-The six songs below share Em → C → G → D progression (or close) and the same E minor pentatonic position. The goal of this group is to practice **vocal phrasing** improv over backing tracks — finding melodies on the fretboard that imitate the vocal lines.
+These six songs share the Em → C → G → D progression (or close) and the same E minor pentatonic position. The goal is **vocal phrasing** improv over backing tracks — finding melodies on the fretboard that imitate the vocal lines.
 
 | # | Song | Key |
 |---|---|---|
@@ -65,25 +87,12 @@ And alongside that:
 - Can practice 30 minutes **without fighting the guitar**
 - *Hear* when something is off — and know how to fix it
 
+In lane terms: foundation laid = all 5 of those songs in **Maintenance**, with at least one of them having spent meaningful time in **Polishing** first.
+
 ---
-
-## How to pick the next song
-
-The coach suggests songs based on:
-
-1. **What chords/techniques you know right now** (from `progress.md`)
-2. **Which song is next in the planned order** (foundation 5 → composition → improvisation group)
-3. **What you feel like playing** today — variety beats grinding one song
-
-A song stays in "Currently learning" for ~1–2 weeks, then either moves to "In rotation" (you can play it through) or gets shelved with a note about what's blocking it.
 
 ## Logging milestones per song
 
-Per-song `Progress log` sections at the bottom of each `songs/<file>.md` are where dated notes go ("2026-06-02: first clean A→D change", "2026-07-15: end-to-end at 60 BPM"). Don't bury this in daily logs — keep song-specific progress on the song's page so it's easy to skim that song's arc.
+Per-song `Progress log` sections at the bottom of each `songs/<file>.md` are where dated notes go — first end-to-end, first at tempo, first from memory, lane promotions, etc. Don't bury song-specific milestones in daily logs only.
 
-Worth noting per song:
-
-- First time through end-to-end (any tempo)
-- First time at target tempo
-- First time from memory
-- First time with a backing track or with someone else
+The Saturday weekly review handles **lane promotions** automatically based on the week's evidence (see `../../prompts/log_templates/weekly.md` → "Repertoire Lane Moves").
