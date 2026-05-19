@@ -2,11 +2,12 @@
 
 Personal guitar coaching setup. Two coaches under one roof:
 
-- **Electric guitar**
-    - Working through **JustinGuitar Grades 1–3** + **Steve Stine's *Music Theory*** in parallel (since December 2025).
+- **Electric guitar**, based on:
+    - **JustinGuitar Grades 1–3**
+    - **Steve Stine's *Music Theory***
       
-- **Classical guitar**
-    - Working through **Bradford Werner's *Classical Guitar Method Volume 1*** (since April 2026).
+- **Classical guitar**, based on:
+    - **Bradford Werner's *Classical Guitar Method Volume 1*** 
 
 Both coaches share the same coaching DNA: 
 - direct, honest, technical
