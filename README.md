@@ -2,10 +2,19 @@
 
 Personal guitar coaching setup. Two coaches under one roof:
 
-- **Electric guitar** — Squier Tele SH + Strat HSS, Yamaha THR5, BOSS SD-1. Working through **JustinGuitar Grades 1–3** + **Steve Stine's *Music Theory*** in parallel. Started December 2025.
-- **Classical guitar** — Manuel Rodríguez T-65 nylon. Working through **Bradford Werner's *Classical Guitar Method Volume 1***. Started April 2026.
+- **Electric guitar**
+    - Working through **JustinGuitar Grades 1–3** + **Steve Stine's *Music Theory*** in parallel (since December 2025).
+      
+- **Classical guitar**
+    - Working through **Bradford Werner's *Classical Guitar Method Volume 1*** (since April 2026).
 
-Both coaches share the same coaching DNA — direct, honest, technical, slow-first, stay-in-curriculum — but differ in repertoire, gear, technique focus, and theory spine. The shared logic lives in `prompts/base.md`; the instrument-specific stuff lives in `prompts/electric/SKILL.md` and `prompts/classical/SKILL.md`.
+Both coaches share the same coaching DNA: 
+- direct, honest, technical
+- slow-first
+- stay in curriculum
+
+But differ in repertoire, gear, technique focus, and theory spine. 
+The shared logic lives in `prompts/base.md`; the instrument-specific stuff lives in `prompts/electric/SKILL.md` and `prompts/classical/SKILL.md`.
 
 ## How a session works
 
