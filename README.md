@@ -1,4 +1,4 @@
-# guitar-coach
+# guitar-coach 🎸
 
 Personal guitar coaching setup. Two coaches under one roof:
 
