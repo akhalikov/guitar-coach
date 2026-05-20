@@ -6,10 +6,10 @@ Complete lesson-by-lesson plan for Bradford Werner's *Classical Guitar Method Vo
 
 ## Current Position
 
-> **Section:** Phase 0 — Orientation
-> **Active piece:** Sitting position + right-hand position setup
-> **Page marker:** —
-> **Last updated:** (will update after first session)
+> **Section:** Phase 2 — Notes on the Third String
+> **Active piece:** Notes on the Third String (p.17) → Moderato (p.18-19)
+> **Page marker:** p.17
+> **Last updated:** 2026-05-20
 
 When you complete a piece confidently, move this marker forward and note the date.
 
@@ -52,10 +52,10 @@ First playing section. E, B, G on open strings.
 
 | Piece | Page | Link | Done? |
 |-|-|-|-|
-| Three Open Strings + Rhythms | 12 | [video](https://www.thisisclassicalguitar.com/free-method-lesson-open-strings-etude-no-1-2/) | ☐ |
-| Etude No. 1 | 14 | [video](https://www.thisisclassicalguitar.com/free-method-lesson-open-strings-etude-no-1-2/) | ☐ |
-| Etude No. 2 | 15 | [video](https://www.thisisclassicalguitar.com/free-method-lesson-open-strings-etude-no-1-2/) | ☐ |
-| Nocturne (duet) | 16 | [video](https://www.thisisclassicalguitar.com/duet-play-along-nocturne-method/) | ☐ |
+| Three Open Strings + Rhythms | 12 | [video](https://www.thisisclassicalguitar.com/free-method-lesson-open-strings-etude-no-1-2/) | ✓ 2026-05-20 |
+| Etude No. 1 | 14 | [video](https://www.thisisclassicalguitar.com/free-method-lesson-open-strings-etude-no-1-2/) | ✓ 2026-05-20 |
+| Etude No. 2 | 15 | [video](https://www.thisisclassicalguitar.com/free-method-lesson-open-strings-etude-no-1-2/) | ✓ 2026-05-20 |
+| Nocturne (duet) | 16 | [video](https://www.thisisclassicalguitar.com/duet-play-along-nocturne-method/) | ✓ 2026-05-20 |
 
 **Estimated:** 2–3 weeks.
 
