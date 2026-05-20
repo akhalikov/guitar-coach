@@ -191,52 +191,41 @@ Tags are **machine-readable** — the weekly review scheduled task counts them. 
 
 **The Cowork shell sandbox cannot reliably run `git add` / `git commit` / `git push` on this repo.** Permission issues on `.git/objects` and no SSH credentials for push. The coach must NOT attempt git operations itself — they will fail or partially fail.
 
-**Instead, the coach prepares the commit and Artur runs it.** After any session — log written, progress updated, plan moved, SKILL edited — print a single fenced bash block that Artur can copy-paste into his terminal.
+**Instead, the coach prepares a single-line bash command and Artur runs it.** After any session — log written, progress updated, plan moved, SKILL edited — print **one fenced bash line** that Artur can copy-paste into his terminal. No multi-line block, no body, no trailer.
 
-The block must include:
-- `cd` to the repo root (use `/Users/khalikov/work/github/akhalikov/guitar-coach`)
-- `rm -f .git/index.lock` (in case a stale lock is lying around)
-- `git add -A`
-- `git commit -m "<message>"` with the Claude co-author trailer (see below)
-- `git push`
+**Why this format:** the commit subject is just an index entry pointing at "what got logged when". The detailed content of the session already lives in `logs/<instrument>/YYYY/MM-DD.md` and `progress/<instrument>.md` — the commit message doesn't duplicate it.
 
-### Commit message conventions
+### Required components (in order)
+
+1. `cd` to the repo root — defensive, in case the terminal isn't already there
+2. `rm -f .git/index.lock` — clears stale lock files left by prior partial sandbox writes (empirically necessary; don't skip)
+3. `git add -A`
+4. `git commit -m "<subject>"` — **subject only, no body, no Claude co-author trailer**
+5. `git push`
+
+All chained with `&&` so a failure short-circuits the rest.
+
+### Commit subject conventions
 
 | Change type | Subject line |
 |---|---|
-| Daily log | `Practice log YYYY-MM-DD (electric)` or `(classical)` |
+| Daily log | `Practice log YYYY-MM-DD session <#> (electric)` or `(classical)` — `session <#>` is optional when only one session that day |
 | Weekly review | `Weekly review — week of YYYY-MM-DD (electric)` or `(classical)` |
 | Position marker advance | `Advance <electric/classical> plan: <piece or lesson>` |
 | SKILL edits | `Update SKILL.md — <what changed>` |
 | Repo restructure / multi-area changes | `<imperative summary>` |
 
-**Always include the Claude co-author trailer** so GitHub credits Claude as a contributor:
-
-```
-<commit subject>
-
-<commit body if any>
-
-Co-Authored-By: Claude <noreply@anthropic.com>
-```
-
-### Example block to print after a daily log
+### Canonical one-line block
 
 ````
 ```bash
-cd /Users/khalikov/work/github/akhalikov/guitar-coach
-rm -f .git/index.lock
-git add -A
-git commit -m "Practice log 2026-05-23 (electric)
-
-Co-Authored-By: Claude <noreply@anthropic.com>"
-git push
+cd /Users/khalikov/work/github/akhalikov/guitar-coach && rm -f .git/index.lock && git add -A && git commit -m "Practice log 2026-05-23 session 1 (classical)" && git push
 ```
 ````
 
 ### The "send it" trigger
 
-When Artur says **"send it"**, that means: print the bash block above immediately, no preamble. He'll paste it into his terminal.
+When Artur says **"send it"**, that means: print the one-line bash command above immediately, no preamble. He'll paste it into his terminal.
 
 ---
 
