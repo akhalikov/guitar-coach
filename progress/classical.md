@@ -5,7 +5,7 @@ Updated after every session. The classical coach reads this first.
 **Status:** Phase 2 — Notes on the Third String (p.17)
 **Started:** April 2026
 **Daily target:** 30–45 minutes
-**Sessions completed:** 1
+**Sessions completed:** 2
 **Guitar:** Manuel Rodríguez T-65 (nylon-string classical, cedar top, ~650mm scale)
 
 ---
@@ -36,8 +36,8 @@ The authoritative position marker lives at the top of `../curriculum/classical/w
 
 ## Open struggles to revisit
 
-- Right forearm position — check at start of every session against Werner p.8 checklist
-- Nocturne: finger discipline (i-m correct alternation) needs one more session before it's automatic
+- **i-m alternation while reading** — breaks down when attention is split between notation and finger tracking. Verbal cueing (i-m out loud) is the current scaffold; goal is to internalize it silently. Drill on open strings before any new piece.
+- Right forearm position — confirmed correct in session 2; continue checking at session start.
 
 ## Wishlist / future
 

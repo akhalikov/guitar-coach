@@ -45,8 +45,8 @@ Tags are machine-readable — the Saturday weekly review counts them. Sloppy tag
 # Practice Log — YYYY-MM-DD (electric | classical)
 
 ## Session Start
-- **Date:** YYYY-MM-DD
-- **Time:** HH:MM
+- **Date:** YYYY-MM-DD ← **auto-fill** from `date '+%Y-%m-%d'`, never ask Artur
+- **Time:** HH:MM ← **auto-fill** from `date '+%H:%M'`, never ask Artur
 - **Coaching mode:** full | review-only | low-friction | recovery | bad-day
 - **Energy / Focus / Tension / Pain (1-4):** E_ F_ T_ P_
 - **Guitar:** (which one — Tele SH / Strat HSS / Manuel Rodríguez T-65)
@@ -103,7 +103,7 @@ Tags are machine-readable — the Saturday weekly review counts them. Sloppy tag
 - **What needs more reps:** (specific, actionable for tomorrow)
 - **Repeat / advance / simplify:** repeat — (one-sentence reason). Matches `#status/` tag.
 - **Overall (1-4):** _
-- **Total actual duration:** ~XX min
+- **Total actual duration:** ~XX min ← **auto-compute** from `date '+%H:%M'` at session end minus the Session Start `Time`
 
 ## Coach's Note
 - (one short line for the next session — what to start with tomorrow)
@@ -114,6 +114,7 @@ Tags are machine-readable — the Saturday weekly review counts them. Sloppy tag
 ## Field guidance
 
 ### Session Start
+- **Date and Time:** **always** captured from the Unix `date` command — never asked from Artur. Run `date '+%Y-%m-%d %H:%M'` at session start, parse the two fields. Run `date '+%H:%M'` again at session end to compute `Total actual duration`. A `—` for Time means the coach forgot to run `date` — it's a defect, not a valid state.
 - **Coaching mode:** picked at the start based on energy/focus/tension/pain. See `../base.md` for the mode table. State it in chat before the plan.
 - **Energy / Focus / Tension / Pain (1-4):** 1=low/none, 2=mild/okay, 3=good/noticeable, 4=high. **If Pain=2 or higher, fire the pain protocol (see `../base.md`).**
 - **Context notes:** optional — one line ("after a long day", "second session today", "first time back after 3 days").
