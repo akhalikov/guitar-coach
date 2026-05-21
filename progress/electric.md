@@ -2,18 +2,18 @@
 
 Updated after every session. The coach reads this first.
 
-**Status:** Brand new — starting Grade 1, Module 1
+**Status:** Active — Grade 1, Module 1 in progress
 **Started:** December 2025
 **Daily target:** 25 minutes
-**Sessions completed:** 0
+**Sessions completed:** 2
 
 ---
 
 ## Current focus
 
-**JustinGuitar:** Grade 1 → Module 1: First Steps → next lesson = posture, picking, reading chord charts, first chord (A)
+**JustinGuitar:** Grade 1 → Module 1: First Steps → current = D chord (A chord advanced); next = A→D change
 
-**Theory (Stine):** Module 1 — Understanding Notes → next concept = the 7 prime notes (A B C D E F G), open string names
+**Theory (Stine):** Module 1 — Understanding Notes → completed = 7 prime notes, open string names, sharps & flats, "BE" mnemonic; next = enharmonics (C#=D♭, etc.)
 
 **Songs in rotation:** none yet — pick first song after A, D, E chords are usable
 
@@ -102,13 +102,14 @@ Updated after every session. The coach reads this first.
 
 ## What's clicking
 
-*(filled in as it happens — keep this honest, not aspirational)*
-
-— (nothing yet)
+- Open string names (E A D G B E) — recalled immediately, no prompting needed
+- A chord shape — found clean tone within first session with self-correction
 
 ## What's not
 
-— (nothing yet)
+- Index finger drifts toward fret 1 when middle and ring fingers come in — anchor habit not yet built
+- A chord placement not yet automatic — target: clean in <3 seconds
+- Chromatic warm-up currently at frets 5–8 (hand span not yet wide enough for frets 1–4)
 
 ## Wishlist / future
 
@@ -121,7 +122,7 @@ Songs or topics Artur wants to get to that aren't on the current path. Don't der
 ## Milestones
 
 - **Started:** December 2025
-- **First clean A chord:** —
+- **First clean A chord:** 2026-05-21 (session 1)
 - **First song end-to-end:** —
 - **First clean F chord:** —
 - **Passed Grade 1:** —
