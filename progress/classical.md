@@ -2,10 +2,10 @@
 
 Updated after every session. The classical coach reads this first.
 
-**Status:** Phase 2 — Notes on the Third String (p.17)
+**Status:** Phase 2 — Moderato (p.18-19)
 **Started:** April 2026
 **Daily target:** 30–45 minutes
-**Sessions completed:** 2
+**Sessions completed:** 3
 **Guitar:** Manuel Rodríguez T-65 (nylon-string classical, cedar top, ~650mm scale)
 
 ---
@@ -14,30 +14,31 @@ Updated after every session. The classical coach reads this first.
 
 The authoritative position marker lives at the top of `../curriculum/classical/werner-vol1-plan.md` under "Current Position". Sync these two files when either changes.
 
-**Section:** Phase 2 — Notes on the Third String
-**Active piece:** Notes on the Third String (p.17) → Moderato (p.18-19)
-**Page marker:** p.17
-**Last updated:** 2026-05-20
+**Section:** Phase 2 — Moderato
+**Active piece:** Moderato (p.18-19) — repeat, settling at tempo before A Fairy Tale (p.20)
+**Page marker:** p.18
+**Last updated:** 2026-05-21
 
 ---
 
 ## What's clicking
 
 - Free stroke p-i-m-a arpeggio — felt natural from first attempt, no tension
-- i-m alternation on single string — even tone, no strength difference between fingers
-- Pinky (finger 4) for D and G — both rang clean on day one
+- i-m alternation on single string — fully internalized as of session 3 (no verbal scaffold needed)
+- Pinky (finger 4) for G and D — both rang clean on day one
 - String-finding by touch without looking during Nocturne duet
 - Playing with backing track — pulse held, performed better with accompaniment than without
+- Moderato (p.18-19) — full piece clean on first hands-together pass at 40 BPM
 
 ## What's not
 
-- Right forearm placement — sitting slightly high on upper bout; should settle in front of elbow
-- Accuracy still requires conscious attention on correct fingering (expected at this stage)
+- Right forearm placement — monitor at each session start (was slightly high; confirmed correct in sessions 2 and 3)
+- Sight reading difficulty creeping up as pieces add left-hand notes — expected, keep drilling
 
 ## Open struggles to revisit
 
-- **i-m alternation while reading** — breaks down when attention is split between notation and finger tracking. Verbal cueing (i-m out loud) is the current scaffold; goal is to internalize it silently. Drill on open strings before any new piece.
-- Right forearm position — confirmed correct in session 2; continue checking at session start.
+- **i-m alternation while reading** — resolved as of 2026-05-21. No verbal scaffold needed. Continue monitoring as pieces get harder.
+- Right forearm position — continue checking at session start.
 
 ## Wishlist / future
 
