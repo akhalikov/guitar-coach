@@ -28,10 +28,10 @@ The coach asks how you're feeling (energy / focus / tension / pain, 1–4) to pi
 
 ## 🗄️ Two-repo layout
 
-This repo is **public** — coaching system only. Personal practice data lives in a **private sibling repo** called `guitar-coach-logs/`:
+This repo is **public** — coaching system only. Personal practice data lives in a **private sibling repo** called `guitar-coach-logs`:
 
 ```
-~/work/github/akhalikov/
+~/
 ├── guitar-coach/            (this repo — prompts, curriculum, SKILL.md files)
 └── guitar-coach-logs/       (private — daily logs, progress markers, recordings)
 ```
