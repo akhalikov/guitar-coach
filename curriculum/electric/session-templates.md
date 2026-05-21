@@ -79,7 +79,7 @@ If a song has a rough spot, isolate the 2 bars that don't work, loop them at hal
 If Artur didn't get it, re-explain once differently — don't grind a third time. The concept will come back around.
 
 ### Wrap & log
-Single-line takeaway from Artur ("F chord muting still bad, A→D much better"). Coach writes the log to `logs/YYYY/MM-DD.md` using the template in `logs/TEMPLATE.md`, then updates `progress.md`.
+Single-line takeaway from Artur ("F chord muting still bad, A→D much better"). Coach writes the log to `../../../guitar-coach-logs/logs/electric/YYYY/MM-DD.md` using the template in `../../prompts/log_templates/daily.md`, then updates `../../../guitar-coach-logs/progress/electric.md`.
 
 ---
 

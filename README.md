@@ -21,19 +21,27 @@ The shared logic lives in `prompts/base.md`; the instrument-specific stuff lives
 
 Open this folder with Claude. Say what you want:
 
-- *"Let's practice electric"* → the electric coach activates (reads `prompts/electric/SKILL.md` → `prompts/base.md` → `progress/electric.md` → recent electric logs → proposes a plan)
+- *"Let's practice electric"* → the electric coach activates (reads `prompts/electric/SKILL.md` → `prompts/base.md` → `../guitar-coach-logs/progress/electric.md` → recent electric logs → proposes a plan)
 - *"Let's practice classical"* → the classical coach activates (same loop with classical files)
 
 The coach asks how you're feeling (energy / focus / tension / pain, 1–4) to pick a session mode, then proposes a plan, walks you through it block by block, and writes the daily log and updates the progress file. Saturday weekly reviews fire automatically via scheduled tasks (classical 10:00, electric 18:00).
 
-## 🗄️ Top-level layout
+## 🗄️ Two-repo layout
+
+This repo is **public** — coaching system only. Personal practice data lives in a **private sibling repo** called `guitar-coach-logs/`:
+
+```
+~/work/github/akhalikov/
+├── guitar-coach/            (this repo — prompts, curriculum, SKILL.md files)
+└── guitar-coach-logs/       (private — daily logs, progress markers, recordings)
+```
+
+The coach reads from and writes to the sibling repo. Commits happen there too — this public repo only changes when the coaching system itself changes.
 
 - `prompts/` — coaching logic (shared `base.md` + per-instrument `SKILL.md` + daily/weekly log templates)
 - `curriculum/` — reference content per instrument (lesson plans, songs/pieces, equipment, books)
-- `progress/` — current state per instrument (what's clicking, what's not, where you are)
-- `logs/` — dated practice journals + recordings
 
-For specific paths, see the file map at the bottom of each `SKILL.md` — those are the source of truth (and they're what the coaches actually read).
+If you're forking this for your own use, see `SETUP.md` for how to set up the paired private logs repo.
 
 ## ⏯️ The two scheduled tasks
 

@@ -12,5 +12,8 @@ curriculum/classical/book/*.pdf
 *~
 .vscode/
 
-# Local recordings are kept — they're part of the practice journal.
-# Don't ignore logs/<instrument>/recordings/.
+# Defensive — personal data should NEVER live in this public repo.
+# Logs and progress live in the private sibling repo guitar-coach-logs/.
+# These rules prevent accidental commits if files are created here by mistake.
+logs/
+progress/

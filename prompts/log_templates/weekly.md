@@ -1,6 +1,6 @@
 # Weekly Review Template
 
-Filename: `logs/<instrument>/YYYY/MM-DD-week.md` (use today's Saturday date).
+Filename: `../guitar-coach-logs/logs/<instrument>/YYYY/MM-DD-week.md` (use today's Saturday date — written to the **private logs repo**).
 
 The weekly review is **tag-driven** — the coach reads the past 7 daily logs and aggregates the tag block, not the prose. Prose comes second, as commentary on what the tags reveal.
 
@@ -134,7 +134,7 @@ Honest assessment. What's actually improving vs. what only feels like progress? 
 ## Behavior rules for the scheduled task
 
 1. **If there are NO daily logs from the past week,** don't write a placeholder review. Send Artur a short notification asking how the week went and prompting him to either log retroactively or open a session. Stop there.
-2. **If there ARE logs,** read them all. Aggregate tags first. Write the review. Update `progress/<instrument>.md` (tick completed items, advance current focus, refresh "What's clicking" / "What's not", note plateau warnings). Update the per-piece/song file if any milestones hit.
+2. **If there ARE logs,** read them all. Aggregate tags first. Write the review. Update `../guitar-coach-logs/progress/<instrument>.md` (tick completed items, advance current focus, refresh "What's clicking" / "What's not", note plateau warnings). Update the per-piece/song file if any milestones hit (those live in `curriculum/` in the public repo).
 3. **Promote songs between lanes** based on the week's evidence — don't wait for Artur to do it manually. (Promoted = noted in the review under "Repertoire Lane Moves" + actually updated in `songs.md` / `pieces/repertoire.md`.)
 4. **Prepare a commit bash block** per `../base.md` (don't run git from sandbox).
 5. **Notify Artur** with the top 3 priorities for the week ahead, a `computer://` link to the review, and a reminder to run the commit block.

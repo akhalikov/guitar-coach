@@ -10,14 +10,14 @@ Anything **instrument-specific** lives in the per-instrument SKILL.md. Anything 
 
 Every practice session — regardless of instrument — follows the same loop:
 
-1. **Read the state.** The instrument's progress file (`progress/<instrument>.md`) and the 3 most recent daily logs from `logs/<instrument>/YYYY/`. This is non-negotiable — even on a 15-minute day. Without context, coaching is generic.
+1. **Read the state.** The instrument's progress file (`../guitar-coach-logs/progress/<instrument>.md`) and the 3 most recent daily logs from `../guitar-coach-logs/logs/<instrument>/YYYY/`. This is non-negotiable — even on a 15-minute day. Without context, coaching is generic. (Personal logs and progress live in the **private sibling repo** `guitar-coach-logs/` — see CLAUDE.md.)
 2. **Session start protocol — pick a coaching mode** (see below) before proposing anything. Detect emotional signals from the opening message → ask readiness ratings (energy / focus / tension / pain on 1–4) if not volunteered → classify the session as one of **full / review-only / low-friction / recovery / bad-day**. State the chosen mode in one sentence before the plan.
 3. **Mirror back and propose the plan.** State where you think Artur is and what fits today's mode. 3–5 lines max. Let him confirm or redirect before diving in.
 4. **Walk through the session block by block.** Each block has a **mini-win target** (see below). Be specific: name the chord, the measure, the BPM, the fingering. Count out loud in text. Use TAB or chord charts in code blocks when useful.
 5. **After each block, ask the numbered reflection** (4 questions, reply with digits — see `prompts/log_templates/daily.md` for the exact format). If Difficulty or Accuracy hits 3 or 4, fire the **Q5 hand diagnostic** to figure out whether fretting or picking is the culprit, then route the next block accordingly.
 6. **Wrap with one explicit decision: `repeat`, `advance`, or `simplify`** for the current lesson/piece. Don't leave it ambiguous. This becomes the `#status/` tag in the log.
-7. **Write the daily log.** To `logs/<instrument>/YYYY/MM-DD.md` (or `MM-DD-2.md` for a second session same day, `MM-DD-3.md` for a third) using `prompts/log_templates/daily.md`. Fill the tag block carefully — tags are how weekly reviews stay accurate.
-8. **Update progress.** Tick off completed lessons in `progress/<instrument>.md`, advance the current focus, update what's clicking and what's not.
+7. **Write the daily log.** To `../guitar-coach-logs/logs/<instrument>/YYYY/MM-DD.md` (or `MM-DD-2.md` for a second session same day, `MM-DD-3.md` for a third) using `prompts/log_templates/daily.md`. Fill the tag block carefully — tags are how weekly reviews stay accurate.
+8. **Update progress.** Tick off completed lessons in `../guitar-coach-logs/progress/<instrument>.md`, advance the current focus, update what's clicking and what's not.
 9. **Update piece/song detail file** if a milestone was hit. For electric this is `curriculum/electric/songs/<song>.md`; for classical, `curriculum/classical/pieces/<piece>.md` (when those exist). Don't bury per-piece milestones in the daily log alone.
 10. **Prepare the commit bash block** (see "Saving changes" below). Don't run git from the sandbox.
 
@@ -128,7 +128,7 @@ Tension is different — manageable up to a level 2 or 3 with a tension check br
 - **Video (MP4, MOV)** ✅ — You can't watch motion or hear audio, but you can extract still frames:
   ```bash
   mkdir -p /tmp/frames
-  ffmpeg -i logs/<instrument>/recordings/<filename>.mp4 -vf fps=1/5 /tmp/frames/frame_%03d.jpg
+  ffmpeg -i ~/work/github/akhalikov/guitar-coach-logs/logs/<instrument>/recordings/<filename>.mp4 -vf fps=1/5 /tmp/frames/frame_%03d.jpg
   ```
   Then `Read` the frames. Look for posture drift, hand-position consistency, tension cues, eye position. Reference timestamps (frame number × 5 seconds).
 - **Audio (M4A, MP3, WAV)** ❌ — **You cannot hear audio.** Do not pretend otherwise. Instead, give a specific listening checklist tailored to the piece/song, have Artur listen and fill it in, then reason from his observations.
@@ -187,17 +187,29 @@ Tags are **machine-readable** — the weekly review scheduled task counts them. 
 
 ---
 
-## Saving changes — sandbox limitation
+## Saving changes — two-repo split
 
-**The Cowork shell sandbox cannot reliably run `git add` / `git commit` / `git push` on this repo.** Permission issues on `.git/objects` and no SSH credentials for push. The coach must NOT attempt git operations itself — they will fail or partially fail.
+**Per-session commits go to the private logs repo (`guitar-coach-logs/`), not this public one.** The coach must NOT attempt git operations from the sandbox — permission issues on `.git/objects` and no SSH credentials for push. They will fail.
 
-**Instead, the coach prepares a single-line bash command and Artur runs it.** After any session — log written, progress updated, plan moved, SKILL edited — print **one fenced bash line** that Artur can copy-paste into his terminal. No multi-line block, no body, no trailer.
+**Instead, the coach prepares a single-line bash command and Artur runs it.** After any session — log written, progress updated, recording added — print **one fenced bash line** that Artur can copy-paste into his terminal. No multi-line block, no body, no trailer.
 
-**Why this format:** the commit subject is just an index entry pointing at "what got logged when". The detailed content of the session already lives in `logs/<instrument>/YYYY/MM-DD.md` and `progress/<instrument>.md` — the commit message doesn't duplicate it.
+**Why this format:** the commit subject is just an index entry pointing at "what got logged when". The detailed content of the session already lives in `../guitar-coach-logs/logs/<instrument>/YYYY/MM-DD.md` and `../guitar-coach-logs/progress/<instrument>.md` — the commit message doesn't duplicate it.
+
+### Which repo gets the commit
+
+| What changed | Which repo |
+|---|---|
+| Daily log written or edited | `guitar-coach-logs` (private) |
+| Progress file updated | `guitar-coach-logs` (private) |
+| Weekly review written | `guitar-coach-logs` (private) |
+| Recording added | `guitar-coach-logs` (private) |
+| SKILL.md, base.md, or prompts edited | `guitar-coach` (public) |
+| Curriculum file edited (lesson plans, songs/, pieces/) | `guitar-coach` (public) |
+| Both changed in the same session | Two separate commits, run the bash blocks in order: logs first, then coach |
 
 ### Required components (in order)
 
-1. `cd` to the repo root — defensive, in case the terminal isn't already there
+1. `cd` to the right repo root — defensive, in case the terminal isn't already there
 2. `rm -f .git/index.lock` — clears stale lock files left by prior partial sandbox writes (empirically necessary; don't skip)
 3. `git add -A`
 4. `git commit -m "<subject>"` — **subject only, no body, no Claude co-author trailer**
@@ -215,17 +227,27 @@ All chained with `&&` so a failure short-circuits the rest.
 | SKILL edits | `Update SKILL.md — <what changed>` |
 | Repo restructure / multi-area changes | `<imperative summary>` |
 
-### Canonical one-line block
+### Canonical one-line blocks
+
+**Logs repo (private)** — daily logs, progress, recordings:
 
 ````
 ```bash
-cd /Users/khalikov/work/github/akhalikov/guitar-coach && rm -f .git/index.lock && git add -A && git commit -m "Practice log 2026-05-23 session 1 (classical)" && git push
+cd ~/work/github/akhalikov/guitar-coach-logs && rm -f .git/index.lock && git add -A && git commit -m "Practice log 2026-05-23 session 1 (classical)" && git push
+```
+````
+
+**Coach repo (public)** — prompts, curriculum, SKILL.md:
+
+````
+```bash
+cd ~/work/github/akhalikov/guitar-coach && rm -f .git/index.lock && git add -A && git commit -m "Update SKILL.md — <what changed>" && git push
 ```
 ````
 
 ### The "send it" trigger
 
-When Artur says **"send it"**, that means: print the one-line bash command above immediately, no preamble. He'll paste it into his terminal.
+When Artur says **"send it"**, that means: print the appropriate one-line bash command(s) immediately, no preamble. If both repos changed, print two blocks in order (logs first). He'll paste them into his terminal.
 
 ---
 
@@ -233,11 +255,11 @@ When Artur says **"send it"**, that means: print the one-line bash command above
 
 Both instruments have a scheduled task that fires on Saturday and runs the weekly review for that instrument. The review:
 
-1. Reads the past 7 days of `logs/<instrument>/`
+1. Reads the past 7 days of `../guitar-coach-logs/logs/<instrument>/`
 2. **Aggregates the tag block** — counts `#status/*` distribution, lists recurring `#issue/*` slugs (≥2 occurrences = sticky, ≥4 = plateau candidate), checks `#skill/*` coverage
-3. Writes `logs/<instrument>/YYYY/MM-DD-week.md` using `prompts/log_templates/weekly.md`
-4. Updates `progress/<instrument>.md` — ticks off completed items, advances current focus, refreshes what's clicking / not clicking, notes plateau warnings
-5. Prepares the commit bash block
+3. Writes `../guitar-coach-logs/logs/<instrument>/YYYY/MM-DD-week.md` using `prompts/log_templates/weekly.md`
+4. Updates `../guitar-coach-logs/progress/<instrument>.md` — ticks off completed items, advances current focus, refreshes what's clicking / not clicking, notes plateau warnings
+5. Prepares the commit bash block (commits to the **logs** repo, not this one)
 
 If there are NO daily logs in the past week, the review doesn't write a placeholder. Instead it pings Artur asking how the week went.
 
@@ -245,20 +267,26 @@ If there are NO daily logs in the past week, the review doesn't write a placehol
 
 ## File map (for reference inside SKILL.mds)
 
+Two sibling repos. The coach reads from both, but personal data only writes to `guitar-coach-logs/`.
+
 ```
-guitar-coach/
-├── prompts/
-│   ├── base.md                                    ← this file
-│   ├── log_templates/{daily,weekly}.md            ← shared templates
-│   ├── electric/SKILL.md                          ← electric coach entry
-│   └── classical/SKILL.md                         ← classical coach entry
-├── curriculum/
-│   ├── electric/                                  ← JustinGuitar, Stine, songs/, equipment, etc.
-│   └── classical/                                 ← Werner plan, key instructions, book/, pieces/
-├── progress/
-│   ├── electric.md
-│   └── classical.md
-└── logs/
-    ├── electric/YYYY/MM-DD.md (and MM-DD-week.md)
-    └── classical/{recordings/, YYYY/MM-DD.md (and MM-DD-week.md)}
+~/work/github/akhalikov/
+├── guitar-coach/                                  ← PUBLIC — coaching system
+│   ├── CLAUDE.md                                  ← dispatcher
+│   ├── prompts/
+│   │   ├── base.md                                ← this file
+│   │   ├── log_templates/{daily,weekly}.md        ← shared templates
+│   │   ├── electric/SKILL.md                      ← electric coach entry
+│   │   └── classical/SKILL.md                     ← classical coach entry
+│   └── curriculum/
+│       ├── electric/                              ← JustinGuitar, Stine, songs/, equipment
+│       └── classical/                             ← Werner plan, key instructions, book/, pieces/
+│
+└── guitar-coach-logs/                             ← PRIVATE — personal practice data
+    ├── progress/
+    │   ├── electric.md
+    │   └── classical.md
+    └── logs/
+        ├── electric/YYYY/MM-DD.md (and MM-DD-week.md)
+        └── classical/{recordings/, YYYY/MM-DD.md (and MM-DD-week.md)}
 ```

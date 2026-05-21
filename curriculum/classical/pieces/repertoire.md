@@ -67,7 +67,7 @@ Create a `pieces/<piece-slug>.md` file when a piece reaches **Polishing**. The d
 - **Hand-position notes** (anything specific — barre, stretch, position shift)
 - **Memorization status**
 - **Werner video link** (if there is one for this piece)
-- **Recordings index** (links to `../../../logs/classical/recordings/*` takes of this piece)
+- **Recordings index** (links to `../../../../guitar-coach-logs/logs/classical/recordings/*` takes of this piece — private repo)
 - **Progress log** — dated bullets: first half-tempo run, first memorized, first at tempo, first with dynamics, etc.
 
 A piece in Learning doesn't need its own file yet — the daily logs cover it. Spinning up the file is itself a sign the piece has settled enough to be worth tracking longitudinally.
