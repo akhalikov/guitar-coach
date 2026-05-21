@@ -44,8 +44,8 @@ Once Vol 1 is complete and hand position is rock-solid, Werner introduces rest s
 > Students should use the left hand pinky for D and G (3rd fret of the 1st and 2nd strings). This fingering is required for solo pieces later and helps align the left hand. Students will have no trouble using the pinky if it is curved and in the proper position.
 
 **Rule:**
-- **String 1, fret 3 (D) → left-hand pinky (finger 4)**
-- **String 2, fret 3 (G) → left-hand pinky (finger 4)**
+- **String 1, fret 3 (G) → left-hand pinky (finger 4)**
+- **String 2, fret 3 (D) → left-hand pinky (finger 4)**
 
 Resist the temptation to use the ring finger (3). The pinky discipline pays off later in solo repertoire.
 

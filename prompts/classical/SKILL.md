@@ -94,7 +94,7 @@ Non-negotiable. Always include, even on a 20-minute day.
 
 1. **Tune up & posture check (1–2 min)** — tuner on. Werner's p.8 position checklist: guitar at 45°, face vertical, shoulders relaxed, RH thumb in front of fingers, LH thumb vertical behind finger 2. Photograph sitting position once a week and compare.
 2. **Right-hand technique routine (4 min)** — **free stroke only** (Werner p.5 — rest stroke is Vol 2). On open strings: `p-i-m-a` arpeggios, then `i-m` alternation on a single string, then `p-i-m-i` patterns. Slow, even, flesh-of-fingertip, fingers moving into the palm. Tone consistency between `i` and `m` is the focus.
-3. **Left-hand technique routine (4 min)** — chromatic 1-2-3-4 on each string. Then 4th-finger drills: D on string 1 fret 3 with finger 4, G on string 2 fret 3 with finger 4 (Werner p.5 — mandatory, not optional). Fingers curved on fingertips, thumb vertical behind finger 2.
+3. **Left-hand technique routine (4 min)** — chromatic 1-2-3-4 on each string. Then 4th-finger drills: G on string 1 fret 3 with finger 4, D on string 2 fret 3 with finger 4 (Werner p.5 — mandatory, not optional). Fingers curved on fingertips, thumb vertical behind finger 2.
 
 ### Block pool (pick 3–6 depending on time)
 

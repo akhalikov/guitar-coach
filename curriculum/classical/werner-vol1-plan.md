@@ -6,10 +6,10 @@ Complete lesson-by-lesson plan for Bradford Werner's *Classical Guitar Method Vo
 
 ## Current Position
 
-> **Section:** Phase 2 — Notes on the Third String
-> **Active piece:** Notes on the Third String (p.17) → Moderato (p.18-19)
-> **Page marker:** p.17
-> **Last updated:** 2026-05-20
+> **Section:** Phase 2 — Moderato
+> **Active piece:** Moderato (p.18-19) — repeat, settling at tempo before advancing to A Fairy Tale (p.20)
+> **Page marker:** p.18
+> **Last updated:** 2026-05-21
 
 When you complete a piece confidently, move this marker forward and note the date.
 
