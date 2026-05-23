@@ -8,19 +8,20 @@ Three lanes per the repertoire convention (see `../../../prompts/base.md` → "R
 
 *Actively building, fragile. Needs slow practice and full attention. Pull from here first in normal sessions. Aim for **one** piece here at a time.*
 
-— (none yet — classical journey starts at Phase 0 / Orientation; pieces enter Learning once Phase 1 begins)
+- **Moderato** (p.18–19) — Phase 2. First full hands-together pass at 40 BPM on 2026-05-21. Next target: two clean passes at 50 BPM with metronome before advancing to A Fairy Tale (p.20).
 
 ## Polishing
 
 *Playable end-to-end but rough. Working on consistency, feel, dynamics, memory, tone. The longest-tenure lane in classical — Werner specifically advises *staying* with pieces after they're "playable" so they settle.*
 
-— (none yet)
+- **Nocturne** (p.16) — Phase 1 duet. Played end-to-end with Werner's backing track at pulse on 2026-05-20, eyes on page, no restart. Promoted from Learning 2026-05-23. Needs more sessions for dynamics and memory before Maintenance.
 
 ## Maintenance
 
 *Solid, memorized, played at tempo with clean tone and dynamics. Pull from here in low-friction and bad-day mode. Also the lane for the **review piece** block in the daily core — replay one fully-learned piece to keep it warm and aim for higher musicality than last time.*
 
-— (none yet)
+- **Etude No. 1** (p.14) — Phase 1 open-string etude. Fully functional as of 2026-05-20. Now used as sight reading warmup material. Promoted 2026-05-23.
+- **Etude No. 2** (p.15) — Phase 1 etude. Fully functional as of 2026-05-21 (completed eyes-on-page, no restart). Now used as sight reading warmup material. Promoted 2026-05-23.
 
 ---
 
