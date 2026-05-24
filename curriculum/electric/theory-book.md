@@ -1,6 +1,6 @@
 # *Music Theory* by Steve Stine — Module Map
 
-The book is *Music Theory Masterclass* by Steve Stine (GuitarZoom Academy), 245 pages. Artur owns the PDF separately — it isn't in this repo. This file is a stable map of what's in each module so the coach can pull one applied concept into each session.
+The book is *Music Theory Masterclass* by Steve Stine (GuitarZoom Academy), 245 pages. the student owns the PDF separately — it isn't in this repo. This file is a stable map of what's in each module so the coach can pull one applied concept into each session.
 
 When the coach references "Stine Module 1" or "Stine p. 12", it's pointing into this book.
 
@@ -20,7 +20,7 @@ The foundational module: the 12 notes of music, how they live on a guitar.
 - **Cross-referencing notes across strings** — find the same note on multiple strings
 - **Visual short-cut for cross-referencing** — the diagonal pattern
 
-**Why it matters for practice:** lets Artur name what he's playing. The moment he can say "this chord has the notes A C# E", the fretboard stops being abstract shapes.
+**Why it matters for practice:** lets the student name what he's playing. The moment he can say "this chord has the notes A C# E", the fretboard stops being abstract shapes.
 
 ## Module 2 — Music Notation, TAB, Chord Charts
 
@@ -39,7 +39,7 @@ How music is written down — for guitar, three notations are used in parallel.
 - **Chords on TAB** — stacked numbers
 - **Chord charts** — vertical fretboard view; numbers = fingers (1=index, 2=middle, 3=ring, 4=pinky); X=mute, O=open
 
-**Why it matters for practice:** Artur needs TAB and chord charts from day one. Standard notation can come later — but understanding note values and 4/4 is essential for strumming patterns.
+**Why it matters for practice:** the student needs TAB and chord charts from day one. Standard notation can come later — but understanding note values and 4/4 is essential for strumming patterns.
 
 ## Module 3 — The Major Scale & Key Signatures
 
@@ -58,11 +58,11 @@ The single most important scale in Western music.
 - **Middle C transposition for guitar** — guitar is written 1 octave higher than it sounds
 - **Major scale on guitar** — closed position pattern, root on string 6 (movable); same shape plays any major scale
 
-**Why it matters for practice:** unlocks "what chords go together in a song", lets Artur transpose, and is the prerequisite for Grade 2 Module 11 (chords in a key) and Grade 3 Module 17 (major scale).
+**Why it matters for practice:** unlocks "what chords go together in a song", lets the student transpose, and is the prerequisite for Grade 2 Module 11 (chords in a key) and Grade 3 Module 17 (major scale).
 
 ## Module 4+ — Beyond (referenced when relevant)
 
-The book continues past Module 3 for another ~150 pages. Likely coverage (the coach should confirm by checking the PDF if Artur asks):
+The book continues past Module 3 for another ~150 pages. Likely coverage (the coach should confirm by checking the PDF if the student asks):
 
 - **Intervals** — distance between two notes (2nd, 3rd, 4th, 5th, 6th, 7th, octave), major/minor/perfect/augmented/diminished
 - **Triads and chord construction** — major chord = 1-3-5, minor = 1-♭3-5, diminished = 1-♭3-♭5
@@ -81,5 +81,5 @@ These come into play in Grade 2 and Grade 3. The coach should pull them in when 
 
 - For each session, the coach picks **one concept** from the next un-checked topic in `progress.md` under "Theory current".
 - The topic is delivered in 3–5 minutes, **applied on the fretboard** (not just on paper).
-- After delivery, Artur should be able to repeat it back or play the example. If not, re-explain once and revisit next session — don't grind.
+- After delivery, the student should be able to repeat it back or play the example. If not, re-explain once and revisit next session — don't grind.
 - Pairings of theory topics to JustinGuitar lessons are in `interleaving.md`.

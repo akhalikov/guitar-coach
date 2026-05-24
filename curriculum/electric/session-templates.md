@@ -22,7 +22,7 @@ Every template has the same five elements in the same order: **tune → warm-up 
 | Warm-up | 3 min | Chromatic 1-2-3-4 up the neck, both ascending and descending. Optional: spider exercise. |
 | Technique focus | 10 min | Current JustinGuitar module's main drill. 2–3 rounds with check-ins between. |
 | Song / application | 7 min | One song using today's chords/technique. Play through, fix the rough spot, play through again. |
-| Theory snippet | 3 min | One concept from `theory-book.md`, applied on the fretboard. Artur repeats it back. |
+| Theory snippet | 3 min | One concept from `theory-book.md`, applied on the fretboard. the student repeats it back. |
 | Wrap & log | 1 min | One-line takeaway. Claude writes the log. |
 
 ## 45-minute session (weekend / deeper day)
@@ -73,13 +73,13 @@ If a song has a rough spot, isolate the 2 bars that don't work, loop them at hal
 
 1. **State the concept** in one sentence.
 2. **Show it** on the guitar (or with a TAB block in chat).
-3. **Ask Artur to repeat it** in his own words or play the example.
+3. **Ask the student to repeat it** in his own words or play the example.
 4. **Note it** in the log so it can be reinforced over the next few sessions.
 
-If Artur didn't get it, re-explain once differently — don't grind a third time. The concept will come back around.
+If the student didn't get it, re-explain once differently — don't grind a third time. The concept will come back around.
 
 ### Wrap & log
-Single-line takeaway from Artur ("F chord muting still bad, A→D much better"). Coach writes the log to `../../../guitar-coach-logs/logs/electric/YYYY/MM-DD.md` using the template in `../../prompts/log_templates/daily.md`, then updates `../../../guitar-coach-logs/progress/electric.md`.
+Single-line takeaway from the student ("F chord muting still bad, A→D much better"). Coach writes the log to `../../../guitar-coach-logs/logs/electric/YYYY/MM-DD.md` using the template in `../../prompts/log_templates/daily.md`, then updates `../../../guitar-coach-logs/progress/electric.md`.
 
 ---
 

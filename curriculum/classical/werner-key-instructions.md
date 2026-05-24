@@ -125,7 +125,7 @@ Werner recommends **Berklee Music Theory Book 1 — Intro to Theory** (with answ
 
 ## How the coach (Claude) should apply these rules
 
-- **Never** prescribe rest stroke or nails during Vol 1 work. If Artur asks about either, point to this file and explain they're Vol 2 material.
+- **Never** prescribe rest stroke or nails during Vol 1 work. If the student asks about either, point to this file and explain they're Vol 2 material.
 - The daily RH technique routine is **free stroke `pima` arpeggios + free stroke `i-m` alternation**, on open strings. No rest stroke variants.
 - Enforce the pinky-for-D-and-G fingering from the moment those notes appear (Phase 3 onward).
 - When critiquing recordings or technique, reference the p.8 position checklist directly. Specific is better than general.

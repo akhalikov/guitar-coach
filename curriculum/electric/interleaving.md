@@ -1,6 +1,6 @@
 # Interleaving Map — Theory ↔ Practice
 
-The principle: theory should feel like the answer to a question Artur just asked with his hands. Every JustinGuitar lesson surfaces something the Stine book has a chapter on — this file is the suggested pairing.
+The principle: theory should feel like the answer to a question the student just asked with his hands. Every JustinGuitar lesson surfaces something the Stine book has a chapter on — this file is the suggested pairing.
 
 This is a guide, not a rule. If today's practice surfaces a different theory question, follow it.
 
@@ -13,7 +13,7 @@ This is a guide, not a rule. If today's practice surfaces a different theory que
 | First chords A, D, E (M1) | Module 1 — The 7 prime notes; what a "chord" is (multiple notes played together) |
 | First strumming (down-strums) (M1) | Module 2 — Quarter notes, 4/4 time signature, counting "1 2 3 4" |
 | Anchor-finger trick (M1) | Module 2 — Reading chord charts in detail |
-| Em, Am chords (M2) | Module 1 — Notes on string 6 and 5 (so Artur knows E and A are open strings) |
+| Em, Am chords (M2) | Module 1 — Notes on string 6 and 5 (so the student knows E and A are open strings) |
 | Down-down-up-up-down-up (M2) | Module 2 — Eighth notes and how the "&" subdivides the beat |
 | First riff (M2) | Module 2 — Reading TAB: lines = strings, numbers = frets |
 | G, D7, G7 (M3) | Module 1 — Sharps/flats, why D7 has a "7" (Module 4 preview) |
@@ -24,7 +24,7 @@ This is a guide, not a rule. If today's practice surfaces a different theory que
 | C chord (M5) | Module 3 — C major scale: C D E F G A B (the chord's home key) |
 | Dynamics (M5) | Module 2 — Staccato vs. legato |
 
-By the end of Grade 1, Artur should have a working grip on Stine Modules 1 and 2.
+By the end of Grade 1, the student should have a working grip on Stine Modules 1 and 2.
 
 ## Grade 2 ↔ Stine Modules 2–3 (+ Intervals from later)
 
@@ -40,7 +40,7 @@ By the end of Grade 1, Artur should have a working grip on Stine Modules 1 and 2
 | I–IV–V progression (M11) | Module 3 — Circle of 5ths, why I-IV-V "sounds resolved" |
 | Slash chords D/F# (M8) | Module 1 — F# is on string 6 fret 2; the bass note named in the slash |
 
-By the end of Grade 2, Artur should understand the major scale (Stine Module 3) and have a working grip on intervals.
+By the end of Grade 2, the student should understand the major scale (Stine Module 3) and have a working grip on intervals.
 
 ## Grade 3 ↔ Stine Modules 3+
 

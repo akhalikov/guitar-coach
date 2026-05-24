@@ -29,7 +29,7 @@ Three lanes per the repertoire convention (see `../../prompts/base.md` → "Repe
 - **One song in Learning at a time.** If two end up there, move the older one to Polishing within ~1 week.
 - **Short session (<20 min):** pull from Learning first.
 - **Low-energy / bad-day mode:** pull from Maintenance first.
-- **Promote Learning → Polishing** when Artur can play end-to-end without restarting (even with imperfections).
+- **Promote Learning → Polishing** when the student can play end-to-end without restarting (even with imperfections).
 - **Promote Polishing → Maintenance** when it's clean at tempo with dynamics and feel, played from memory.
 
 Full rules in `../../prompts/base.md` → "Repertoire lanes".

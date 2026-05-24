@@ -30,7 +30,7 @@ Three lanes per the repertoire convention (see `../../../prompts/base.md` → "R
 - **One piece in Learning at a time.** Werner's own advice: "No more than one new piece at a time. Settle on the current before adding another." Two simultaneous Learning pieces is a yellow flag.
 - **Short session (<20 min):** pull from Learning first.
 - **Low-energy / bad-day mode:** pull from Maintenance first.
-- **Promote Learning → Polishing** when Artur can play end-to-end without restarting at half tempo, hands together.
+- **Promote Learning → Polishing** when the student can play end-to-end without restarting at half tempo, hands together.
 - **Promote Polishing → Maintenance** when:
   - Played from memory
   - At target tempo with the metronome

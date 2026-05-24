@@ -45,8 +45,8 @@ Tags are machine-readable — the Saturday weekly review counts them. Sloppy tag
 # Practice Log — YYYY-MM-DD (electric | classical)
 
 ## Session Start
-- **Date:** YYYY-MM-DD ← **auto-fill** from `date '+%Y-%m-%d'`, never ask Artur
-- **Time:** HH:MM ← **auto-fill** from `date '+%H:%M'`, never ask Artur
+- **Date:** YYYY-MM-DD ← **auto-fill** from `date '+%Y-%m-%d'`, never ask the student
+- **Time:** HH:MM ← **auto-fill** from `date '+%H:%M'`, never ask the student
 - **Coaching mode:** full | review-only | low-friction | recovery | bad-day
 - **Energy / Focus / Tension / Pain (1-4):** E_ F_ T_ P_
 - **Guitar:** (which one — Tele SH / Strat HSS / Manuel Rodríguez T-65)
@@ -114,14 +114,14 @@ Tags are machine-readable — the Saturday weekly review counts them. Sloppy tag
 ## Field guidance
 
 ### Session Start
-- **Date and Time:** **always** captured from the Unix `date` command — never asked from Artur. Run `date '+%Y-%m-%d %H:%M'` at session start, parse the two fields. Run `date '+%H:%M'` again at session end to compute `Total actual duration`. A `—` for Time means the coach forgot to run `date` — it's a defect, not a valid state.
+- **Date and Time:** **always** captured from the Unix `date` command — never asked from the student. Run `date '+%Y-%m-%d %H:%M'` at session start, parse the two fields. Run `date '+%H:%M'` again at session end to compute `Total actual duration`. A `—` for Time means the coach forgot to run `date` — it's a defect, not a valid state.
 - **Coaching mode:** picked at the start based on energy/focus/tension/pain. See `../base.md` for the mode table. State it in chat before the plan.
 - **Energy / Focus / Tension / Pain (1-4):** 1=low/none, 2=mild/okay, 3=good/noticeable, 4=high. **If Pain=2 or higher, fire the pain protocol (see `../base.md`).**
 - **Context notes:** optional — one line ("after a long day", "second session today", "first time back after 3 days").
 
 ### Per-block reflection format
 
-Numbered scale per dimension. Artur replies with digits only:
+Numbered scale per dimension. The student replies with digits only:
 
 ```
 D=2 A=1 T=1 Te=1
@@ -145,7 +145,7 @@ What "clean" looks like for this block — specific, narrow, achievable inside t
 - "Etude 1 bars 1–4 at 60 BPM, 2 run-throughs with no restart"
 - "A→D change × 20, count clean ones, ≥15/20 = win"
 
-If the target is hit early, the coach should remind Artur: **"Keep going slowly and cleanly — don't speed up."**
+If the target is hit early, the coach should remind the student: **"Keep going slowly and cleanly — don't speed up."**
 
 ### Status (repeat / advance / simplify)
 The single most important field. Forces a commitment.

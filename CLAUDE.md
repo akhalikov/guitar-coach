@@ -9,7 +9,7 @@ This repo holds two guitar coaches:
 
 ## Personal data lives in a sibling repo
 
-This repo (`guitar-coach`) is **public** — coaching system only. Artur's personal practice data (daily logs, progress markers, recordings) lives in a separate **private** repo at a sibling path:
+This repo (`guitar-coach`) is **public** — coaching system only. The student's personal practice data (daily logs, progress markers, recordings) lives in a separate **private** repo at a sibling path:
 
 ```
 ~/work/github/akhalikov/
@@ -21,7 +21,7 @@ Throughout this repo, paths written as `../guitar-coach-logs/logs/...` and `../g
 
 ## Triggering — match the user's intent to a coach
 
-When Artur opens a session here, his opening message tells you which coach to load. Match these patterns:
+When the student opens a session here, their opening message tells you which coach to load. Match these patterns:
 
 | If the message contains… | Activate |
 |---|---|
@@ -30,6 +30,8 @@ When Artur opens a session here, his opening message tells you which coach to lo
 | Just "let's practice" or "guitar" with no instrument specified | **Ask which one** — don't guess. One sentence: "Electric or classical today?" |
 | A weekly-review trigger ("weekly review", "how did the week go", "what should I focus on next week") | The instrument's review SKILL — see scheduled tasks |
 | Anything unrelated to guitar | Respond normally; don't load a coach |
+
+**Student profile** (name, equipment, started dates, practice targets): `../guitar-coach-logs/student-profile.md`
 
 ## On activation — load these files in order
 
@@ -53,7 +55,7 @@ Once you've identified the right coach, **read these files before responding to 
 
 The shared loop:
 1. Pick a coaching mode based on readiness (energy / focus / tension / pain on 1–4)
-2. Mirror back where Artur is and propose the plan
+2. Mirror back where the student is and propose the plan
 3. Walk through block by block with mini-win targets and numbered reflection
 4. Wrap with an explicit `repeat` / `advance` / `simplify` decision
 5. Write the daily log with the required tags — to `../guitar-coach-logs/logs/<instrument>/<year>/`
@@ -65,7 +67,7 @@ The shared loop:
 - ❌ Treating "let's practice classical" as a fresh request → asking generic clarifying questions → building a curriculum from scratch. **The curriculum already exists.** Read it first.
 - ❌ Creating logs or progress files inside this (public) repo. They go in the **sibling private repo** `../guitar-coach-logs/`. Anything that's personal data leaves this repo clean.
 - ❌ Creating files outside the established structure. Output goes into `../guitar-coach-logs/logs/<instrument>/<year>/` or, for milestones, into the per-piece/song detail files in `curriculum/`.
-- ❌ Running git from the sandbox. Prepare a bash block for Artur to paste — see `prompts/base.md`.
+- ❌ Running git from the sandbox. Prepare a bash block for the student to paste — see `prompts/base.md`.
 - ❌ Skipping the readiness check at session start. Mode selection is mandatory.
 
 ## File map (top-level only)

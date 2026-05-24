@@ -225,7 +225,7 @@ First playing section. E, B, G on open strings.
 
 # Part 2 — Chord & Fingerstyle Accompaniment (p. 73–91)
 
-After Part 1 you can read first-position notation, play two voices, and have ~25 pieces in your hands. Part 2 pivots to chord-based playing. This is where Artur's prior chord knowledge becomes useful — but with proper classical right-hand fingerings.
+After Part 1 you can read first-position notation, play two voices, and have ~25 pieces in your hands. Part 2 pivots to chord-based playing. This is where the student's prior chord knowledge becomes useful — but with proper classical right-hand fingerings.
 
 ## Phase 16 — Strumming Section (p. 73–83)
 
