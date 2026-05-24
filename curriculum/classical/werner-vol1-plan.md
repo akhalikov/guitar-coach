@@ -6,10 +6,10 @@ Complete lesson-by-lesson plan for Bradford Werner's *Classical Guitar Method Vo
 
 ## Current Position
 
-> **Section:** Phase 2 — Moderato
-> **Active piece:** Moderato (p.18-19) — repeat, settling at tempo before advancing to A Fairy Tale (p.20)
-> **Page marker:** p.18
-> **Last updated:** 2026-05-21
+> **Section:** Phase 2 — A Fairy Tale
+> **Active piece:** A Fairy Tale (p.20) — first contact, repeat. RH alternation slips under LH load; RH-only drill before hands-together next session.
+> **Page marker:** p.20
+> **Last updated:** 2026-05-24
 
 When you complete a piece confidently, move this marker forward and note the date.
 
@@ -66,7 +66,7 @@ First playing section. E, B, G on open strings.
 | Piece | Page | Link | Done? |
 |-|-|-|-|
 | Notes on the Third String + Sight Reading | 17 | [video](https://www.thisisclassicalguitar.com/method-lesson-first-left-hand-note-moderato-maple-a-fairy-tale/) | ☐ |
-| Moderato | 18–19 | [video](https://www.thisisclassicalguitar.com/method-lesson-first-left-hand-note-moderato-maple-a-fairy-tale/) | ☐ |
+| Moderato | 18–19 | [video](https://www.thisisclassicalguitar.com/method-lesson-first-left-hand-note-moderato-maple-a-fairy-tale/) | ✓ 2026-05-24 |
 | A Fairy Tale (duet) | 20 | [video](https://www.thisisclassicalguitar.com/duet-play-along-a-fairy-tale-method/) | ☐ |
 
 **Estimated:** 2–3 weeks.
