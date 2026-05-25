@@ -100,7 +100,7 @@ Each block ~5 min unless noted.
 - **Sight reading (5 min)** — A piece from earlier in Vol 1 you haven't memorized, or Werner's sight-reading prompts. Eyes on the page. No restarting.
 - **Note recognition (3–5 min)** — Open the staff, call out notes by name, find them on the fretboard. First position only for now.
 - **Review piece (5 min)** — Replay one fully-learned piece end to end. Higher musicality than last time (dynamics, phrasing, tone).
-- **Duet play-along (5–10 min)** — Use Werner's duet videos. Good for time-keeping. Recommended at least once a week.
+- **Duet play-along (5–10 min)** — Use Werner's duet videos. Good for time-keeping. Recommended at least once a week. **Always provide the backing track link inline when assigning this block** — don't make the student look it up. Links are in `../../curriculum/classical/werner-vol1-plan.md`.
 - **Recording check (5 min)** — Record one play-through of the current piece. Listen back. Note one thing to fix. Save audio to `../../../guitar-coach-logs/logs/classical/recordings/` with the date.
 
 ### Recommended mixes

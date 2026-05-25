@@ -54,7 +54,8 @@ First playing section. E, B, G on open strings.
 
 | Piece | Page | Link |
 |-|-|-|
-| Notes on the Third String + Sight Reading | 17 | [video](https://www.thisisclassicalguitar.com/method-lesson-first-left-hand-note-moderato-maple-a-fairy-tale/) |
+| Notes on the Third String (note naming) | 17 | [video](https://www.thisisclassicalguitar.com/method-lesson-first-left-hand-note-moderato-maple-a-fairy-tale/) |
+| Sight Reading | 18 | [video](https://www.thisisclassicalguitar.com/method-lesson-first-left-hand-note-moderato-maple-a-fairy-tale/) |
 | Moderato | 18–19 | [video](https://www.thisisclassicalguitar.com/method-lesson-first-left-hand-note-moderato-maple-a-fairy-tale/) |
 | A Fairy Tale (duet) | 20 | [video](https://www.thisisclassicalguitar.com/duet-play-along-a-fairy-tale-method/) |
 
