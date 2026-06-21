@@ -128,7 +128,7 @@ Tension is different — manageable up to a level 2 or 3 with a tension check br
 - **Video (MP4, MOV)** ✅ — You can't watch motion or hear audio, but you can extract still frames:
   ```bash
   mkdir -p /tmp/frames
-  ffmpeg -i ~/work/github/akhalikov/guitar-coach-logs/logs/<instrument>/recordings/<filename>.mp4 -vf fps=1/5 /tmp/frames/frame_%03d.jpg
+  ffmpeg -i ~/github/guitar-coach-logs/logs/<instrument>/recordings/<filename>.mp4 -vf fps=1/5 /tmp/frames/frame_%03d.jpg
   ```
   Then `Read` the frames. Look for posture drift, hand-position consistency, tension cues, eye position. Reference timestamps (frame number × 5 seconds).
 - **Audio (M4A, MP3, WAV)** ❌ — **You cannot hear audio.** Do not pretend otherwise. Instead, give a specific listening checklist tailored to the piece/song, have the student listen and fill it in, then reason from their observations.
@@ -233,7 +233,7 @@ All chained with `&&` so a failure short-circuits the rest.
 
 ````
 ```bash
-cd ~/work/github/akhalikov/guitar-coach-logs && rm -f .git/index.lock && git add -A && git commit -m "Practice log 2026-05-23 session 1 (classical)" && git push
+cd ~/github/guitar-coach-logs && rm -f .git/index.lock && git add -A && git commit -m "Practice log 2026-05-23 session 1 (classical)" && git push
 ```
 ````
 
@@ -241,7 +241,7 @@ cd ~/work/github/akhalikov/guitar-coach-logs && rm -f .git/index.lock && git add
 
 ````
 ```bash
-cd ~/work/github/akhalikov/guitar-coach && rm -f .git/index.lock && git add -A && git commit -m "Update SKILL.md — <what changed>" && git push
+cd ~/github/guitar-coach && rm -f .git/index.lock && git add -A && git commit -m "Update SKILL.md — <what changed>" && git push
 ```
 ````
 
@@ -270,7 +270,7 @@ If there are NO daily logs in the past week, the review doesn't write a placehol
 Two sibling repos. The coach reads from both, but personal data only writes to `guitar-coach-logs/`.
 
 ```
-~/work/github/akhalikov/
+~/github/
 ├── guitar-coach/                                  ← PUBLIC — coaching system
 │   ├── CLAUDE.md                                  ← dispatcher
 │   ├── prompts/
