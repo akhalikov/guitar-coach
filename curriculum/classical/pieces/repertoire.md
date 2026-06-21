@@ -8,13 +8,18 @@ Three lanes per the repertoire convention (see `../../../prompts/base.md` → "R
 
 *Actively building, fragile. Needs slow practice and full attention. Pull from here first in normal sessions. Aim for **one** piece here at a time.*
 
-- **Moderato** (p.18–19) — Phase 2. First full hands-together pass at 40 BPM on 2026-05-21. Next target: two clean passes at 50 BPM with metronome before advancing to A Fairy Tale (p.20).
+- **Ode to Joy** (p.26) — Phase 4. First contact 2026-06-21. Reading is the bottleneck (H=4). Target: bars 1–8 with note-naming before playing. Next: bars 9–16 once bars 1–8 are clean.
 
 ## Polishing
 
 *Playable end-to-end but rough. Working on consistency, feel, dynamics, memory, tone. The longest-tenure lane in classical — Werner specifically advises *staying* with pieces after they're "playable" so they settle.*
 
-- **Nocturne** (p.16) — Phase 1 duet. Played end-to-end with Werner's backing track at pulse on 2026-05-20, eyes on page, no restart. Promoted from Learning 2026-05-23. Needs more sessions for dynamics and memory before Maintenance.
+- **Nocturne** (p.16) — Phase 1 duet. Played end-to-end with Werner's backing track at pulse on 2026-05-20, eyes on page, no restart. Promoted from Learning 2026-05-23. Comfortable and confident with backing track. Needs more sessions for dynamics and full memory.
+- **Moderato** (p.18–19) — Phase 2. Complete as of 2026-05-24. Played clean at 80 BPM. Staying in Polishing until dynamics and memorization confirmed.
+- **A Fairy Tale** (p.20) — Phase 2. Complete as of 2026-05-25. Clean at 60 BPM, D=2 A=2. Staying in Polishing until dynamics and memorization confirmed.
+- **Five Melodies** (p.24) — Phase 3. Complete as of 2026-06-21. All 5 melodies hands-together at 50 BPM. Promoted from Learning 2026-06-21. Target: consistent 60 BPM with dynamics before Maintenance.
+- **Spanish Romance — minor section** (Anonymous, outside piece) — Bars 1–8 stable at 50 BPM (D=2 A=2) across 2 sessions. Promoted from Learning 2026-06-21. Bars 9+ blocked by barre — that's a technique goal, not a lane issue. RH pattern: p-a-m-i.
+- **Hurt** (Johnny Cash, outside piece) — Full song playable end-to-end, chords and strumming memorized. Open issue: verse→chorus tempo transition. Added to lane 2026-06-12.
 
 ## Maintenance
 
