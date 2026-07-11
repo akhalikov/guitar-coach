@@ -12,12 +12,12 @@ This repo holds two guitar coaches:
 This repo (`guitar-coach`) is **public** — coaching system only. The student's personal practice data (daily logs, progress markers, recordings) lives in a separate **private** repo at a sibling path:
 
 ```
-~/work/github/akhalikov/
+~/github/
 ├── guitar-coach/            (this repo — public)
 └── guitar-coach-logs/       (sibling — private, personal data)
 ```
 
-Throughout this repo, paths written as `../guitar-coach-logs/logs/...` and `../guitar-coach-logs/progress/...` refer to that sibling repo. When reading or writing those files, use the absolute path `~/work/github/akhalikov/guitar-coach-logs/` — never create logs or progress files inside this repo.
+Throughout this repo, paths written as `../guitar-coach-logs/logs/...` and `../guitar-coach-logs/progress/...` refer to that sibling repo. When reading or writing those files, use the absolute path `~/github/guitar-coach-logs/` — never create logs or progress files inside this repo.
 
 ## Triggering — match the user's intent to a coach
 
