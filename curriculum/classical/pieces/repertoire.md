@@ -8,13 +8,14 @@ Three lanes per the repertoire convention (see `../../../prompts/base.md` → "R
 
 *Actively building, fragile. Needs slow practice and full attention. Pull from here first in normal sessions. Aim for **one** piece here at a time.*
 
-- **Moderato** (p.18–19) — Phase 2. First full hands-together pass at 40 BPM on 2026-05-21. Next target: two clean passes at 50 BPM with metronome before advancing to A Fairy Tale (p.20).
+- **Spanish Romance — minor section** (Anonymous) — Outside piece, not in Werner Vol 1. Am arpeggio section only; major (E major) section deferred. Added 2026-06-12. Technique focus: RH arpeggio pattern (p-a-m-i or similar), LH position in Am. Coach note: more advanced than current Werner phase — treat as a parallel track, not a replacement for Five Melodies work.
 
 ## Polishing
 
 *Playable end-to-end but rough. Working on consistency, feel, dynamics, memory, tone. The longest-tenure lane in classical — Werner specifically advises *staying* with pieces after they're "playable" so they settle.*
 
 - **Nocturne** (p.16) — Phase 1 duet. Played end-to-end with Werner's backing track at pulse on 2026-05-20, eyes on page, no restart. Promoted from Learning 2026-05-23. Needs more sessions for dynamics and memory before Maintenance.
+- **Hurt** (Johnny Cash) — Outside piece / Part 2 spirit (fingerstyle accompaniment). Full song playable end-to-end, all chords and strumming patterns memorized. Open issue: verse→chorus tempo transition sometimes slips. Added 2026-06-12. Technique focus: clean chord transitions at tempo, steady pulse through the section change.
 
 ## Maintenance
 
@@ -22,6 +23,8 @@ Three lanes per the repertoire convention (see `../../../prompts/base.md` → "R
 
 - **Etude No. 1** (p.14) — Phase 1 open-string etude. Fully functional as of 2026-05-20. Now used as sight reading warmup material. Promoted 2026-05-23.
 - **Etude No. 2** (p.15) — Phase 1 etude. Fully functional as of 2026-05-21 (completed eyes-on-page, no restart). Now used as sight reading warmup material. Promoted 2026-05-23.
+- **Moderato** (p.18–19) — Phase 2. Advanced 2026-05-24. Clean at 80 BPM. Promoted to Maintenance 2026-05-25.
+- **A Fairy Tale** (p.20) — Phase 2 duet. Advanced 2026-05-25. Clean at 60 BPM, D=2 A=2. Promoted to Maintenance 2026-05-25.
 
 ---
 
