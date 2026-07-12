@@ -35,7 +35,7 @@ Open this folder with Claude. Say what you want:
 
 If you just say "JustinGuitar," "Stine," or name a song that's shared between electric and acoustic without naming a guitar, the coach asks which one first — the curriculum content is the same, but progress/logs still need to go to the right stream.
 
-The coach asks how you're feeling (energy / focus / tension / pain, 1–4) to pick a session mode, then proposes a plan, walks you through it block by block, and writes the daily log and updates the progress file. Saturday weekly reviews fire automatically via scheduled tasks (classical 10:00, electric 18:00). Acoustic doesn't have a dedicated weekly-review slot yet.
+The coach asks how you're feeling (energy / focus / tension / pain, 1–4) to pick a session mode, then proposes a plan, walks you through it block by block, and writes the daily log and updates the progress file. A single Saturday 10:00 scheduled task, `guitar-weekly-review`, reviews all three instruments in one run.
 
 ## 🗄️ Two-repo layout
 
@@ -54,17 +54,16 @@ The coach reads from and writes to the sibling repo. Commits happen there too �
 
 If you're forking this for your own use, see `SETUP.md` for how to set up the paired private logs repo.
 
-## ⏯️ The scheduled tasks
+## ⏯️ The scheduled task
 
 | Task | Cadence | What it does |
 |---|---|---|
-| `classical-guitar-weekly-review` | Saturday 10:00 local | Reads the week's classical logs, writes the weekly review, advances the Werner position marker, prepares a commit block |
-| `electric-guitar-weekly-review` | Saturday 18:00 local | Same for electric — reads week's logs, writes weekly review, ticks completed JG/Stine items, prepares a commit block |
+| `guitar-weekly-review` | Saturday 10:00 local | Runs the weekly review for electric, acoustic, and classical in turn — reads each instrument's week of logs, writes its review, ticks completed JG/Stine items (once, shared between electric and acoustic) or advances the Werner position marker, and prepares one combined commit block. An instrument with no logs that week is skipped, not given a placeholder review. |
 
-Acoustic doesn't have a weekly-review task set up yet. Until it does, ask the coach for an ad hoc review of `guitar-coach-logs/logs/acoustic/`.
+One task, one Saturday 10:00 run, covering all three instruments — previously this was two separate tasks (classical at 10:00, electric at 18:00); they've been merged.
 
-Both existing tasks run automatically while the Claude app is open. If closed at the scheduled time, they fire on next launch. 
-Manage them from the **Scheduled** section in the Cowork sidebar.
+The task runs automatically while the Claude app is open. If closed at the scheduled time, it fires on next launch. 
+Manage it from the **Scheduled** section in the Cowork sidebar.
 
 ## 🎯 Goals
 

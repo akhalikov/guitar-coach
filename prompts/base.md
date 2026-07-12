@@ -221,9 +221,9 @@ All chained with `&&` so a failure short-circuits the rest.
 
 | Change type | Subject line |
 |---|---|
-| Daily log | `Practice log YYYY-MM-DD session <#> (electric)` or `(classical)` — `session <#>` is optional when only one session that day |
-| Weekly review | `Weekly review — week of YYYY-MM-DD (electric)` or `(classical)` |
-| Position marker advance | `Advance <electric/classical> plan: <piece or lesson>` |
+| Daily log | `Practice log YYYY-MM-DD session <#> (electric)`, `(acoustic)`, or `(classical)` — `session <#>` is optional when only one session that day |
+| Weekly review | `Weekly review — week of YYYY-MM-DD (<instruments covered>)` — e.g. `(electric, acoustic, classical)`, or just `(classical)` if the others had no logs that week |
+| Position marker advance | `Advance <electric/acoustic/classical> plan: <piece or lesson>` |
 | SKILL edits | `Update SKILL.md — <what changed>` |
 | Repo restructure / multi-area changes | `<imperative summary>` |
 
@@ -253,15 +253,27 @@ When the student says **"send it"**, that means: print the appropriate one-line 
 
 ## Weekly review (mandatory)
 
-Electric and classical each have a scheduled task that fires on Saturday and runs the weekly review for that instrument. Acoustic doesn't have one set up yet — see `prompts/acoustic/SKILL.md` → "Weekly review". The review, once set up:
+**One scheduled task, `guitar-weekly-review`, fires Saturday 10:00 local and runs the review for all three instruments in turn** (electric, acoustic, classical) — not three separate tasks. For each instrument:
 
 1. Reads the past 7 days of `../guitar-coach-logs/logs/<instrument>/`
 2. **Aggregates the tag block** — counts `#status/*` distribution, lists recurring `#issue/*` slugs (≥2 occurrences = sticky, ≥4 = plateau candidate), checks `#skill/*` coverage
 3. Writes `../guitar-coach-logs/logs/<instrument>/YYYY/MM-DD-week.md` using `prompts/log_templates/weekly.md`
 4. Updates `../guitar-coach-logs/progress/<instrument>.md` — ticks off completed items, advances current focus, refreshes what's clicking / not clicking, notes plateau warnings
-5. Prepares the commit bash block (commits to the **logs** repo, not this one)
 
-If there are NO daily logs in the past week, the review doesn't write a placeholder. Instead it pings the student asking how the week went.
+**If there are NO daily logs for an instrument in the past week,** that instrument doesn't get a placeholder review — it's simply skipped, and the student's notification (see below) says so plainly for that instrument. Each instrument is evaluated independently; a light week on acoustic doesn't block electric's or classical's review from running.
+
+### The shared JustinGuitar/Stine spine, at review time
+
+Electric and acoustic share one curriculum position (see CLAUDE.md and `prompts/acoustic/SKILL.md`), so the review must not tick the same JG/Stine box twice from two different weeks' evidence:
+
+- Compute "Curriculum Movement — JustinGuitar / Stine" from the **union** of `logs/electric/` and `logs/acoustic/` for the week, and write it **once**, into `../guitar-coach-logs/progress/electric.md` and into electric's weekly-review file only.
+- Acoustic's weekly-review file skips that section entirely and instead links back to electric's review for the shared movement — it only reports acoustic-only material: repertoire lane moves in `curriculum/acoustic/songs.md`, technique notes in `progress/acoustic.md`.
+- Classical is fully independent — its own Werner position marker, no sharing.
+
+### After all three are processed
+
+- **Prepare one combined commit bash block** — all three instruments write into the same private `guitar-coach-logs` repo, so this is a single commit covering whichever review/progress files actually changed that week (see "Saving changes" below for the commit-subject convention).
+- **Send one notification** covering all instruments processed that week — top priorities per instrument that had a review, and a plain note for any instrument that was skipped for lack of logs.
 
 ---
 

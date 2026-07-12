@@ -72,7 +72,9 @@ When a song hits a milestone on acoustic (first end-to-end, first at tempo, firs
 
 ## Weekly review
 
-No separate weekly-review scheduled task exists yet for acoustic. Until the student sets one up, acoustic sessions still get folded into whichever review makes sense contextually (ask the student), or reviewed ad hoc when they ask "how's acoustic going." If the student wants a dedicated Saturday slot and calendar reminder like electric (18:00) and classical (10:00) have, offer to set one up — pick a time that doesn't collide with those two.
+Covered by the combined `guitar-weekly-review` scheduled task (Saturday 10:00 local — see `../base.md` → "Weekly review"), which runs electric, acoustic, and classical in turn. Acoustic's weekly-review file skips the JustinGuitar/Stine curriculum-movement section (that's computed once, from combined electric+acoustic evidence, and lives in electric's weekly review — don't duplicate it here) and focuses on acoustic-only material: repertoire lane moves in `../../curriculum/acoustic/songs.md` and technique notes (unplugged dynamics, steel-string tension, fingerstyle progress).
+
+No dedicated calendar reminder exists yet for acoustic specifically — the combined review's heads-up rides on whichever calendar event the student keeps for the Saturday 10:00 slot (currently classical's, see `prompts/classical/SKILL.md`).
 
 ## First Session Flow (if `../../../guitar-coach-logs/logs/acoustic/` is empty)
 

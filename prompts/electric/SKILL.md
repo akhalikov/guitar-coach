@@ -62,15 +62,15 @@ When a song hits a milestone (first end-to-end, first at tempo, first from memor
 
 ## Google Calendar — weekend session reminder
 
-A single recurring event exists in the student's Google Calendar as a heads-up for the scheduled Saturday review session. **No retroactive event creation** for daily practice — daily logs in `../../../guitar-coach-logs/logs/electric/` are the source of truth; the calendar is just a forward-looking reminder.
+A single recurring event exists in the student's Google Calendar. **⚠️ Stale as of the review-task consolidation:** this event was originally a heads-up for electric's own Saturday review, back when electric had its own scheduled task at 18:00. That task is gone — the weekly review for all three instruments (including electric) now fires once, at 10:00, via the combined `guitar-weekly-review` task (see `../base.md` → "Weekly review"). This event hasn't been updated to match. Until the student decides what to do with it, treat it as just a practice-session reminder, not a review heads-up. **No retroactive event creation** for daily practice — daily logs in `../../../guitar-coach-logs/logs/electric/` are the source of truth; the calendar is just a forward-looking reminder.
 
-**The recurring event:**
+**The recurring event (as it currently stands, likely needs a decision):**
 - **Summary:** `Electric Guitar — Practice Session`
 - **Cadence:** Every Saturday, 18:00–18:30 local time (Europe/Vienna)
 - **Reminder:** 30-minute popup (fires 17:30)
 - **Color:** Tangerine (id `"6"`) — distinct from classical's Basil
 
-Coach doesn't need to recreate this under normal circumstances. If the student asks to change time/day/duration, update the event with the calendar update tool and update this section.
+Options worth raising with the student next time this comes up: leave it as a standalone practice reminder, retime it to 10:00 alongside the review, or delete it since the review notification now covers all three instruments regardless of this event. Coach doesn't need to unilaterally change it — ask first. If the student decides, update the event with the calendar tool and update this section.
 
 ## First Session Flow (if `../../../guitar-coach-logs/logs/electric/` is empty)
 

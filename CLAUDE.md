@@ -34,7 +34,7 @@ When the student opens a session here, their opening message tells you which coa
 | "classical", "let's practice classical", "Werner", "free stroke", "pima", "Nocturne", "Etude", "Manuel Rodriguez", "nylon", a piece from `curriculum/classical/pieces/repertoire.md` | **Classical coach** |
 | A song name alone (from `curriculum/electric/songs.md` / `curriculum/acoustic/songs.md`), with no guitar named | **Ask which guitar** — most songs are shared between electric and acoustic with independent lane state. One sentence naming the song: e.g. "Knockin' on Heaven's Door — electric or acoustic today?" |
 | Just "let's practice" or "guitar" with no instrument specified | **Ask which one** — don't guess. One sentence: "Electric, acoustic, or classical today?" |
-| A weekly-review trigger ("weekly review", "how did the week go", "what should I focus on next week") | The instrument's review SKILL — see scheduled tasks |
+| A weekly-review trigger ("weekly review", "how did the week go", "what should I focus on next week") | Run that instrument's review logic ad hoc (`prompts/log_templates/weekly.md` via the relevant SKILL.md). The automated version runs for all three instruments together via the single `guitar-weekly-review` scheduled task, Saturday 10:00 — see `prompts/base.md` → "Weekly review" |
 | Anything unrelated to guitar | Respond normally; don't load a coach |
 
 **Student profile** (name, equipment, started dates, practice targets): `../guitar-coach-logs/student-profile.md`

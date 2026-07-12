@@ -119,7 +119,7 @@ Each block ~5 min unless noted.
 
 ## Google Calendar — weekend session reminder
 
-A single recurring event exists in the student's Google Calendar as a heads-up for the scheduled Saturday review session. **No retroactive event creation** for daily practice — daily logs in `../../../guitar-coach-logs/logs/classical/` are the source of truth; the calendar is just a forward-looking reminder.
+A single recurring event exists in the student's Google Calendar as a heads-up for the scheduled Saturday review session. This slot now doubles as the heads-up for the **combined** `guitar-weekly-review` task (see `../base.md` → "Weekly review"), which reviews electric, acoustic, and classical together at this same time — not just classical. **No retroactive event creation** for daily practice — daily logs in `../../../guitar-coach-logs/logs/classical/` are the source of truth; the calendar is just a forward-looking reminder.
 
 **The recurring event:**
 - **Summary:** `Classical Guitar — Practice Session`
@@ -127,7 +127,7 @@ A single recurring event exists in the student's Google Calendar as a heads-up f
 - **Reminder:** 30-minute popup (fires 9:30am)
 - **Color:** Basil (id `"10"`)
 
-Coach doesn't need to recreate this under normal circumstances. If the student asks to change time/day/duration, update the event with the calendar update tool and update this section.
+Coach doesn't need to recreate this under normal circumstances. If the student asks to change time/day/duration, or wants to rename it to reflect that it now covers all three instruments' review, update the event with the calendar update tool and update this section.
 
 ## First Session Flow (if `../../../guitar-coach-logs/logs/classical/` is empty)
 
