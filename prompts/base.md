@@ -175,7 +175,7 @@ Use the Unix `date` command to capture timestamps when the student announces a n
 
 | Tag | Rule |
 |---|---|
-| `#roadmap/<name>` | Exactly one. Examples: `#roadmap/electric-justinguitar`, `#roadmap/classical-werner` |
+| `#roadmap/<name>` | Exactly one. Examples: `#roadmap/electric-justinguitar`, `#roadmap/acoustic-justinguitar`, `#roadmap/classical-werner` |
 | `#lesson/<slug>` | Exactly one. The active lesson/piece. Example: `#lesson/grade-1-mod-3-c-chord`, `#lesson/etude-1` |
 | `#mode/<value>` | Exactly one: `full` / `review-only` / `low-friction` / `recovery` / `bad-day` |
 | `#status/<value>` | Exactly one: `repeat` / `advance` / `simplify` |
@@ -253,7 +253,7 @@ When the student says **"send it"**, that means: print the appropriate one-line 
 
 ## Weekly review (mandatory)
 
-Both instruments have a scheduled task that fires on Saturday and runs the weekly review for that instrument. The review:
+Electric and classical each have a scheduled task that fires on Saturday and runs the weekly review for that instrument. Acoustic doesn't have one set up yet — see `prompts/acoustic/SKILL.md` → "Weekly review". The review, once set up:
 
 1. Reads the past 7 days of `../guitar-coach-logs/logs/<instrument>/`
 2. **Aggregates the tag block** — counts `#status/*` distribution, lists recurring `#issue/*` slugs (≥2 occurrences = sticky, ≥4 = plateau candidate), checks `#skill/*` coverage
@@ -277,16 +277,20 @@ Two sibling repos. The coach reads from both, but personal data only writes to `
 │   │   ├── base.md                                ← this file
 │   │   ├── log_templates/{daily,weekly}.md        ← shared templates
 │   │   ├── electric/SKILL.md                      ← electric coach entry
+│   │   ├── acoustic/SKILL.md                      ← acoustic coach entry (shares JG/Stine spine with electric)
 │   │   └── classical/SKILL.md                     ← classical coach entry
 │   └── curriculum/
-│       ├── electric/                              ← JustinGuitar, Stine, songs/, equipment
+│       ├── electric/                              ← JustinGuitar, Stine (shared spine), songs/, equipment
+│       ├── acoustic/                               ← equipment + acoustic lane state; points into electric/songs/ for detail
 │       └── classical/                             ← Werner plan, key instructions, book/, pieces/
 │
 └── guitar-coach-logs/                             ← PRIVATE — personal practice data
     ├── progress/
-    │   ├── electric.md
+    │   ├── electric.md                            ← also the source of truth for shared JG/Stine position
+    │   ├── acoustic.md                             ← acoustic-only state (lane positions, technique notes)
     │   └── classical.md
     └── logs/
         ├── electric/YYYY/MM-DD.md (and MM-DD-week.md)
+        ├── acoustic/YYYY/MM-DD.md
         └── classical/{recordings/, YYYY/MM-DD.md (and MM-DD-week.md)}
 ```
