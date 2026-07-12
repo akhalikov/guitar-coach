@@ -3,11 +3,13 @@
 | | |
 |---|---|
 | **Key** | G major |
+| **Tempo** | varies by section — intro ~120, settles to ~86–96 through verses/choruses; don't chase a single fixed BPM |
 | **Chords** | G, D/F#, Em, C, D, Cadd9 |
 | **Technique** | перебор (fingerstyle arpeggio) on verses 1–2, бой (strum) on verse 3 and the choruses |
 | **Guitar** | Baton Rouge acoustic — not in the electric repertoire |
 | **Status** | acoustic-exclusive |
 | **Source** | chords per [akkords.pro](https://akkords.pro/songs/ddt/eto-vsyo/) |
+| **Tab (local)** | [`tabs/02-eto-vse_TAB-songsterr.pdf`](tabs/02-eto-vse_TAB-songsterr.pdf) |
 
 ## Why this song is here
 
@@ -42,6 +44,7 @@
 ## Lessons
 
 - [akkords.pro — chords, strum/pick pattern, full lyrics](https://akkords.pro/songs/ddt/eto-vsyo/)
+- **Full note-by-note tab (local PDF):** [`tabs/02-eto-vse_TAB-songsterr.pdf`](tabs/02-eto-vse_TAB-songsterr.pdf) — sections labeled Kuplet 1/2/3, Pripev 1/2/3, Аутро; the repeating picked figures with tied "let ring" notes are the exact перебор shape to copy once the basic bass–3-2-1 pattern is solid.
 
 ## Progress log
 

@@ -3,11 +3,13 @@
 | | |
 |---|---|
 | **Key** | E minor |
+| **Tempo** | ~106 BPM through most of the song, ritardando to ~70 for the final ending (Окончание) |
 | **Chords** | Em, Em7, C, Am, D/F#, D, G |
 | **Technique** | бой (strumming) — simple chord set, but the strum pattern has real rhythmic complexity |
 | **Guitar** | Baton Rouge acoustic — not in the electric repertoire |
 | **Status** | acoustic-exclusive |
 | **Source** | chords per [akkords.pro](https://akkords.pro/songs/ddt/veter/) |
+| **Tab (local)** | [`tabs/03-veter_TAB-songsterr.pdf`](tabs/03-veter_TAB-songsterr.pdf) |
 
 ## Why this song is here
 
@@ -41,6 +43,7 @@
 ## Lessons
 
 - [akkords.pro — chords and full lyrics](https://akkords.pro/songs/ddt/veter/)
+- **Full note-by-note tab (local PDF):** [`tabs/03-veter_TAB-songsterr.pdf`](tabs/03-veter_TAB-songsterr.pdf) — chord names are printed directly above each measure, easiest of the three tabs to read at a glance. Full structure is longer than the summary above: Вступление → Куплет 1 → Припев 1 → Пригрыш (riff) → Куплет 2 → Припев 2 → Бридж → Соло → Припев 3 → Окончание (ritardando close).
 
 ## Progress log
 

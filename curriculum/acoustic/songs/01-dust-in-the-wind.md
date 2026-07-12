@@ -3,7 +3,8 @@
 | | |
 |---|---|
 | **Key** | C major (relative A minor) |
-| **Tempo** | ~96 BPM |
+| **Tempo** | ~94 BPM (outro slows to ~80) |
+| **Tab (local)** | [`tabs/01-dust-in-the-wind_TAB-songsterr.pdf`](tabs/01-dust-in-the-wind_TAB-songsterr.pdf) |
 | **Chords** | C, Cmaj7, Cadd9, Am, Asus2, Asus4, G, G/B, D/F#, Dm |
 | **Technique** | Travis picking (alternating thumb bass + syncopated index/middle) |
 | **Guitar** | Baton Rouge acoustic — no electric equivalent in this rotation |
@@ -43,6 +44,7 @@
 
 - [Lauren Bateman — Dust in the Wind chord chart and lesson](https://www.laurenbateman.com/dust-in-the-wind-guitar-chord-chart/)
 - [Songsterr — fingerstyle tab](https://www.songsterr.com/a/wsa/kansas-dust-in-the-wind-fingerstyle-tab-s406855)
+- **Full note-by-note tab (local PDF):** [`tabs/01-dust-in-the-wind_TAB-songsterr.pdf`](tabs/01-dust-in-the-wind_TAB-songsterr.pdf) — Rich Williams' part off a Martin 00-21, matches the Travis pattern above measure-by-measure. Use this once the thumb/finger independence is there and you want the exact picked notes instead of just the chord shapes.
 
 ## Progress log
 
