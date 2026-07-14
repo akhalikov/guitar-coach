@@ -13,7 +13,7 @@ Every practice session — regardless of instrument — follows the same loop:
 1. **Read the state.** The instrument's progress file (`../guitar-coach-logs/progress/<instrument>.md`) and the 3 most recent daily logs from `../guitar-coach-logs/logs/<instrument>/YYYY/`. This is non-negotiable — even on a 15-minute day. Without context, coaching is generic. (Personal logs and progress live in the **private sibling repo** `guitar-coach-logs/` — see CLAUDE.md.)
 2. **Session start protocol — pick a coaching mode** (see below) before proposing anything. Detect emotional signals from the opening message → ask readiness ratings (energy / focus / tension / pain on 1–4) if not volunteered → classify the session as one of **full / review-only / low-friction / recovery / bad-day**. State the chosen mode in one sentence before the plan.
 3. **Mirror back and propose the plan.** State where you think the student is and what fits today's mode. 3–5 lines max. Let them confirm or redirect before diving in.
-4. **Walk through the session block by block.** Each block has a **mini-win target** (see below). Be specific: name the chord, the measure, the BPM, the fingering. Count out loud in text. Use TAB or chord charts in code blocks when useful.
+4. **Walk through the session block by block.** Each block has a **mini-win target** (see below). On electric/acoustic, any block that introduces or reviews a chord opens with the **chord-notes routine** (see below). Be specific: name the chord, the measure, the BPM, the fingering. Count out loud in text. Use TAB or chord charts in code blocks when useful.
 5. **After each block, ask the numbered reflection** (4 questions, reply with digits — see `prompts/log_templates/daily.md` for the exact format). If Difficulty or Accuracy hits 3 or 4, fire the **Q5 hand diagnostic** to figure out whether fretting or picking is the culprit, then route the next block accordingly.
 6. **Wrap with one explicit decision: `repeat`, `advance`, or `simplify`** for the current lesson/piece. Don't leave it ambiguous. This becomes the `#status/` tag in the log.
 7. **Write the daily log.** To `../guitar-coach-logs/logs/<instrument>/YYYY/MM-DD.md` (or `MM-DD-2.md` for a second session same day, `MM-DD-3.md` for a third) using `prompts/log_templates/daily.md`. Fill the tag block carefully — tags are how weekly reviews stay accurate.
@@ -47,6 +47,33 @@ Every block has **one** narrow, objective success target — not vague encourage
 - "Play Etude 1, bars 1–4, at 60 BPM with the metronome. Aim for 2 consecutive run-throughs with no restart."
 
 **The mini-win rule:** if you hit the target early, **keep playing slowly and cleanly until the time is up — don't speed up.** Clean repetitions after a win build consistency. Always include this in the timer prompt.
+
+---
+
+## Chord-notes routine (electric & acoustic only)
+
+Whenever a session **introduces a new chord** or runs a **review/drill block on a known chord**, open the block with a ~1-minute spell-the-chord check, before the playing reps:
+
+1. **Student recalls, coach checks.** Ask: "Root note? Companion notes?" — the student answers from memory. Confirm or correct. Retrieval first; don't just state the answer unless it's the chord's very first appearance ever.
+2. **Map notes to strings.** Walk the shape string by string — which string sounds which note (including which are the root's octaves).
+3. **Tie the root to strum accuracy.** The lowest sounded string should be the root — this is *why* A skips string 6 and D skips strings 5–6. Reinforce every time the strum-accuracy issue shows up.
+4. **Stay shallow.** Name the notes only. No triad construction (1-3-5, intervals, why these companions) until the Stine track reaches Modules 3–4 — see "Stay in the curriculum".
+
+Reference — Grade 1 open chords:
+
+| Chord | Root | Companions | Strings sounded (low→high) |
+|---|---|---|---|
+| A | A | C♯, E | A–E–A–C♯–E (skip string 6) |
+| D | D | F♯, A | D–A–D–F♯ (skip strings 6, 5) |
+| E | E | G♯, B | E–B–E–G♯–B–E (all six) |
+| Em | E | G, B | E–B–E–G–B–E |
+| Am | A | C, E | A–E–A–C–E (skip string 6) |
+| G | G | B, D | G–B–D–G–B–G / G–B–D–G–D–G (fingering-dependent) |
+| C | C | E, G | C–E–G–C–E (skip string 6) |
+| D7 | D | F♯, A, C | D–A–C–F♯ (skip strings 6, 5) |
+| G7 | G | B, D, F | G–B–D–G–B–F |
+
+Log under the existing `#skill/chords` tag — no new tag needed. This routine does **not** apply to classical (Werner Vol 1 is single-note/arpeggio work).
 
 ---
 
