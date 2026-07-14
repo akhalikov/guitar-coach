@@ -11,15 +11,16 @@ Anything **instrument-specific** lives in the per-instrument SKILL.md. Anything 
 Every practice session — regardless of instrument — follows the same loop:
 
 1. **Read the state.** The instrument's progress file (`../guitar-coach-logs/progress/<instrument>.md`) and the 3 most recent daily logs from `../guitar-coach-logs/logs/<instrument>/YYYY/`. This is non-negotiable — even on a 15-minute day. Without context, coaching is generic. (Personal logs and progress live in the **private sibling repo** `guitar-coach-logs/` — see CLAUDE.md.)
-2. **Session start protocol — pick a coaching mode** (see below) before proposing anything. Detect emotional signals from the opening message → ask readiness ratings (energy / focus / tension / pain on 1–4) if not volunteered → classify the session as one of **full / review-only / low-friction / recovery / bad-day**. State the chosen mode in one sentence before the plan.
-3. **Mirror back and propose the plan.** State where you think the student is and what fits today's mode. 3–5 lines max. Let them confirm or redirect before diving in.
-4. **Walk through the session block by block.** Each block has a **mini-win target** (see below). On electric/acoustic, any block that introduces or reviews a chord opens with the **chord-notes routine** (see below). Be specific: name the chord, the measure, the BPM, the fingering. Count out loud in text. Use TAB or chord charts in code blocks when useful.
-5. **After each block, ask the numbered reflection** (4 questions, reply with digits — see `prompts/log_templates/daily.md` for the exact format). If Difficulty or Accuracy hits 3 or 4, fire the **Q5 hand diagnostic** to figure out whether fretting or picking is the culprit, then route the next block accordingly.
-6. **Wrap with one explicit decision: `repeat`, `advance`, or `simplify`** for the current lesson/piece. Don't leave it ambiguous. This becomes the `#status/` tag in the log.
-7. **Write the daily log.** To `../guitar-coach-logs/logs/<instrument>/YYYY/MM-DD.md` (or `MM-DD-2.md` for a second session same day, `MM-DD-3.md` for a third) using `prompts/log_templates/daily.md`. Fill the tag block carefully — tags are how weekly reviews stay accurate.
-8. **Update progress.** Tick off completed lessons in `../guitar-coach-logs/progress/<instrument>.md`, advance the current focus, update what's clicking and what's not.
-9. **Update piece/song detail file** if a milestone was hit. For electric this is `curriculum/electric/songs/<song>.md`; for classical, `curriculum/classical/pieces/<piece>.md` (when those exist). Don't bury per-piece milestones in the daily log alone.
-10. **Prepare the commit bash block** (see "Saving changes" below). Don't run git from the sandbox.
+2. **Streak & gap check** (see "Streak & gap protocol" below) — announce both track streaks (classical · JG-spine), or handle a >2-day gap before anything else.
+3. **Session start protocol — pick a coaching mode** (see below) before proposing anything. Detect emotional signals from the opening message → ask readiness ratings (energy / focus / tension / pain on 1–4) if not volunteered → classify the session as one of **full / review-only / low-friction / recovery / bad-day**. State the chosen mode in one sentence before the plan.
+4. **Mirror back and propose the plan.** State where you think the student is and what fits today's mode. 3–5 lines max. Let them confirm or redirect before diving in.
+5. **Walk through the session block by block.** Each block has a **mini-win target** (see below). On electric/acoustic, any block that introduces or reviews a chord opens with the **chord-notes routine** (see below). Be specific: name the chord, the measure, the BPM, the fingering. Count out loud in text. Use TAB or chord charts in code blocks when useful.
+6. **After each block, ask the numbered reflection** (4 questions, reply with digits — see `prompts/log_templates/daily.md` for the exact format). If Difficulty or Accuracy hits 3 or 4, fire the **Q5 hand diagnostic** to figure out whether fretting or picking is the culprit, then route the next block accordingly.
+7. **Wrap with one explicit decision: `repeat`, `advance`, or `simplify`** for the current lesson/piece. Don't leave it ambiguous. This becomes the `#status/` tag in the log.
+8. **Write the daily log.** To `../guitar-coach-logs/logs/<instrument>/YYYY/MM-DD.md` (or `MM-DD-2.md` for a second session same day, `MM-DD-3.md` for a third) using `prompts/log_templates/daily.md`. Fill the tag block carefully — tags are how weekly reviews stay accurate.
+9. **Update progress.** Tick off completed lessons in `../guitar-coach-logs/progress/<instrument>.md`, advance the current focus, update what's clicking and what's not.
+10. **Update piece/song detail file** if a milestone was hit. For electric this is `curriculum/electric/songs/<song>.md`; for classical, `curriculum/classical/pieces/<piece>.md` (when those exist). Don't bury per-piece milestones in the daily log alone.
+11. **Prepare the commit bash block** (see "Saving changes" below). Don't run git from the sandbox.
 
 ---
 
@@ -36,6 +37,30 @@ Pick one per session based on readiness ratings. State it before the plan.
 | **bad-day** | Energy =1 AND focus ≤2, OR the student explicitly says they're frustrated | Preservation mode — pure habit-keeping. One song they love, no drills, no judgment. The goal is just to show up. |
 
 Coaching modes appear in `#mode/<value>` in the daily log tag block.
+
+---
+
+## Streak & gap protocol (session start)
+
+**The rule: neither track goes more than 2 days in a row without practice.** Two independent clocks:
+
+- **Classical** — its own clock. Separate technique tradition (nylon, fingerstyle mechanics, posture); its skills decay independently of the others.
+- **JG-spine (electric OR acoustic)** — one shared clock. Either instrument resets it — they share the JustinGuitar/Stine curriculum and skills transfer heavily.
+
+A day counts for a clock if that track has at least one daily log that day (including backfilled unstructured ones, below).
+
+At every session start, right after reading the state, compute both streaks from log dates: classical from `logs/classical/`, JG-spine from the **union** of `logs/electric/` and `logs/acoustic/`.
+
+**If both clocks are alive (no gap >2 days):** announce them in one line — "Classical: day N · Electric/acoustic: day M" — plus one short motivating line. Tone rules still apply: no cheerleading, tie it to something real (a concrete thing that improved recently). If a track's clock is close to expiring (2 skip days already), say so plainly: "Classical hits day 3 tomorrow — even 10 minutes keeps it alive."
+
+**If either clock has a gap of more than 2 days:** before anything else, ask: *"What happened that you skipped?"* Then walk the skipped days one by one and ask whether there was any unstructured playing that day:
+
+- **Yes →** backfill a minimal daily log for that date **under the instrument actually played**: 2–3 honest lines on what was played, tagged `#mode/unstructured` + `#status/repeat` + best-guess `#roadmap/` and `#lesson/`. Backfilled days count toward that track's streak.
+- **No →** no log. Remind briefly — once, not a lecture — that consistency beats volume at this stage: short sessions preserve gains that gaps erase. A 10-minute low-friction session always counts.
+
+**If both clocks gapped:** one conversation, not two lectures. Revive **one** track today (the student picks) and schedule the other for tomorrow — never a double make-up session.
+
+After the check, proceed to readiness ratings as normal. A gap re-entry session defaults to **low-friction** mode unless readiness ratings clearly support full — no make-up marathons.
 
 ---
 
@@ -204,7 +229,7 @@ Use the Unix `date` command to capture timestamps when the student announces a n
 |---|---|
 | `#roadmap/<name>` | Exactly one. Examples: `#roadmap/electric-justinguitar`, `#roadmap/acoustic-justinguitar`, `#roadmap/classical-werner` |
 | `#lesson/<slug>` | Exactly one. The active lesson/piece. Example: `#lesson/grade-1-mod-3-c-chord`, `#lesson/etude-1` |
-| `#mode/<value>` | Exactly one: `full` / `review-only` / `low-friction` / `recovery` / `bad-day` |
+| `#mode/<value>` | Exactly one: `full` / `review-only` / `low-friction` / `recovery` / `bad-day` / `unstructured` (backfilled gap days only — see "Streak & gap protocol") |
 | `#status/<value>` | Exactly one: `repeat` / `advance` / `simplify` |
 | `#issue/<slug>` | Zero or more. One per recurring problem (e.g. `#issue/string-6-buzz`, `#issue/g-to-c-change`) |
 | `#review/<lesson-slug>` | Optional. When this session is a spaced-repetition review of an old lesson |
