@@ -1,4 +1,4 @@
-# journal/ — Personal practice data
+# journal — Personal practice data
 
 Artur's practice data for the guitar coaching system: daily logs, progress markers, recordings, and the generated heatmap. The coaching system itself (prompts, curriculum, CLAUDE.md dispatcher) lives at the repo root, one level up.
 
