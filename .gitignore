@@ -12,8 +12,6 @@ curriculum/classical/book/*.pdf
 *~
 .vscode/
 
-# Defensive — personal data should NEVER live in this public repo.
-# Logs and progress live in the private sibling repo guitar-coach-private/.
-# These rules prevent accidental commits if files are created here by mistake.
-logs/
-progress/
+# Personal practice data lives in journal/ and IS committed to this repo.
+# (Previously logs/ and progress/ were ignored because they lived in a
+# separate private repo — that rule was removed when journal/ was folded in.)

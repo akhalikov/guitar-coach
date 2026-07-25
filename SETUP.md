@@ -1,46 +1,40 @@
 # Setup — Forking this for your own practice
 
-This repo is the **coaching system** — prompts, curriculum, log templates, scheduled-task templates. It deliberately contains **no personal practice data**. Your own daily logs, progress markers, and recordings live in a separate **private** repo on your machine.
+This repo holds both the **coaching system** (prompts, curriculum, log templates, scheduled-task templates) and your **personal practice data** (daily logs, progress markers, recordings). The system lives at the repo root; your data lives in the `journal/` folder.
 
-## The two-repo layout
+> Note: your practice data is committed to this repo. If you want it private, keep your fork private.
+
+## The layout
 
 ```
-~/work/github/<you>/
-├── guitar-coach/            (this fork — public, system)
-└── guitar-coach-private/       (your private repo — your data)
+~/github/guitar-coach/
+├── prompts/     (system — base.md + per-instrument SKILL.md + log templates)
+├── curriculum/  (reference content per instrument)
+└── journal/     (your data — logs, progress, recordings, heatmap)
 ```
 
-The coach reads from `../guitar-coach-private/progress/<instrument>.md` and `../guitar-coach-private/logs/<instrument>/YYYY/`, and writes new logs there. The public repo never sees your data.
+The coach reads from `journal/progress/<instrument>.md` and `journal/logs/<instrument>/YYYY/`, and writes new logs there.
 
 ## One-time setup
 
-1. **Fork this repo** to your own GitHub account (or just clone if you don't plan to contribute back).
+1. **Fork this repo** to your own GitHub account (or clone if you don't plan to contribute back).
 
    ```bash
    gh repo clone <you>/guitar-coach
    cd guitar-coach
    ```
 
-2. **Create your private logs repo** as a sibling folder:
+2. **Bootstrap the `journal/` folder structure:**
 
    ```bash
-   cd ..
-   mkdir guitar-coach-private
-   cd guitar-coach-private
-   git init
+   mkdir -p journal/logs/electric/$(date +%Y) journal/logs/classical/$(date +%Y) journal/logs/classical/recordings journal/progress
+   touch journal/logs/electric/$(date +%Y)/.gitkeep journal/logs/classical/$(date +%Y)/.gitkeep journal/logs/classical/recordings/.gitkeep
    ```
 
-3. **Bootstrap the folder structure:**
+3. **Create progress starter files.** The coach reads these every session.
 
    ```bash
-   mkdir -p logs/electric/$(date +%Y) logs/classical/$(date +%Y) logs/classical/recordings progress
-   touch logs/electric/$(date +%Y)/.gitkeep logs/classical/$(date +%Y)/.gitkeep logs/classical/recordings/.gitkeep
-   ```
-
-4. **Create progress starter files.** The coach reads these every session.
-
-   ```bash
-   cat > progress/electric.md <<'EOF'
+   cat > journal/progress/electric.md <<'EOF'
    # Electric — Current State
 
    - **Current JustinGuitar module:** Grade 1, Module 1
@@ -49,7 +43,7 @@ The coach reads from `../guitar-coach-private/progress/<instrument>.md` and `../
    - **Open struggles:** ...
    EOF
 
-   cat > progress/classical.md <<'EOF'
+   cat > journal/progress/classical.md <<'EOF'
    # Classical — Current State
 
    - **Current Werner phase / piece:** Phase 0 — Orientation
@@ -59,37 +53,29 @@ The coach reads from `../guitar-coach-private/progress/<instrument>.md` and `../
    EOF
    ```
 
-   Fill these in with your actual state. The coach reads them at session start.
+   Fill these in with your actual state.
 
-5. **Add a README and .gitignore** to your private repo. Any sensible defaults work — keep it private and don't push recordings you wouldn't want public.
-
-6. **Create the private GitHub repo** and push:
+4. **Push:**
 
    ```bash
-   gh repo create guitar-coach-private --private --source=. --remote=origin --push
+   git add -A && git commit -m "Bootstrap journal/" && git push
    ```
 
-   That's it. Open `~/work/github/<you>/guitar-coach/` in your Claude desktop app (Cowork) and the coach will pick up CLAUDE.md and route from there.
+   That's it. Open `~/github/guitar-coach/` in your Claude desktop app (Cowork) and the coach will pick up CLAUDE.md and route from there.
 
 ## Path conventions in this repo
 
-Throughout the public repo's prompts and templates, paths like `../guitar-coach-private/logs/...` refer to your private sibling repo. These are written from the perspective of the public repo's root.
-
-If you put the two repos in different folders (not siblings), you'll need to:
-- Update the path references in `CLAUDE.md`, `prompts/base.md`, `prompts/electric/SKILL.md`, `prompts/classical/SKILL.md`, `prompts/log_templates/{daily,weekly}.md`, and the two scheduled tasks
-- Or symlink your logs repo into the expected sibling location
-
-The sibling layout is recommended — keeps the relative paths working as-is.
+Throughout the prompts and templates, paths like `journal/logs/...` are relative to the repo root. If you rename the `journal/` folder, update the references in `CLAUDE.md`, `prompts/base.md`, `prompts/electric/SKILL.md`, `prompts/classical/SKILL.md`, and `prompts/log_templates/{daily,weekly}.md`.
 
 ## Where your data goes
 
-- **Daily session log** → `../guitar-coach-private/logs/<instrument>/YYYY/MM-DD.md`
-- **Weekly review** (Saturday) → `../guitar-coach-private/logs/<instrument>/YYYY/MM-DD-week.md`
-- **Current state** (curriculum position, songs in rotation, struggles) → `../guitar-coach-private/progress/<instrument>.md`
-- **Recordings** (classical) → `../guitar-coach-private/logs/classical/recordings/`
+- **Daily session log** → `journal/logs/<instrument>/YYYY/MM-DD.md`
+- **Weekly review** (Saturday) → `journal/logs/<instrument>/YYYY/MM-DD-week.md`
+- **Current state** (curriculum position, songs in rotation, struggles) → `journal/progress/<instrument>.md`
+- **Recordings** (classical) → `journal/logs/classical/recordings/`
 
-## Two repos = two commits per session (when both change)
+## One commit per session
 
-If only your logs changed in a session (the usual case), one commit to the logs repo. If you also edited the coaching system (e.g. tweaked a prompt or added a song to `curriculum/`), that's a second commit to the public repo. The coach prints the right bash blocks at session end.
+Logs and system files are in the same repo, so a session is normally **one commit** — `git add -A` from the repo root stages your log, the progress update, and the regenerated heatmap together. The coach prints the right bash block at session end.
 
 See `prompts/base.md` → "Saving changes" for the conventions.

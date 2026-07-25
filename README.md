@@ -23,36 +23,34 @@ The shared logic lives in `prompts/base.md`; the instrument-specific stuff lives
 
 ### Electric and acoustic share a practice/theory spine
 
-Acoustic isn't a fork of electric's curriculum — it's the same JustinGuitar grade position and Stine theory position, applied on a different guitar. That shared position lives in one place, `guitar-coach-private/progress/electric.md`, and both coaches read/advance it. What acoustic keeps separate: its own `curriculum/acoustic/songs.md` repertoire lanes (a song can be "Polishing" on electric and untouched on acoustic), its own daily log stream in `guitar-coach-private/logs/acoustic/`, and a few acoustic-exclusive songs with their own detail files in `curriculum/acoustic/songs/`.
+Acoustic isn't a fork of electric's curriculum — it's the same JustinGuitar grade position and Stine theory position, applied on a different guitar. That shared position lives in one place, `journal/progress/electric.md`, and both coaches read/advance it. What acoustic keeps separate: its own `curriculum/acoustic/songs.md` repertoire lanes (a song can be "Polishing" on electric and untouched on acoustic), its own daily log stream in `journal/logs/acoustic/`, and a few acoustic-exclusive songs with their own detail files in `curriculum/acoustic/songs/`.
 
 ## ⚙️ How a session works
 
 Open this folder with Claude. Say what you want:
 
-- *"Let's practice electric"* → the electric coach activates (reads `prompts/electric/SKILL.md` → `prompts/base.md` → `../guitar-coach-private/progress/electric.md` → recent electric logs → proposes a plan)
-- *"Let's practice acoustic"* → the acoustic coach activates (reads `prompts/acoustic/SKILL.md` → `prompts/base.md` → `../guitar-coach-private/progress/electric.md` for the shared JG/Stine position → `../guitar-coach-private/progress/acoustic.md` for acoustic-only state → recent acoustic logs → proposes a plan)
+- *"Let's practice electric"* → the electric coach activates (reads `prompts/electric/SKILL.md` → `prompts/base.md` → `journal/progress/electric.md` → recent electric logs → proposes a plan)
+- *"Let's practice acoustic"* → the acoustic coach activates (reads `prompts/acoustic/SKILL.md` → `prompts/base.md` → `journal/progress/electric.md` for the shared JG/Stine position → `journal/progress/acoustic.md` for acoustic-only state → recent acoustic logs → proposes a plan)
 - *"Let's practice classical"* → the classical coach activates (same loop with classical files)
 
 If you just say "JustinGuitar," "Stine," or name a song that's shared between electric and acoustic without naming a guitar, the coach asks which one first — the curriculum content is the same, but progress/logs still need to go to the right stream.
 
 The coach asks how you're feeling (energy / focus / tension / pain, 1–4) to pick a session mode, then proposes a plan, walks you through it block by block, and writes the daily log and updates the progress file. A single Saturday 10:00 scheduled task, `guitar-weekly-review`, reviews all three instruments in one run.
 
-## 🗄️ Two-repo layout
+## 🗄️ Layout
 
-This repo is **public** — coaching system only. Personal practice data lives in a **private sibling repo** called `guitar-coach-private`:
+One repo. The coaching system lives at the root; personal practice data lives in the `journal/` folder:
 
 ```
-~/
-├── guitar-coach/            (this repo — prompts, curriculum, SKILL.md files)
-└── guitar-coach-private/       (private — daily logs, progress markers, recordings)
+~/github/guitar-coach/
+├── prompts/     (coaching logic — base.md + per-instrument SKILL.md + log templates)
+├── curriculum/  (reference content per instrument — lesson plans, songs/pieces, equipment, books)
+└── journal/     (personal data — daily logs, progress markers, recordings, heatmap)
 ```
 
-The coach reads from and writes to the sibling repo. Commits happen there too — this public repo only changes when the coaching system itself changes.
+The coach reads from and writes to `journal/`, and a session commit covers both the log and any system change in one go.
 
-- `prompts/` — coaching logic (shared `base.md` + per-instrument `SKILL.md` + daily/weekly log templates)
-- `curriculum/` — reference content per instrument (lesson plans, songs/pieces, equipment, books)
-
-If you're forking this for your own use, see `SETUP.md` for how to set up the paired private logs repo.
+If you're forking this for your own use, see `SETUP.md`.
 
 ## ⏯️ The scheduled task
 

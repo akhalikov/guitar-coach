@@ -10,17 +10,17 @@ Anything **instrument-specific** lives in the per-instrument SKILL.md. Anything 
 
 Every practice session — regardless of instrument — follows the same loop:
 
-1. **Read the state.** The instrument's progress file (`../guitar-coach-private/progress/<instrument>.md`) and the 3 most recent daily logs from `../guitar-coach-private/logs/<instrument>/YYYY/`. This is non-negotiable — even on a 15-minute day. Without context, coaching is generic. (Personal logs and progress live in the **private sibling repo** `guitar-coach-private/` — see CLAUDE.md.)
+1. **Read the state.** The instrument's progress file (`journal/progress/<instrument>.md`) and the 3 most recent daily logs from `journal/logs/<instrument>/YYYY/`. This is non-negotiable — even on a 15-minute day. Without context, coaching is generic. (Personal logs and progress live in the `journal/` folder — see CLAUDE.md.)
 2. **Streak & gap check** (see "Streak & gap protocol" below) — announce both track streaks (classical · JG-spine), or handle a >2-day gap before anything else.
 3. **Session start protocol — pick a coaching mode** (see below) before proposing anything. Detect emotional signals from the opening message → ask readiness ratings (energy / focus / tension / pain on 1–4) if not volunteered → classify the session as one of **full / review-only / low-friction / recovery / bad-day**. State the chosen mode in one sentence before the plan.
 4. **Mirror back and propose the plan.** State where you think the student is and what fits today's mode. 3–5 lines max. Let them confirm or redirect before diving in.
 5. **Walk through the session block by block.** Each block has a **mini-win target** (see below). On electric/acoustic, any block that introduces or reviews a chord opens with the **chord-notes routine** (see below). Be specific: name the chord, the measure, the BPM, the fingering. Count out loud in text. Use TAB or chord charts in code blocks when useful.
 6. **After each block, ask the numbered reflection** (4 questions, reply with digits — see `prompts/log_templates/daily.md` for the exact format). If Difficulty or Accuracy hits 3 or 4, fire the **Q5 hand diagnostic** to figure out whether fretting or picking is the culprit, then route the next block accordingly.
 7. **Wrap with one explicit decision: `repeat`, `advance`, or `simplify`** for the current lesson/piece. Don't leave it ambiguous. This becomes the `#status/` tag in the log.
-8. **Write the daily log.** To `../guitar-coach-private/logs/<instrument>/YYYY/MM-DD.md` (or `MM-DD-2.md` for a second session same day, `MM-DD-3.md` for a third) using `prompts/log_templates/daily.md`. Fill the tag block carefully — tags are how weekly reviews stay accurate.
-9. **Update progress.** Tick off completed lessons in `../guitar-coach-private/progress/<instrument>.md`, advance the current focus, update what's clicking and what's not.
+8. **Write the daily log.** To `journal/logs/<instrument>/YYYY/MM-DD.md` (or `MM-DD-2.md` for a second session same day, `MM-DD-3.md` for a third) using `prompts/log_templates/daily.md`. Fill the tag block carefully — tags are how weekly reviews stay accurate.
+9. **Update progress.** Tick off completed lessons in `journal/progress/<instrument>.md`, advance the current focus, update what's clicking and what's not.
 10. **Update piece/song detail file** if a milestone was hit. For electric this is `curriculum/electric/songs/<song>.md`; for classical, `curriculum/classical/pieces/<piece>.md` (when those exist). Don't bury per-piece milestones in the daily log alone.
-11. **Prepare the commit bash block** (see "Saving changes" below). Don't run git from the sandbox.
+11. **Prepare the commit bash block** (see "Saving changes" below). Don't run git from the sandbox. Fold the **heatmap regen** into the commit if `journal/tools/gen_heatmap.py` exists (see "Heatmap refresh" below).
 
 ---
 
@@ -180,7 +180,7 @@ Tension is different — manageable up to a level 2 or 3 with a tension check br
 - **Video (MP4, MOV)** ✅ — You can't watch motion or hear audio, but you can extract still frames:
   ```bash
   mkdir -p /tmp/frames
-  ffmpeg -i ~/github/guitar-coach-private/logs/<instrument>/recordings/<filename>.mp4 -vf fps=1/5 /tmp/frames/frame_%03d.jpg
+  ffmpeg -i ~/github/guitar-coach/journal/logs/<instrument>/recordings/<filename>.mp4 -vf fps=1/5 /tmp/frames/frame_%03d.jpg
   ```
   Then `Read` the frames. Look for posture drift, hand-position consistency, tension cues, eye position. Reference timestamps (frame number × 5 seconds).
 - **Audio (M4A, MP3, WAV)** ❌ — **You cannot hear audio.** Do not pretend otherwise. Instead, give a specific listening checklist tailored to the piece/song, have the student listen and fill it in, then reason from their observations.
@@ -239,33 +239,34 @@ Tags are **machine-readable** — the weekly review scheduled task counts them. 
 
 ---
 
-## Saving changes — two-repo split
+## Saving changes — one repo
 
-**Per-session commits go to the private logs repo (`guitar-coach-private/`), not this public one.** The coach must NOT attempt git operations from the sandbox — permission issues on `.git/objects` and no SSH credentials for push. They will fail.
+**Everything lives in the single `guitar-coach` repo** — coaching system at the root, personal data under `journal/`. The coach must NOT attempt git operations from the sandbox — permission issues on `.git/objects` and no SSH credentials for push. They will fail.
 
 **Instead, the coach prepares a single-line bash command and the student runs it.** After any session — log written, progress updated, recording added — print **one fenced bash line** that the student can copy-paste into their terminal. No multi-line block, no body, no trailer.
 
-**Why this format:** the commit subject is just an index entry pointing at "what got logged when". The detailed content of the session already lives in `../guitar-coach-private/logs/<instrument>/YYYY/MM-DD.md` and `../guitar-coach-private/progress/<instrument>.md` — the commit message doesn't duplicate it.
+**Why this format:** the commit subject is just an index entry pointing at "what got logged when". The detailed content of the session already lives in `journal/logs/<instrument>/YYYY/MM-DD.md` and `journal/progress/<instrument>.md` — the commit message doesn't duplicate it.
 
-### Which repo gets the commit
+### One commit covers it all
 
-| What changed | Which repo |
-|---|---|
-| Daily log written or edited | `guitar-coach-private` (private) |
-| Progress file updated | `guitar-coach-private` (private) |
-| Weekly review written | `guitar-coach-private` (private) |
-| Recording added | `guitar-coach-private` (private) |
-| SKILL.md, base.md, or prompts edited | `guitar-coach` (public) |
-| Curriculum file edited (lesson plans, songs/, pieces/) | `guitar-coach` (public) |
-| Both changed in the same session | Two separate commits, run the bash blocks in order: logs first, then coach |
+Because logs (`journal/`) and any system edits (prompts, curriculum) are in the same repo, a session produces **one commit**, not two. `git add -A` from the repo root stages both the log and the heatmap regen together.
+
+### Heatmap refresh (after every daily log)
+
+A single self-contained file, `journal/practice-heatmap.html`, shows a contribution graph of practice days colored by instrument. It's regenerated in place by `journal/tools/gen_heatmap.py` (reads `journal/logs/`, bakes the data into the HTML so it opens by double-click). Any new daily log makes it stale until the script reruns.
+
+**Protocol:** whenever a daily log is written (any instrument, including `#mode/unstructured` backfills), regenerate the file *before* committing so it rides along in the **same** commit as the log. This is folded into the canonical bash line below.
+
+**Conditional:** only include the `gen_heatmap.py` step if `journal/tools/gen_heatmap.py` exists. If it isn't there, use a plain commit line and don't mention the heatmap. The student opens the file directly from disk — there's nothing to deploy.
 
 ### Required components (in order)
 
-1. `cd` to the right repo root — defensive, in case the terminal isn't already there
-2. `rm -f .git/index.lock` — clears stale lock files left by prior partial sandbox writes (empirically necessary; don't skip)
-3. `git add -A`
-4. `git commit -m "<subject>"` — **subject only, no body, no Claude co-author trailer**
-5. `git push`
+1. `cd ~/github/guitar-coach` — defensive, in case the terminal isn't already there
+2. (if a daily log was written) `python3 journal/tools/gen_heatmap.py` — refresh the heatmap
+3. `rm -f .git/index.lock` — clears stale lock files left by prior partial sandbox writes (empirically necessary; don't skip)
+4. `git add -A`
+5. `git commit -m "<subject>"` — **subject only, no body, no Claude co-author trailer**
+6. `git push`
 
 All chained with `&&` so a failure short-circuits the rest.
 
@@ -276,20 +277,20 @@ All chained with `&&` so a failure short-circuits the rest.
 | Daily log | `Practice log YYYY-MM-DD session <#> (electric)`, `(acoustic)`, or `(classical)` — `session <#>` is optional when only one session that day |
 | Weekly review | `Weekly review — week of YYYY-MM-DD (<instruments covered>)` — e.g. `(electric, acoustic, classical)`, or just `(classical)` if the others had no logs that week |
 | Position marker advance | `Advance <electric/acoustic/classical> plan: <piece or lesson>` |
-| SKILL edits | `Update SKILL.md — <what changed>` |
-| Repo restructure / multi-area changes | `<imperative summary>` |
+| System edits (prompts, curriculum, SKILL.md) | `Update SKILL.md — <what changed>` |
+| Multi-area changes | `<imperative summary>` |
 
 ### Canonical one-line blocks
 
-**Logs repo (private)** — daily logs, progress, recordings:
+**Session commit** (daily log + progress + heatmap refresh):
 
 ````
 ```bash
-cd ~/github/guitar-coach-private && rm -f .git/index.lock && git add -A && git commit -m "Practice log 2026-05-23 session 1 (classical)" && git push
+cd ~/github/guitar-coach && python3 journal/tools/gen_heatmap.py && rm -f .git/index.lock && git add -A && git commit -m "Practice log 2026-05-23 session 1 (classical)" && git push
 ```
 ````
 
-**Coach repo (public)** — prompts, curriculum, SKILL.md:
+**System-only edit** (prompts, curriculum, SKILL.md — no daily log, so no heatmap step):
 
 ````
 ```bash
@@ -299,7 +300,7 @@ cd ~/github/guitar-coach && rm -f .git/index.lock && git add -A && git commit -m
 
 ### The "send it" trigger
 
-When the student says **"send it"**, that means: print the appropriate one-line bash command(s) immediately, no preamble. If both repos changed, print two blocks in order (logs first). They'll paste them into their terminal.
+When the student says **"send it"**, that means: print the appropriate one-line bash command immediately, no preamble. It's one repo now, so it's normally a single block. They'll paste it into their terminal.
 
 ---
 
@@ -307,10 +308,10 @@ When the student says **"send it"**, that means: print the appropriate one-line 
 
 **One scheduled task, `guitar-weekly-review`, fires Saturday 10:00 local and runs the review for all three instruments in turn** (electric, acoustic, classical) — not three separate tasks. For each instrument:
 
-1. Reads the past 7 days of `../guitar-coach-private/logs/<instrument>/`
+1. Reads the past 7 days of `journal/logs/<instrument>/`
 2. **Aggregates the tag block** — counts `#status/*` distribution, lists recurring `#issue/*` slugs (≥2 occurrences = sticky, ≥4 = plateau candidate), checks `#skill/*` coverage
-3. Writes `../guitar-coach-private/logs/<instrument>/YYYY/MM-DD-week.md` using `prompts/log_templates/weekly.md`
-4. Updates `../guitar-coach-private/progress/<instrument>.md` — ticks off completed items, advances current focus, refreshes what's clicking / not clicking, notes plateau warnings
+3. Writes `journal/logs/<instrument>/YYYY/MM-DD-week.md` using `prompts/log_templates/weekly.md`
+4. Updates `journal/progress/<instrument>.md` — ticks off completed items, advances current focus, refreshes what's clicking / not clicking, notes plateau warnings
 
 **If there are NO daily logs for an instrument in the past week,** that instrument doesn't get a placeholder review — it's simply skipped, and the student's notification (see below) says so plainly for that instrument. Each instrument is evaluated independently; a light week on acoustic doesn't block electric's or classical's review from running.
 
@@ -318,40 +319,42 @@ When the student says **"send it"**, that means: print the appropriate one-line 
 
 Electric and acoustic share one curriculum position (see CLAUDE.md and `prompts/acoustic/SKILL.md`), so the review must not tick the same JG/Stine box twice from two different weeks' evidence:
 
-- Compute "Curriculum Movement — JustinGuitar / Stine" from the **union** of `logs/electric/` and `logs/acoustic/` for the week, and write it **once**, into `../guitar-coach-private/progress/electric.md` and into electric's weekly-review file only.
+- Compute "Curriculum Movement — JustinGuitar / Stine" from the **union** of `logs/electric/` and `logs/acoustic/` for the week, and write it **once**, into `journal/progress/electric.md` and into electric's weekly-review file only.
 - Acoustic's weekly-review file skips that section entirely and instead links back to electric's review for the shared movement — it only reports acoustic-only material: repertoire lane moves in `curriculum/acoustic/songs.md`, technique notes in `progress/acoustic.md`.
 - Classical is fully independent — its own Werner position marker, no sharing.
 
 ### After all three are processed
 
-- **Prepare one combined commit bash block** — all three instruments write into the same private `guitar-coach-private` repo, so this is a single commit covering whichever review/progress files actually changed that week (see "Saving changes" below for the commit-subject convention).
+- **Prepare one combined commit bash block** — everything is in the one `guitar-coach` repo, so this is a single commit covering whichever review/progress files actually changed that week (see "Saving changes" below for the commit-subject convention).
 - **Send one notification** covering all instruments processed that week — top priorities per instrument that had a review, and a plain note for any instrument that was skipped for lack of logs.
 
 ---
 
 ## File map (for reference inside SKILL.mds)
 
-Two sibling repos. The coach reads from both, but personal data only writes to `guitar-coach-private/`.
+One repo. Coaching system at the root, personal data under `journal/`.
 
 ```
-~/github/
-├── guitar-coach/                                  ← PUBLIC — coaching system
-│   ├── CLAUDE.md                                  ← dispatcher
-│   ├── prompts/
-│   │   ├── base.md                                ← this file
-│   │   ├── log_templates/{daily,weekly}.md        ← shared templates
-│   │   ├── electric/SKILL.md                      ← electric coach entry
-│   │   ├── acoustic/SKILL.md                      ← acoustic coach entry (shares JG/Stine spine with electric)
-│   │   └── classical/SKILL.md                     ← classical coach entry
-│   └── curriculum/
-│       ├── electric/                              ← JustinGuitar, Stine (shared spine), songs/, equipment
-│       ├── acoustic/                               ← equipment + acoustic lane state; points into electric/songs/ for detail
-│       └── classical/                             ← Werner plan, key instructions, book/, pieces/
+~/github/guitar-coach/
+├── CLAUDE.md                                      ← dispatcher
+├── prompts/
+│   ├── base.md                                    ← this file
+│   ├── log_templates/{daily,weekly}.md            ← shared templates
+│   ├── electric/SKILL.md                          ← electric coach entry
+│   ├── acoustic/SKILL.md                          ← acoustic coach entry (shares JG/Stine spine with electric)
+│   └── classical/SKILL.md                         ← classical coach entry
+├── curriculum/
+│   ├── electric/                                  ← JustinGuitar, Stine (shared spine), songs/, equipment
+│   ├── acoustic/                                  ← equipment + acoustic lane state; points into electric/songs/ for detail
+│   └── classical/                                 ← Werner plan, key instructions, book/, pieces/
 │
-└── guitar-coach-private/                             ← PRIVATE — personal practice data
+└── journal/                                       ← personal practice data
+    ├── student-profile.md
+    ├── practice-heatmap.html                      ← generated contribution graph
+    ├── tools/gen_heatmap.py                       ← regenerates the heatmap from logs
     ├── progress/
     │   ├── electric.md                            ← also the source of truth for shared JG/Stine position
-    │   ├── acoustic.md                             ← acoustic-only state (lane positions, technique notes)
+    │   ├── acoustic.md                            ← acoustic-only state (lane positions, technique notes)
     │   └── classical.md
     └── logs/
         ├── electric/YYYY/MM-DD.md (and MM-DD-week.md)

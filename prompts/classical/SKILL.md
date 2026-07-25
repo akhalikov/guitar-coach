@@ -14,17 +14,17 @@ At the start of every session, **before** suggesting anything:
 1. Read `../base.md` for shared coaching logic.
 2. Read `../../curriculum/classical/werner-key-instructions.md` — Werner's own foundational rules. Non-negotiable.
 3. Read `../../curriculum/classical/werner-vol1-plan.md` to see the curriculum and the current lesson marker.
-4. Read `../../../guitar-coach-private/progress/classical.md` for the current position summary and rolling notes.
-5. Read the **3 most recent** daily logs in `../../../guitar-coach-private/logs/classical/YYYY/` (current year).
+4. Read `../../journal/progress/classical.md` for the current position summary and rolling notes.
+5. Read the **3 most recent** daily logs in `../../journal/logs/classical/YYYY/` (current year).
 6. Briefly mirror back where you think the student is and what the natural next step is. Let them confirm or redirect before diving in.
 
 The full Werner Vol 1 PDF lives **locally** at `../../curriculum/classical/book/Classical-Guitar-Method-Vol1-Werner.pdf` (gitignored — see `../../curriculum/classical/book/README.md` for the license rationale). Consult specific pages with `pdftotext -f N -l N <path> -`. If the file isn't present, prompt the student to download it from <https://wernerguitareditions.com/products/classical-guitar-method-volume-1>.
 
-If `../../../guitar-coach-private/logs/classical/` has no entries, use the **First Session Flow** below.
+If `../../journal/logs/classical/` has no entries, use the **First Session Flow** below.
 
 ## Student profile
 
-Read `../../../guitar-coach-private/student-profile.md` for the student's name, equipment, started dates, and practice targets. That file is the source of truth — do not duplicate it here.
+Read `../../journal/student-profile.md` for the student's name, equipment, started dates, and practice targets. That file is the source of truth — do not duplicate it here.
 
 ## What the student already knows (carryover)
 
@@ -101,7 +101,7 @@ Each block ~5 min unless noted.
 - **Note recognition (3–5 min)** — Open the staff, call out notes by name, find them on the fretboard. First position only for now.
 - **Review piece (5 min)** — Replay one fully-learned piece end to end. Higher musicality than last time (dynamics, phrasing, tone).
 - **Duet play-along (5–10 min)** — Use Werner's duet videos. Good for time-keeping. Recommended at least once a week. **Always provide the backing track link inline when assigning this block** — don't make the student look it up. Links are in `../../curriculum/classical/werner-vol1-plan.md`.
-- **Recording check (5 min)** — Record one play-through of the current piece. Listen back. Note one thing to fix. Save audio to `../../../guitar-coach-private/logs/classical/recordings/` with the date.
+- **Recording check (5 min)** — Record one play-through of the current piece. Listen back. Note one thing to fix. Save audio to `../../journal/logs/classical/recordings/` with the date.
 
 ### Recommended mixes
 
@@ -119,7 +119,7 @@ Each block ~5 min unless noted.
 
 ## Google Calendar — weekend session reminder
 
-A single recurring event exists in the student's Google Calendar as a heads-up for the scheduled Saturday review session. This slot now doubles as the heads-up for the **combined** `guitar-weekly-review` task (see `../base.md` → "Weekly review"), which reviews electric, acoustic, and classical together at this same time — not just classical. **No retroactive event creation** for daily practice — daily logs in `../../../guitar-coach-private/logs/classical/` are the source of truth; the calendar is just a forward-looking reminder.
+A single recurring event exists in the student's Google Calendar as a heads-up for the scheduled Saturday review session. This slot now doubles as the heads-up for the **combined** `guitar-weekly-review` task (see `../base.md` → "Weekly review"), which reviews electric, acoustic, and classical together at this same time — not just classical. **No retroactive event creation** for daily practice — daily logs in `../../journal/logs/classical/` are the source of truth; the calendar is just a forward-looking reminder.
 
 **The recurring event:**
 - **Summary:** `Classical Guitar — Practice Session`
@@ -129,11 +129,11 @@ A single recurring event exists in the student's Google Calendar as a heads-up f
 
 Coach doesn't need to recreate this under normal circumstances. If the student asks to change time/day/duration, or wants to rename it to reflect that it now covers all three instruments' review, update the event with the calendar update tool and update this section.
 
-## First Session Flow (if `../../../guitar-coach-private/logs/classical/` is empty)
+## First Session Flow (if `../../journal/logs/classical/` is empty)
 
 1. Welcome briefly. No long pep talk.
 2. Confirm gear: nylon classical, footstool, metronome, tuner, recording device. **Check fingernails — short, no acrylic, flesh-tone playing** (Werner p.5 — nails are Vol 2).
-3. Walk through **sitting position** using the p.8 checklist (see `../../curriculum/classical/werner-key-instructions.md`). Have him take a photo or short video from the side and from the front. Save to `../../../guitar-coach-private/logs/classical/recordings/sitting-position-baseline.{mp4,jpg}`. Critique it specifically: guitar at 45°, head at eye level, face of guitar vertical, shoulders down.
+3. Walk through **sitting position** using the p.8 checklist (see `../../curriculum/classical/werner-key-instructions.md`). Have him take a photo or short video from the side and from the front. Save to `../../journal/logs/classical/recordings/sitting-position-baseline.{mp4,jpg}`. Critique it specifically: guitar at 45°, head at eye level, face of guitar vertical, shoulders down.
 4. Walk through **right-hand position**. **Free stroke only — do not introduce rest stroke** (Werner p.5). Play open strings: `i-m-i-m` free stroke on string 1, then `p-i-m-a` arpeggio on strings 4-3-2-1. Watch fingers curl into the palm, thumb stays in front. Record this.
 5. Walk through **left-hand position**. Chromatic 1-2-3-4 on string 6. Then introduce the pinky rule: D on string 1 fret 3 with finger 4, G on string 2 fret 3 with finger 4.
 6. Read **p.9 (Brief Definitions of Music Notation)** together — quick reference page. Then have the student read the first few lines of Etude No. 1 (p. 14), calling out note names before playing. Goal is *reading*, not playing by ear.
@@ -173,12 +173,12 @@ Complete Werner Vol 1 confidently — every piece memorized, every piece playabl
 |---|---|
 | `../base.md` | Shared coaching logic — read first every session |
 | `../log_templates/{daily,weekly}.md` | Log templates (shared with electric) |
-| `../../../guitar-coach-private/progress/classical.md` | Current Werner position summary + rolling notes |
+| `../../journal/progress/classical.md` | Current Werner position summary + rolling notes |
 | `../../curriculum/classical/werner-key-instructions.md` | Werner's foundational rules — read first every session |
 | `../../curriculum/classical/werner-vol1-plan.md` | Full lesson-by-lesson plan with the "Current Position" marker |
 | `../../curriculum/classical/book/` | Local Werner PDF (gitignored) + README |
 | `../../curriculum/classical/pieces/repertoire.md` | Pieces index with Learning / Polishing / Maintenance lanes |
 | `../../curriculum/classical/pieces/<piece>.md` | Per-piece detail (created when a piece reaches Polishing) |
-| `../../../guitar-coach-private/logs/classical/YYYY/MM-DD.md` | Daily session journals (private repo) |
-| `../../../guitar-coach-private/logs/classical/YYYY/MM-DD-week.md` | Weekly reviews (private repo) |
-| `../../../guitar-coach-private/logs/classical/recordings/` | Audio / video / photo takes (private repo) |
+| `../../journal/logs/classical/YYYY/MM-DD.md` | Daily session journals (journal) |
+| `../../journal/logs/classical/YYYY/MM-DD-week.md` | Weekly reviews (journal) |
+| `../../journal/logs/classical/recordings/` | Audio / video / photo takes (journal) |

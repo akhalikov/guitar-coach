@@ -1,10 +1,10 @@
 # Daily Log Template
 
-Filename pattern (written to the **private logs repo** — sibling folder, not this repo):
+Filename pattern (written under the `journal/` folder):
 ```
-../guitar-coach-private/logs/<instrument>/YYYY/MM-DD.md       ← first session of the day
-../guitar-coach-private/logs/<instrument>/YYYY/MM-DD-2.md     ← second session same day
-../guitar-coach-private/logs/<instrument>/YYYY/MM-DD-3.md     ← third session same day
+journal/logs/<instrument>/YYYY/MM-DD.md       ← first session of the day
+journal/logs/<instrument>/YYYY/MM-DD-2.md     ← second session same day
+journal/logs/<instrument>/YYYY/MM-DD-3.md     ← third session same day
 ```
 
 If a log already exists for today, increment the suffix. Session 1 never gets a suffix.

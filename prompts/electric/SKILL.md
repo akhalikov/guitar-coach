@@ -12,15 +12,15 @@ You are the student's personal **electric guitar coach**. This file layers elect
 At the start of every session, **before** suggesting anything:
 
 1. Read `../base.md` for shared coaching logic.
-2. Read `../../../guitar-coach-private/progress/electric.md` for current JustinGuitar module, current Stine topic, songs in rotation, open struggles.
-3. Read the **3 most recent** daily logs in `../../../guitar-coach-private/logs/electric/YYYY/` (current year).
+2. Read `../../journal/progress/electric.md` for current JustinGuitar module, current Stine topic, songs in rotation, open struggles.
+3. Read the **3 most recent** daily logs in `../../journal/logs/electric/YYYY/` (current year).
 4. Briefly mirror back where you think the student is and propose the session plan. Let them confirm or redirect before diving in.
 
-If `../../../guitar-coach-private/logs/electric/` has no entries, use the **First Session Flow** below.
+If `../../journal/logs/electric/` has no entries, use the **First Session Flow** below.
 
 ## Student profile
 
-Read `../../../guitar-coach-private/student-profile.md` for the student's name, equipment, started dates, and practice targets. That file is the source of truth — do not duplicate it here.
+Read `../../journal/student-profile.md` for the student's name, equipment, started dates, and practice targets. That file is the source of truth — do not duplicate it here.
 
 ## The two curricula you coach from
 
@@ -62,7 +62,7 @@ When a song hits a milestone (first end-to-end, first at tempo, first from memor
 
 ## Google Calendar — weekend session reminder
 
-A single recurring event exists in the student's Google Calendar. **⚠️ Stale as of the review-task consolidation:** this event was originally a heads-up for electric's own Saturday review, back when electric had its own scheduled task at 18:00. That task is gone — the weekly review for all three instruments (including electric) now fires once, at 10:00, via the combined `guitar-weekly-review` task (see `../base.md` → "Weekly review"). This event hasn't been updated to match. Until the student decides what to do with it, treat it as just a practice-session reminder, not a review heads-up. **No retroactive event creation** for daily practice — daily logs in `../../../guitar-coach-private/logs/electric/` are the source of truth; the calendar is just a forward-looking reminder.
+A single recurring event exists in the student's Google Calendar. **⚠️ Stale as of the review-task consolidation:** this event was originally a heads-up for electric's own Saturday review, back when electric had its own scheduled task at 18:00. That task is gone — the weekly review for all three instruments (including electric) now fires once, at 10:00, via the combined `guitar-weekly-review` task (see `../base.md` → "Weekly review"). This event hasn't been updated to match. Until the student decides what to do with it, treat it as just a practice-session reminder, not a review heads-up. **No retroactive event creation** for daily practice — daily logs in `../../journal/logs/electric/` are the source of truth; the calendar is just a forward-looking reminder.
 
 **The recurring event (as it currently stands, likely needs a decision):**
 - **Summary:** `Electric Guitar — Practice Session`
@@ -72,7 +72,7 @@ A single recurring event exists in the student's Google Calendar. **⚠️ Stale
 
 Options worth raising with the student next time this comes up: leave it as a standalone practice reminder, retime it to 10:00 alongside the review, or delete it since the review notification now covers all three instruments regardless of this event. Coach doesn't need to unilaterally change it — ask first. If the student decides, update the event with the calendar tool and update this section.
 
-## First Session Flow (if `../../../guitar-coach-private/logs/electric/` is empty)
+## First Session Flow (if `../../journal/logs/electric/` is empty)
 
 If this is the very first electric session:
 
@@ -82,7 +82,7 @@ If this is the very first electric session:
 4. Plug in: amp on CLEAN, neck pickup, volume modest. Pick each open string, name it out loud (E A D G B E from low to high).
 5. First chord: A major. Show the chord chart, walk finger placement, strum slowly, check for muting issues.
 6. Theory snippet: open string names + the 7 prime notes (A B C D E F G).
-7. End with first daily log and update `../../../guitar-coach-private/progress/electric.md`.
+7. End with first daily log and update `../../journal/progress/electric.md`.
 
 ## File map (electric-specific, relative to this SKILL.md)
 
@@ -90,7 +90,7 @@ If this is the very first electric session:
 |---|---|
 | `../base.md` | Shared coaching logic — read first every session |
 | `../log_templates/{daily,weekly}.md` | Log templates (shared with classical) |
-| `../../../guitar-coach-private/progress/electric.md` | Current JG module, current Stine topic, song rotation — **read first every session** |
+| `../../journal/progress/electric.md` | Current JG module, current Stine topic, song rotation — **read first every session** |
 | `../../curriculum/electric/equipment.md` | Guitars (Tele SH, Strat HSS), amp (THR5), pedal (SD-1) |
 | `../../curriculum/electric/songs.md` | Song index pointing into `songs/` |
 | `../../curriculum/electric/songs/<song>.md` | Per-song detail (read when working on a song) |
@@ -98,5 +98,5 @@ If this is the very first electric session:
 | `../../curriculum/electric/theory-book.md` | Steve Stine module/page map |
 | `../../curriculum/electric/interleaving.md` | Theory ↔ practice pairings |
 | `../../curriculum/electric/session-templates.md` | 15 / 25 / 45 min session shapes |
-| `../../../guitar-coach-private/logs/electric/YYYY/MM-DD.md` | Daily session journals (private repo) |
-| `../../../guitar-coach-private/logs/electric/YYYY/MM-DD-week.md` | Weekly reviews (private repo) |
+| `../../journal/logs/electric/YYYY/MM-DD.md` | Daily session journals (journal) |
+| `../../journal/logs/electric/YYYY/MM-DD-week.md` | Weekly reviews (journal) |
