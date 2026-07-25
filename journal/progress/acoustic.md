@@ -13,7 +13,7 @@ Updated after every acoustic session. The coach reads this first, alongside `pro
 
 **Shared JustinGuitar/Stine position:** see `progress/electric.md` — acoustic applies whatever is current there, doesn't track it separately. As of 2026-07-17: A→D metronome milestone passed on this guitar (15-16/20 at 60 BPM); E chord unlocked for next spine session. Chord-notes routine first run passed (A and D spelled fully).
 
-**Repertoire lane state:** see `../guitar-coach/curriculum/acoustic/songs.md` — nothing in rotation yet (no chords ready for songs — waiting on E chord).
+**Repertoire lane state:** see `../guitar-coach/curriculum/acoustic/songs.md` — **More Than Words (Extreme)** in the Learning lane, ~half learned. Advanced right-hand song (percussive "chuck" + syncopation) worked in parallel with the JG spine; doesn't change the shared JG grade position. Coaching focus: right-hand mechanics, well under tempo.
 
 ---
 

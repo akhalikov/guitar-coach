@@ -8,7 +8,7 @@ Same three lanes as electric (see `../../prompts/base.md` → "Repertoire lanes"
 
 *Actively building, fragile. Needs slow practice and full attention. Pull from here first in normal sessions. Aim for **one** song here at a time.*
 
-— (none yet — pick the first acoustic target once a first chord or two is comfortable on this guitar; **Knockin' on Heaven's Door** or **Stand By Me** are the natural starting points, same as electric)
+- **[More Than Words — Extreme](songs/04-more-than-words.md)** — in progress, ~half learned. Advanced right hand (percussive "chuck" + syncopation) but the student is already partway through, so it's an active target, not just a preview. Being worked in parallel with the JustinGuitar spine (like the classical outside pieces) — doesn't change the shared JG grade position.
 
 ## Polishing
 
@@ -54,10 +54,11 @@ Use this before pulling a song into the acoustic Learning lane. **Shared** songs
 | 10 | [Dust in the Wind — Kansas](songs/01-dust-in-the-wind.md) | Acoustic-exclusive | ✅ Native | Travis-picking standard, written for acoustic — the fingerstyle centerpiece of this lane |
 | 11 | [Это всё — ДДТ](songs/02-eto-vse.md) | Acoustic-exclusive | ✅ Native | Open chords, no barre, mixes перебор (fingerstyle) verses with a strummed close-out — good technique bridge |
 | 12 | [Ветер — ДДТ](songs/03-veter.md) | Acoustic-exclusive | ✅ Native | Simple E minor chord set, but the strum pattern has real rhythmic bite for a "simple chords" song |
+| 13 | [More Than Words — Extreme](songs/04-more-than-words.md) | Acoustic-exclusive | ✅ Native | Percussive fingerstyle showcase — easy chords, advanced right hand (muted "chuck" + syncopation). Advanced song, but **actively in the Learning lane** (~half learned already) |
 
 **Not tracked on acoustic at all:** Smoke on the Water and Enter Sandman depend on distortion/palm-muting for the effect — they stay on electric only, not even as a reduced-fit entry here. Still Loving You was dropped from the acoustic lane by request.
 
-**Reading the flags:** ✅ Great/Good/Native = safe to pull into the acoustic Learning lane whenever it fits the rotation. ⚠️ Reduced = fine as a technique exercise, but don't treat "clean on acoustic" as the finish line — the electric version is still the target.
+**Reading the flags:** ✅ Great/Good/Native = safe to pull into the acoustic Learning lane whenever it fits the rotation. ⚠️ Reduced = fine as a technique exercise, but don't treat "clean on acoustic" as the finish line — the electric version is still the target. ⚠️ Stretch = well above current level; keep as wishlist/preview, don't pull into active Learning until the prerequisite technique is solid.
 
 ---
 
