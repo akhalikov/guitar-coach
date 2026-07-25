@@ -12,7 +12,7 @@ at a time with GitHub-style year buttons (floor: 2026).
 import json
 import os
 import re
-from datetime import datetime, timezone
+from datetime import datetime, timezone, date, timedelta
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 INSTRUMENTS = ("classical", "electric", "acoustic")
@@ -65,6 +65,78 @@ def scan_lessons():
                     insts = [x.strip() for x in parts[1].split(",") if x.strip() in INSTRUMENTS]
                 lessons[date] = sorted(set(insts))
     return {k: lessons[k] for k in sorted(lessons)}
+
+
+SVG_COLORS = {
+    "empty": "#21262d", "classical": "#2f81f7", "acoustic": "#3fb950",
+    "electric": "#f78166", "multi": "#bc8cff", "lesson": "#e3b341",
+    "bg": "#0d1117", "muted": "#7d8590", "text": "#e6edf3",
+}
+MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+
+
+def _class_for(insts):
+    if not insts:
+        return "empty"
+    return "multi" if len(insts) > 1 else insts[0]
+
+
+def render_svg(days, lessons):
+    """Static SVG snapshot of the latest year's grid — embeddable in markdown."""
+    yrs = [int(k[:4]) for k in days] + [int(k[:4]) for k in lessons]
+    year = max([date.today().year] + yrs)
+    start, end = date(year, 1, 1), date(year, 12, 31)
+    gs = start - timedelta(days=(start.weekday() + 1) % 7)  # back to Sunday
+    weeks, cur = [], gs
+    while cur <= end:
+        weeks.append([cur + timedelta(days=i) for i in range(7)])
+        cur += timedelta(days=7)
+
+    cell, step, left, top = 11, 14, 32, 34
+    width = left + len(weeks) * step + 16
+    grid_h = 7 * step
+    legend_y = top + grid_h + 16
+    height = legend_y + 20
+
+    n = len({k for k in days if k[:4] == str(year)})
+    p = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" '
+         f'viewBox="0 0 {width} {height}" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif">',
+         f'<rect width="{width}" height="{height}" rx="10" fill="{SVG_COLORS["bg"]}"/>',
+         f'<text x="{left}" y="18" fill="{SVG_COLORS["text"]}" font-size="12" font-weight="600">'
+         f'{n} practice day{"" if n == 1 else "s"} in {year}</text>']
+
+    last_m = -1
+    for wi, wk in enumerate(weeks):
+        f = wk[0]
+        if f.year == year and f.month != last_m and f.day <= 7:
+            p.append(f'<text x="{left + wi * step}" y="{top - 6}" fill="{SVG_COLORS["muted"]}" font-size="9">{MONTHS[f.month - 1]}</text>')
+            last_m = f.month
+
+    for dow, lab in [(1, "Mon"), (3, "Wed"), (5, "Fri")]:
+        y = top + dow * step + cell - 1
+        p.append(f'<text x="{left - 6}" y="{y}" fill="{SVG_COLORS["muted"]}" font-size="9" text-anchor="end">{lab}</text>')
+
+    for wi, wk in enumerate(weeks):
+        for dow, d in enumerate(wk):
+            if d < start or d > end:
+                continue
+            key = d.isoformat()
+            uni = sorted(set(days.get(key, [])) | set(lessons.get(key) or []))
+            fill = SVG_COLORS[_class_for(uni)]
+            x, y = left + wi * step, top + dow * step
+            ring = f' stroke="{SVG_COLORS["lesson"]}" stroke-width="1.6"' if lessons.get(key) else ""
+            p.append(f'<rect x="{x}" y="{y}" width="{cell}" height="{cell}" rx="2" fill="{fill}"{ring}/>')
+
+    lx = left
+    for key, label in [("classical", "Classical"), ("acoustic", "Acoustic"),
+                       ("electric", "Electric"), ("multi", "Multiple")]:
+        p.append(f'<rect x="{lx}" y="{legend_y}" width="10" height="10" rx="2" fill="{SVG_COLORS[key]}"/>')
+        p.append(f'<text x="{lx + 14}" y="{legend_y + 9}" fill="{SVG_COLORS["muted"]}" font-size="9">{label}</text>')
+        lx += 14 + len(label) * 6 + 14
+    p.append(f'<rect x="{lx}" y="{legend_y}" width="10" height="10" rx="2" fill="{SVG_COLORS["empty"]}" stroke="{SVG_COLORS["lesson"]}" stroke-width="1.6"/>')
+    p.append(f'<text x="{lx + 14}" y="{legend_y + 9}" fill="{SVG_COLORS["muted"]}" font-size="9">Lesson</text>')
+    p.append("</svg>")
+    return "\n".join(p) + "\n"
 
 
 HTML = """<!DOCTYPE html>
@@ -222,6 +294,11 @@ def main():
     with open(out, "w") as f:
         f.write(html)
     print(f"Wrote {out} — {len(payload['days'])} practice days")
+
+    svg_out = os.path.join(REPO, "practice-heatmap.svg")
+    with open(svg_out, "w") as f:
+        f.write(render_svg(payload["days"], payload["lessons"]))
+    print(f"Wrote {svg_out}")
 
 
 if __name__ == "__main__":
