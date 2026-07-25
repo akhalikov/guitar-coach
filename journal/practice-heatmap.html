@@ -16,35 +16,34 @@ font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-ser
 .calrow{display:flex;gap:16px;align-items:flex-start;}
 .calmain{min-width:0;flex:1;}
 .graph-scroll{overflow-x:auto;padding-bottom:6px;}
-table.cal{border-spacing:3px;border-collapse:separate;}table.cal td{width:13px;height:13px;padding:0;}
-.cell{width:13px;height:13px;border-radius:3px;background:var(--empty);outline:1px solid rgba(255,255,255,.04);outline-offset:-1px;}
+table.cal{border-spacing:2px;border-collapse:separate;}table.cal td{width:11px;height:11px;padding:0;}
+.cell{width:11px;height:11px;border-radius:2px;background:var(--empty);outline:1px solid rgba(255,255,255,.04);outline-offset:-1px;}
 .cell.classical{background:var(--classical);}.cell.acoustic{background:var(--acoustic);}
 .cell.electric{background:var(--electric);}.cell.multi{background:var(--multi);}
 .cell.lesson{box-shadow:inset 0 0 0 2px var(--lesson);}
 .cell.future{background:transparent;outline:none;box-shadow:none;}
 .daylabel,.monlabel{color:var(--muted);font-size:10px;}
-.daylabel{padding-right:6px;text-align:right;height:13px;}
+.daylabel{padding-right:6px;text-align:right;height:11px;}
 .monlabel{position:relative;text-align:left;height:14px;font-size:11px;overflow:visible;}
 .monlabel span{position:absolute;left:0;top:0;white-space:nowrap;}
 .years{display:flex;flex-direction:column;gap:4px;flex:0 0 auto;}
-button.yr{all:unset;cursor:pointer;padding:6px 16px;border-radius:7px;font-size:13px;color:var(--text);text-align:center;min-width:60px;}
+button.yr{all:unset;cursor:pointer;padding:5px 16px;border-radius:7px;font-size:13px;color:var(--text);text-align:center;min-width:56px;}
 button.yr:hover{background:#ffffff0d;}
 button.yr.active{background:var(--accent);color:#fff;font-weight:600;}
 .legend{display:flex;align-items:center;gap:16px;margin-top:14px;flex-wrap:wrap;}
 .legend .item{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);}
 .sw{width:12px;height:12px;border-radius:3px;display:inline-block;}
-.foot{color:var(--muted);font-size:11px;margin-top:8px;}
+.foot{color:var(--muted);font-size:10px;margin-top:10px;text-align:right;}
 .tt{position:fixed;pointer-events:none;z-index:10;background:#1c2128;border:1px solid var(--border);
 color:var(--text);font-size:12px;padding:6px 9px;border-radius:6px;white-space:nowrap;opacity:0;
 transition:opacity .08s;transform:translate(-50%,-130%);}
 </style></head><body>
 <div class="wrap"><h1>🎸 Guitar Practice</h1>
 <div class="sub">Contribution graph — one cell per day, colored by instrument. Hover a cell for details.</div>
-<div class="card"><div class="stats" id="stats"></div></div>
 <div class="card">
+<div class="ytitle" id="ytitle"></div>
 <div class="calrow">
 <div class="calmain">
-<div class="ytitle" id="ytitle"></div>
 <div class="graph-scroll"><div id="graph"></div></div>
 <div class="legend">
 <div class="item"><span class="sw" style="background:var(--classical)"></span> Classical</div>
@@ -54,14 +53,15 @@ transition:opacity .08s;transform:translate(-50%,-130%);}
 <div class="item"><span class="sw" style="box-shadow:inset 0 0 0 2px var(--lesson);background:var(--empty)"></span> Lesson with teacher</div>
 <div class="item"><span class="sw" style="background:var(--empty)"></span> No practice</div>
 </div>
-<div class="foot" id="foot"></div>
 </div>
 <div class="years" id="years"></div>
-</div></div></div>
+</div>
+<div class="foot" id="foot"></div>
+</div></div>
 <div class="tt" id="tt"></div>
 <script>
-const PAYLOAD = {"generated": "2026-07-25 23:11 UTC", "days": {"2026-05-20": ["classical"], "2026-05-21": ["classical", "electric"], "2026-05-22": ["electric"], "2026-05-24": ["classical"], "2026-05-25": ["classical"], "2026-05-28": ["classical"], "2026-06-12": ["classical"], "2026-06-17": ["classical"], "2026-06-21": ["classical"], "2026-07-12": ["acoustic"], "2026-07-14": ["classical"], "2026-07-17": ["acoustic"], "2026-07-25": ["acoustic"]}, "lessons": {"2026-01-03": ["electric"], "2026-01-10": ["electric"], "2026-03-14": ["electric"], "2026-03-28": ["electric"], "2026-04-11": ["electric"], "2026-04-25": ["classical"], "2026-05-09": ["classical"], "2026-05-23": ["classical"], "2026-06-06": ["classical"], "2026-06-21": ["classical"], "2026-07-11": ["acoustic", "electric"], "2026-07-25": ["acoustic", "electric"]}};
-const FLOOR_YEAR = 2026;
+const PAYLOAD = {"generated": "2026-07-25 23:38 UTC", "days": {"2026-05-20": ["classical"], "2026-05-21": ["classical", "electric"], "2026-05-22": ["electric"], "2026-05-24": ["classical"], "2026-05-25": ["classical"], "2026-05-28": ["classical"], "2026-06-12": ["classical"], "2026-06-17": ["classical"], "2026-06-21": ["classical"], "2026-07-12": ["acoustic"], "2026-07-14": ["classical"], "2026-07-17": ["acoustic"], "2026-07-25": ["acoustic"]}, "lessons": {"2026-01-03": ["electric"], "2026-01-10": ["electric"], "2026-03-14": ["electric"], "2026-03-28": ["electric"], "2026-04-11": ["electric"], "2026-04-25": ["classical"], "2026-05-09": ["classical"], "2026-05-23": ["classical"], "2026-06-06": ["classical"], "2026-06-21": ["classical"], "2026-07-11": ["acoustic", "electric"], "2026-07-25": ["acoustic", "electric"]}};
+const FLOOR_YEAR = 2025;
 const MONTHS=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 const DAYS=["","Mon","","Wed","","Fri",""];const pad=n=>String(n).padStart(2,"0");
 const iso=d=>d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate());
@@ -79,7 +79,7 @@ const dataYears=keys.map(k=>+k.slice(0,4));
 const maxY=Math.max(nowY, ...(dataYears.length?dataYears:[nowY]), FLOOR_YEAR);
 const years=[];for(let y=maxY;y>=FLOOR_YEAR;y--)years.push(y);
 
-function renderRange(START,END,title){
+function renderRange(START,END,period){
   const gs=new Date(START);gs.setDate(gs.getDate()-gs.getDay());
   const weeks=[];let cur=new Date(gs);
   while(cur<=END){const w=[];for(let i=0;i<7;i++){w.push(new Date(cur));cur.setDate(cur.getDate()+1);}weeks.push(w);}
@@ -113,11 +113,9 @@ function renderRange(START,END,title){
   const active=[...new Set([...wk,...lk])].sort();
   let longest=0,run=0,prev=null;
   active.forEach(k=>{const d=parse(k);if(prev&&(d-prev)===86400000)run++;else run=1;longest=Math.max(longest,run);prev=d;});
-  const stats=[["Practice days",wk.length],["Lessons",lk.length],["Classical",per.classical],
-    ["Acoustic",per.acoustic],["Electric",per.electric],["Longest daily streak",longest]];
-  document.getElementById('stats').innerHTML=stats.map(([l,n])=>
-    `<div class="stat"><div class="num">${n}</div><div class="lbl">${l}</div></div>`).join("");
-  document.getElementById('ytitle').textContent=title.replace('{n}',wk.length).replace('{s}',wk.length===1?'':'s');
+  const sTxt=wk.length===1?'':'s',lsTxt=longest===1?'':'s';
+  document.getElementById('ytitle').textContent=
+    `${wk.length} practice day${sTxt} in ${period} · longest streak ${longest} day${lsTxt}`;
 
   document.querySelectorAll('.cell[data-date]').forEach(c=>{
     c.addEventListener('mousemove',e=>{const d=parse(c.dataset.date);
@@ -126,36 +124,28 @@ function renderRange(START,END,title){
       tt.style.top=e.clientY+'px';tt.style.opacity=1;});
     c.addEventListener('mouseleave',()=>tt.style.opacity=0);});
 }
-function renderYear(year){
-  const today=new Date();
-  const START=new Date(year,0,1);
-  const END=(year===today.getFullYear())?today:new Date(year,11,31);
-  renderRange(START,END,`{n} practice day{s} in ${year}`);
+const CUR=new Date().getFullYear();
+function showYear(year){
+  if(year===CUR){ // current year → trailing 365 days, GitHub-style
+    const END=new Date();const START=new Date();START.setDate(START.getDate()-364);
+    renderRange(START,END,'the last year');
+  }else{
+    renderRange(new Date(year,0,1),new Date(year,11,31),String(year));
+  }
 }
-function renderTrailing(){
-  const END=new Date();
-  const START=new Date();START.setDate(START.getDate()-364);
-  renderRange(START,END,'{n} practice day{s} in the last year');
-}
-
-// Buttons: "Last year" (trailing, default) + calendar years
+// Year buttons — newest first, current year selected by default
 const ybox=document.getElementById('years');
 const clearA=()=>document.querySelectorAll('button.yr').forEach(x=>x.classList.remove('active'));
-const lastBtn=document.createElement('button');lastBtn.className='yr';lastBtn.textContent='Last year';
-lastBtn.addEventListener('click',()=>{clearA();lastBtn.classList.add('active');renderTrailing();location.hash='last';});
-ybox.appendChild(lastBtn);
 years.forEach(y=>{
   const b=document.createElement('button');b.className='yr';b.textContent=y;
-  b.addEventListener('click',()=>{clearA();b.classList.add('active');renderYear(y);location.hash=y;});
+  b.addEventListener('click',()=>{clearA();b.classList.add('active');showYear(y);location.hash=y;});
   ybox.appendChild(b);
 });
 document.getElementById('foot').textContent="Generated "+(PAYLOAD.generated||"");
 
-// Default: hash year if valid, else the trailing last-year view
+// Default: hash year if valid, else the newest year (top button)
 const h=location.hash.replace('#','');
-if(/^\d{4}$/.test(h)&&years.includes(+h)){
-  const b=[...ybox.children].find(x=>x.textContent===h);b.classList.add('active');renderYear(+h);
-}else{
-  lastBtn.classList.add('active');renderTrailing();
-}
+const initial=(/^\d{4}$/.test(h)&&years.includes(+h))?+h:years[0];
+const initBtn=[...ybox.children].find(x=>x.textContent===String(initial));
+initBtn.classList.add('active');showYear(initial);
 </script></body></html>
