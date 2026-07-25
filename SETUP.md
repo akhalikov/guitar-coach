@@ -7,10 +7,10 @@ This repo is the **coaching system** — prompts, curriculum, log templates, sch
 ```
 ~/work/github/<you>/
 ├── guitar-coach/            (this fork — public, system)
-└── guitar-coach-logs/       (your private repo — your data)
+└── guitar-coach-private/       (your private repo — your data)
 ```
 
-The coach reads from `../guitar-coach-logs/progress/<instrument>.md` and `../guitar-coach-logs/logs/<instrument>/YYYY/`, and writes new logs there. The public repo never sees your data.
+The coach reads from `../guitar-coach-private/progress/<instrument>.md` and `../guitar-coach-private/logs/<instrument>/YYYY/`, and writes new logs there. The public repo never sees your data.
 
 ## One-time setup
 
@@ -25,8 +25,8 @@ The coach reads from `../guitar-coach-logs/progress/<instrument>.md` and `../gui
 
    ```bash
    cd ..
-   mkdir guitar-coach-logs
-   cd guitar-coach-logs
+   mkdir guitar-coach-private
+   cd guitar-coach-private
    git init
    ```
 
@@ -66,14 +66,14 @@ The coach reads from `../guitar-coach-logs/progress/<instrument>.md` and `../gui
 6. **Create the private GitHub repo** and push:
 
    ```bash
-   gh repo create guitar-coach-logs --private --source=. --remote=origin --push
+   gh repo create guitar-coach-private --private --source=. --remote=origin --push
    ```
 
    That's it. Open `~/work/github/<you>/guitar-coach/` in your Claude desktop app (Cowork) and the coach will pick up CLAUDE.md and route from there.
 
 ## Path conventions in this repo
 
-Throughout the public repo's prompts and templates, paths like `../guitar-coach-logs/logs/...` refer to your private sibling repo. These are written from the perspective of the public repo's root.
+Throughout the public repo's prompts and templates, paths like `../guitar-coach-private/logs/...` refer to your private sibling repo. These are written from the perspective of the public repo's root.
 
 If you put the two repos in different folders (not siblings), you'll need to:
 - Update the path references in `CLAUDE.md`, `prompts/base.md`, `prompts/electric/SKILL.md`, `prompts/classical/SKILL.md`, `prompts/log_templates/{daily,weekly}.md`, and the two scheduled tasks
@@ -83,10 +83,10 @@ The sibling layout is recommended — keeps the relative paths working as-is.
 
 ## Where your data goes
 
-- **Daily session log** → `../guitar-coach-logs/logs/<instrument>/YYYY/MM-DD.md`
-- **Weekly review** (Saturday) → `../guitar-coach-logs/logs/<instrument>/YYYY/MM-DD-week.md`
-- **Current state** (curriculum position, songs in rotation, struggles) → `../guitar-coach-logs/progress/<instrument>.md`
-- **Recordings** (classical) → `../guitar-coach-logs/logs/classical/recordings/`
+- **Daily session log** → `../guitar-coach-private/logs/<instrument>/YYYY/MM-DD.md`
+- **Weekly review** (Saturday) → `../guitar-coach-private/logs/<instrument>/YYYY/MM-DD-week.md`
+- **Current state** (curriculum position, songs in rotation, struggles) → `../guitar-coach-private/progress/<instrument>.md`
+- **Recordings** (classical) → `../guitar-coach-private/logs/classical/recordings/`
 
 ## Two repos = two commits per session (when both change)
 

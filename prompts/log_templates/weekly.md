@@ -1,6 +1,6 @@
 # Weekly Review Template
 
-Filename: `../guitar-coach-logs/logs/<instrument>/YYYY/MM-DD-week.md` (use today's Saturday date — written to the **private logs repo**). `<instrument>` is `electric`, `acoustic`, or `classical` — the single `guitar-weekly-review` scheduled task (see `../base.md` → "Weekly review") runs this template once per instrument that had logs in the past week, producing up to three separate files.
+Filename: `../guitar-coach-private/logs/<instrument>/YYYY/MM-DD-week.md` (use today's Saturday date — written to the **private logs repo**). `<instrument>` is `electric`, `acoustic`, or `classical` — the single `guitar-weekly-review` scheduled task (see `../base.md` → "Weekly review") runs this template once per instrument that had logs in the past week, producing up to three separate files.
 
 The weekly review is **tag-driven** — the coach reads the past 7 daily logs and aggregates the tag block, not the prose. Prose comes second, as commentary on what the tags reveal.
 
@@ -144,9 +144,9 @@ Honest assessment. What's actually improving vs. what only feels like progress? 
 The `guitar-weekly-review` task runs this process **once per instrument** (electric, then acoustic, then classical), independently:
 
 1. **If there are NO daily logs from the past week for that instrument,** don't write a placeholder review for it. Note in the final combined notification that this instrument was skipped and why. Move to the next instrument.
-2. **If there ARE logs,** read them all. Aggregate tags first. Write the review (electric and acoustic special-case the shared JG/Stine section — see the note at the top of this template). Update `../guitar-coach-logs/progress/<instrument>.md` (tick completed items, advance current focus, refresh "What's clicking" / "What's not", note plateau warnings). Update the per-piece/song file if any milestones hit (those live in `curriculum/` in the public repo).
+2. **If there ARE logs,** read them all. Aggregate tags first. Write the review (electric and acoustic special-case the shared JG/Stine section — see the note at the top of this template). Update `../guitar-coach-private/progress/<instrument>.md` (tick completed items, advance current focus, refresh "What's clicking" / "What's not", note plateau warnings). Update the per-piece/song file if any milestones hit (those live in `curriculum/` in the public repo).
 3. **Promote songs between lanes** based on the week's evidence — don't wait for the student to do it manually. (Promoted = noted in the review under "Repertoire Lane Moves" + actually updated in `songs.md` / `pieces/repertoire.md`. Electric and acoustic lanes for the same song are promoted independently based on each instrument's own evidence.)
-4. **After all three instruments are processed, prepare one combined commit bash block** per `../base.md` — a single commit to `guitar-coach-logs` covering every review/progress file that changed this run. Don't run git from the sandbox.
+4. **After all three instruments are processed, prepare one combined commit bash block** per `../base.md` — a single commit to `guitar-coach-private` covering every review/progress file that changed this run. Don't run git from the sandbox.
 5. **Send one notification** covering every instrument that got a review: top 3 priorities each, a `computer://` link to each review file, a reminder to run the commit block, and a plain note for any instrument that was skipped.
 
 Direct and technical. No fluff. If the prior week was light for a given instrument, say so honestly.
