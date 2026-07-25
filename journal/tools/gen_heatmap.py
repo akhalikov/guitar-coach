@@ -82,11 +82,9 @@ def _class_for(insts):
 
 
 def render_svg(days, lessons):
-    """Static SVG snapshot of the latest year's grid — embeddable in markdown."""
-    yrs = [int(k[:4]) for k in days] + [int(k[:4]) for k in lessons]
-    year = max([date.today().year] + yrs)
-    start = date(year, 1, 1)
-    end = date.today() if year == date.today().year else date(year, 12, 31)
+    """Static SVG snapshot of the trailing 12 months — embeddable in markdown."""
+    end = date.today()
+    start = end - timedelta(days=364)
     gs = start - timedelta(days=(start.weekday() + 1) % 7)  # back to Sunday
     weeks, cur = [], gs
     while cur <= end:
@@ -99,19 +97,25 @@ def render_svg(days, lessons):
     legend_y = top + grid_h + 16
     height = legend_y + 20
 
-    n = len({k for k in days if k[:4] == str(year)})
+    n = len([k for k in days if start <= date.fromisoformat(k) <= end])
     p = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" '
          f'viewBox="0 0 {width} {height}" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif">',
          f'<rect width="{width}" height="{height}" rx="10" fill="{SVG_COLORS["bg"]}"/>',
          f'<text x="{left}" y="18" fill="{SVG_COLORS["text"]}" font-size="12" font-weight="600">'
-         f'{n} practice day{"" if n == 1 else "s"} in {year}</text>']
+         f'{n} practice day{"" if n == 1 else "s"} in the last year</text>']
 
     last_m = -1
     for wi, wk in enumerate(weeks):
-        f = wk[0]
-        if f.year == year and f.month != last_m and f.day <= 7:
-            p.append(f'<text x="{left + wi * step}" y="{top - 6}" fill="{SVG_COLORS["muted"]}" font-size="9">{MONTHS[f.month - 1]}</text>')
-            last_m = f.month
+        labm = -1
+        for d in wk:
+            if start <= d <= end and d.day == 1:
+                labm = d.month - 1
+                break
+        if labm < 0 and wi == 0:
+            labm = start.month - 1
+        if labm >= 0 and labm != last_m:
+            p.append(f'<text x="{left + wi * step}" y="{top - 6}" fill="{SVG_COLORS["muted"]}" font-size="9">{MONTHS[labm]}</text>')
+            last_m = labm
 
     for dow, lab in [(1, "Mon"), (3, "Wed"), (5, "Fri")]:
         y = top + dow * step + cell - 1
@@ -221,16 +225,16 @@ const dataYears=keys.map(k=>+k.slice(0,4));
 const maxY=Math.max(nowY, ...(dataYears.length?dataYears:[nowY]), FLOOR_YEAR);
 const years=[];for(let y=maxY;y>=FLOOR_YEAR;y--)years.push(y);
 
-function renderYear(year){
-  const today=new Date();
-  const START=new Date(year,0,1);
-  const END=(year===today.getFullYear())?today:new Date(year,11,31);
+function renderRange(START,END,title){
   const gs=new Date(START);gs.setDate(gs.getDate()-gs.getDay());
   const weeks=[];let cur=new Date(gs);
   while(cur<=END){const w=[];for(let i=0;i<7;i++){w.push(new Date(cur));cur.setDate(cur.getDate()+1);}weeks.push(w);}
   let html='<table class="cal"><tr><td></td>';let lm=-1;
-  weeks.forEach(w=>{const f=w[0],m=f.getMonth();
-    if(f.getFullYear()===year&&m!==lm&&f.getDate()<=7){html+=`<td class="monlabel"><span>${MONTHS[m]}</span></td>`;lm=m;}
+  weeks.forEach((w,wi)=>{
+    let labM=-1;
+    for(const d of w){if(d>=START&&d<=END&&d.getDate()===1){labM=d.getMonth();break;}}
+    if(labM<0&&wi===0)labM=START.getMonth();
+    if(labM>=0&&labM!==lm){html+=`<td class="monlabel"><span>${MONTHS[labM]}</span></td>`;lm=labM;}
     else html+='<td class="monlabel"></td>';});
   html+='</tr>';
   for(let dow=0;dow<7;dow++){html+=`<tr><td class="daylabel">${DAYS[dow]}</td>`;
@@ -246,21 +250,21 @@ function renderYear(year){
   html+='</table>';
   document.getElementById('graph').innerHTML=html;
 
-  // Per-year stats
-  const yk=keys.filter(k=>k.slice(0,4)==String(year));
+  // Stats over [START,END]
+  const inWin=k=>{const d=parse(k);return d>=START&&d<=END;};
+  const wk=keys.filter(inWin);
   const per={classical:0,acoustic:0,electric:0};
-  yk.forEach(k=>DATA[k].forEach(i=>per[i]++));
-  const lk=Object.keys(LESSONS).filter(k=>k.slice(0,4)==String(year));
-  const active=[...new Set([...yk,...lk])].sort();
+  wk.forEach(k=>DATA[k].forEach(i=>per[i]++));
+  const lk=Object.keys(LESSONS).filter(inWin);
+  const active=[...new Set([...wk,...lk])].sort();
   let longest=0,run=0,prev=null;
   active.forEach(k=>{const d=parse(k);if(prev&&(d-prev)===86400000)run++;else run=1;longest=Math.max(longest,run);prev=d;});
-  const stats=[["Practice days",yk.length],["Lessons",lk.length],["Classical",per.classical],
+  const stats=[["Practice days",wk.length],["Lessons",lk.length],["Classical",per.classical],
     ["Acoustic",per.acoustic],["Electric",per.electric],["Longest daily streak",longest]];
   document.getElementById('stats').innerHTML=stats.map(([l,n])=>
     `<div class="stat"><div class="num">${n}</div><div class="lbl">${l}</div></div>`).join("");
-  document.getElementById('ytitle').textContent=`${yk.length} practice day${yk.length===1?'':'s'} in ${year}`;
+  document.getElementById('ytitle').textContent=title.replace('{n}',wk.length).replace('{s}',wk.length===1?'':'s');
 
-  // Tooltips
   document.querySelectorAll('.cell[data-date]').forEach(c=>{
     c.addEventListener('mousemove',e=>{const d=parse(c.dataset.date);
       const p=d.toLocaleDateString(undefined,{weekday:'short',month:'short',day:'numeric',year:'numeric'});
@@ -268,22 +272,38 @@ function renderYear(year){
       tt.style.top=e.clientY+'px';tt.style.opacity=1;});
     c.addEventListener('mouseleave',()=>tt.style.opacity=0);});
 }
+function renderYear(year){
+  const today=new Date();
+  const START=new Date(year,0,1);
+  const END=(year===today.getFullYear())?today:new Date(year,11,31);
+  renderRange(START,END,`{n} practice day{s} in ${year}`);
+}
+function renderTrailing(){
+  const END=new Date();
+  const START=new Date();START.setDate(START.getDate()-364);
+  renderRange(START,END,'{n} practice day{s} in the last year');
+}
 
-// Build year buttons
+// Buttons: "Last year" (trailing, default) + calendar years
 const ybox=document.getElementById('years');
-years.forEach((y,i)=>{
+const clearA=()=>document.querySelectorAll('button.yr').forEach(x=>x.classList.remove('active'));
+const lastBtn=document.createElement('button');lastBtn.className='yr';lastBtn.textContent='Last year';
+lastBtn.addEventListener('click',()=>{clearA();lastBtn.classList.add('active');renderTrailing();location.hash='last';});
+ybox.appendChild(lastBtn);
+years.forEach(y=>{
   const b=document.createElement('button');b.className='yr';b.textContent=y;
-  b.addEventListener('click',()=>{document.querySelectorAll('button.yr').forEach(x=>x.classList.remove('active'));
-    b.classList.add('active');renderYear(y);location.hash=y;});
+  b.addEventListener('click',()=>{clearA();b.classList.add('active');renderYear(y);location.hash=y;});
   ybox.appendChild(b);
 });
 document.getElementById('foot').textContent="Generated "+(PAYLOAD.generated||"");
 
-// Default: hash year if valid, else newest
-const wanted=+location.hash.replace('#','');
-const initial=years.includes(wanted)?wanted:years[0];
-const initBtn=[...ybox.children].find(b=>+b.textContent===initial);
-if(initBtn){initBtn.classList.add('active');renderYear(initial);}
+// Default: hash year if valid, else the trailing last-year view
+const h=location.hash.replace('#','');
+if(/^\\d{4}$/.test(h)&&years.includes(+h)){
+  const b=[...ybox.children].find(x=>x.textContent===h);b.classList.add('active');renderYear(+h);
+}else{
+  lastBtn.classList.add('active');renderTrailing();
+}
 </script></body></html>
 """
 
