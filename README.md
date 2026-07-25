@@ -2,8 +2,6 @@
 
 [![Practice heatmap](journal/practice-heatmap.svg)](https://akhalikov.github.io/guitar-coach/)
 
-_Practice days by instrument — [open the live dashboard](https://akhalikov.github.io/guitar-coach/) for the interactive version. This image is regenerated from the logs on every push._
-
 Personal guitar coaching setup. Three coaches under one roof:
 
 - **Electric guitar** based on:
