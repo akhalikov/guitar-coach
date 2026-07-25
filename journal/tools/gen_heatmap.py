@@ -85,7 +85,8 @@ def render_svg(days, lessons):
     """Static SVG snapshot of the latest year's grid — embeddable in markdown."""
     yrs = [int(k[:4]) for k in days] + [int(k[:4]) for k in lessons]
     year = max([date.today().year] + yrs)
-    start, end = date(year, 1, 1), date(year, 12, 31)
+    start = date(year, 1, 1)
+    end = date.today() if year == date.today().year else date(year, 12, 31)
     gs = start - timedelta(days=(start.weekday() + 1) % 7)  # back to Sunday
     weeks, cur = [], gs
     while cur <= end:
@@ -164,7 +165,9 @@ table.cal{border-spacing:3px;border-collapse:separate;}table.cal td{width:13px;h
 .cell.lesson{box-shadow:inset 0 0 0 2px var(--lesson);}
 .cell.future{background:transparent;outline:none;box-shadow:none;}
 .daylabel,.monlabel{color:var(--muted);font-size:10px;}
-.daylabel{padding-right:6px;text-align:right;height:13px;}.monlabel{text-align:left;height:14px;font-size:11px;}
+.daylabel{padding-right:6px;text-align:right;height:13px;}
+.monlabel{position:relative;text-align:left;height:14px;font-size:11px;overflow:visible;}
+.monlabel span{position:absolute;left:0;top:0;white-space:nowrap;}
 .years{display:flex;flex-direction:column;gap:4px;flex:0 0 auto;}
 button.yr{all:unset;cursor:pointer;padding:6px 16px;border-radius:7px;font-size:13px;color:var(--text);text-align:center;min-width:60px;}
 button.yr:hover{background:#ffffff0d;}
@@ -219,13 +222,15 @@ const maxY=Math.max(nowY, ...(dataYears.length?dataYears:[nowY]), FLOOR_YEAR);
 const years=[];for(let y=maxY;y>=FLOOR_YEAR;y--)years.push(y);
 
 function renderYear(year){
-  const START=new Date(year,0,1), END=new Date(year,11,31);
+  const today=new Date();
+  const START=new Date(year,0,1);
+  const END=(year===today.getFullYear())?today:new Date(year,11,31);
   const gs=new Date(START);gs.setDate(gs.getDate()-gs.getDay());
   const weeks=[];let cur=new Date(gs);
   while(cur<=END){const w=[];for(let i=0;i<7;i++){w.push(new Date(cur));cur.setDate(cur.getDate()+1);}weeks.push(w);}
   let html='<table class="cal"><tr><td></td>';let lm=-1;
   weeks.forEach(w=>{const f=w[0],m=f.getMonth();
-    if(f.getFullYear()===year&&m!==lm&&f.getDate()<=7){html+=`<td class="monlabel">${MONTHS[m]}</td>`;lm=m;}
+    if(f.getFullYear()===year&&m!==lm&&f.getDate()<=7){html+=`<td class="monlabel"><span>${MONTHS[m]}</span></td>`;lm=m;}
     else html+='<td class="monlabel"></td>';});
   html+='</tr>';
   for(let dow=0;dow<7;dow++){html+=`<tr><td class="daylabel">${DAYS[dow]}</td>`;
