@@ -2,15 +2,15 @@
 
 Personal guitar coaching setup. Three coaches under one roof:
 
-- **Electric guitar**, based on:
+- **Electric guitar** based on:
     - **JustinGuitar Grades 1–3**
     - **Steve Stine's *Music Theory***
 
-- **Acoustic guitar** (Baton Rouge X11LS/F-W-SCR steel-string), based on:
+- **Acoustic guitar** based on:
     - **The same JustinGuitar Grades 1–3 + Steve Stine spine as electric** — tracked once, not duplicated (see below)
     - its own repertoire lanes, daily log stream, and unplugged/fingerstyle technique notes
 
-- **Classical guitar**, based on:
+- **Classical guitar** based on:
     - **Bradford Werner's *Classical Guitar Method Volume 1*** 
 
 All three coaches share the same coaching DNA: 
