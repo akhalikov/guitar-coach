@@ -11,9 +11,9 @@ Updated after every session. The coach reads this first.
 
 ## Current focus
 
-**JustinGuitar:** Grade 1 → Module 1: First Steps → current = A→D change — **metronome milestone passed 2026-07-17 on acoustic** (15-16/20 clean at 60 BPM, 4 beats per chord); next = **E chord** (unlocked), with A→D at 60 BPM staying in rotation until 18+/20
+**JustinGuitar:** Grade 1 → Module 1: First Steps → **A→D LOCKED** 2026-07-25 on acoustic (18+/20 at 60 BPM). **E chord introduced 2026-07-25** — clean on first contact (all six strings, no acoustic pressure fix needed). **A→E change** started same session: >15/20 first contact, rep-count. Next = add D→E, then push A↔E to a 60 BPM metronome pass; A→D no longer needs reps.
 
-**Theory (Stine):** Module 1 — Understanding Notes → completed = 7 prime notes, open string names, sharps & flats, "BE" mnemonic, enharmonics; chromatic scale ascending confirmed 2026-07-12, descending landed with corrections 2026-07-17 (watch: flat-of-the-note-you-leave, F→E / C→B natural half-steps) — re-check descending cold next session, then half-step/whole-step
+**Theory (Stine):** Module 1 — Understanding Notes → completed = 7 prime notes, open string names, sharps & flats, "BE" mnemonic, enharmonics; chromatic scale ascending confirmed 2026-07-12. **Descending missed twice** (07-17 and 07-25, same errors: A♭-first step, F♭ trap) — both at end-of-session/tired; drill COLD at the start of next session before moving to half-step/whole-step. Correct: A→A♭→G→G♭→F→E.
 
 **Songs in rotation:** none yet — pick first song after A, D, E chords are usable
 

@@ -1,0 +1,45 @@
+name: Deploy dashboard to GitHub Pages
+
+# Builds the practice heatmap from journal/logs + journal/lessons.txt on every
+# push, then deploys the whole repo root (dashboard at /, heatmap under /journal/).
+# This is why the heatmap no longer needs to be regenerated locally before committing.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Build heatmap from logs
+        run: python3 journal/tools/gen_heatmap.py
+      - uses: actions/configure-pages@v5
+      - name: Upload site (repo root)
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "."
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

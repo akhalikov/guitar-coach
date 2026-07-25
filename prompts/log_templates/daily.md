@@ -63,12 +63,12 @@ Tags are machine-readable — the Saturday weekly review counts them. Sloppy tag
 ## Section 1 — Warm-up
 - **Target (mini-win):** what "clean" looks like for this block — specific
 - **Result:** what actually happened
-- **Reflection (1-4):** D_ A_ T_ Te_
-  - D=Difficulty (1.very easy 2.manageable 3.challenging 4.too hard)
-  - A=Accuracy (1.clean 2.few mistakes 3.frequent 4.fell apart)
-  - T=Timing (1.steady 2.off 3.unstable 4.lost pulse)
-  - Te=Tension (1.none 2.mild 3.noticeable 4.pain — stop)
-  - **If D≥3 or A≥3:** H_ (Hand diagnostic — 1.fretting 2.picking 3.both 4.unsure)
+- **Reflection:** D_ A_ T_ Te_ — **the coach ALWAYS shows this legend when asking:**
+  - **D – Difficulty:** 1 = easy → 4 = very hard
+  - **A – Accuracy:** 4 = clean, no mistakes → 1 = lots of mistakes  *(high = good — the one that runs the other way)*
+  - **T – Tension:** 1 = relaxed → 4 = tight/straining
+  - **Te – Tempo:** 1 = rock steady → 4 = drifting badly
+  - **If D≥3 or A≤2:** H_ (Hand diagnostic — 1.fretting 2.picking 3.both 4.unsure)
 
 ## Section 2 — Technique
 - **Target (mini-win):** ...
@@ -121,13 +121,20 @@ Tags are machine-readable — the Saturday weekly review counts them. Sloppy tag
 
 ### Per-block reflection format
 
-Numbered scale per dimension. The student replies with digits only:
+Numbered scale per dimension. **The coach ALWAYS displays this legend when asking for a reflection** — never just "D/A/T/Te?" on its own. The student has explicitly asked for the description every time:
 
 ```
-D=2 A=1 T=1 Te=1
+D – Difficulty: 1 = easy → 4 = very hard
+A – Accuracy:   4 = clean, no mistakes → 1 = lots of mistakes
+T – Tension:    1 = relaxed → 4 = tight/straining
+Te – Tempo:     1 = rock steady → 4 = drifting badly
 ```
 
-If Difficulty or Accuracy is 3 or 4, the coach immediately asks:
+The student replies with digits only, e.g. `D=2 A=4 T=1 Te=1` (here A=4 means clean).
+
+> **Scale-direction note.** Three dimensions run 1=best→4=worst; **Accuracy is intentionally inverted (4=best)** so "high accuracy = good" reads naturally. **Convention changed 2026-07-25** — logs before that date used the old Accuracy scale (1=clean → 4=fell apart), so read older `A=` values the other way. `T` and `Te` were also standardized to Tension/Tempo on that date (an earlier template draft briefly labeled them Timing/Tension; actual logs always used Tension/Tempo).
+
+If Difficulty is 3 or 4, **or Accuracy is 1 or 2** (i.e. mistakes are creeping in), the coach immediately asks:
 
 ```
 Where did the problem come from?

@@ -41,7 +41,7 @@ The basic shape (covered in `../base.md`'s session loop):
 5. Theory snippet — interleaved with today's practice (3 min)
 6. Wrap & log (1 min) — explicit `repeat` / `advance` / `simplify` decision goes in the log
 
-Each block uses the per-block numbered reflection (D/A/T/Te scale 1-4, plus the H= hand diagnostic when D or A is 3 or 4). Full format in `../log_templates/daily.md`.
+Each block uses the per-block numbered reflection — **always show the legend** (D–Difficulty 1=easy→4=hard, A–Accuracy 4=clean→1=messy, T–Tension 1=relaxed→4=tight, Te–Tempo 1=steady→4=drifting), plus the H= hand diagnostic when D is 3–4 or A is 1–2. Full format in `../log_templates/daily.md`.
 
 **Pick a coaching mode** at session start — `full` / `review-only` / `low-friction` / `recovery` / `bad-day`. Mode table is in `../base.md`. State it before the plan.
 

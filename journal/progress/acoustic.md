@@ -11,7 +11,7 @@ Updated after every acoustic session. The coach reads this first, alongside `pro
 
 ## Current focus
 
-**Shared JustinGuitar/Stine position:** see `progress/electric.md` — acoustic applies whatever is current there, doesn't track it separately. As of 2026-07-17: A→D metronome milestone passed on this guitar (15-16/20 at 60 BPM); E chord unlocked for next spine session. Chord-notes routine first run passed (A and D spelled fully).
+**Shared JustinGuitar/Stine position:** see `progress/electric.md` — acoustic applies whatever is current there, doesn't track it separately. As of 2026-07-25: A→D **locked** on this guitar (18+/20 at 60 BPM); **E chord introduced, clean on first contact** (all six strings, no pressure fix needed — E is easier here than A was); A→E change started (>15/20 first contact).
 
 **Repertoire lane state:** see `../guitar-coach/curriculum/acoustic/songs.md` — **More Than Words (Extreme)** in the Learning lane, ~half learned. Advanced right-hand song (percussive "chuck" + syncopation) worked in parallel with the JG spine; doesn't change the shared JG grade position. Coaching focus: right-hand mechanics, well under tempo.
 
@@ -25,7 +25,8 @@ Updated after every acoustic session. The coach reads this first, alongside `pro
 
 ## What's not
 
-- A chord under full-speed reps — improving: 15-16/20 clean under metronome 2026-07-17 with no buzz maintenance needed (pressure fix holding); push to 18+/20 before calling it locked
+- A chord under full-speed reps — **A→D locked 2026-07-25** (18+/20 at 60 BPM); pressure fix fully holding, no buzz maintenance needed
+- E chord on acoustic — clean on first contact 2026-07-25, no pressure adjustment required (contrast with A, which needed one). A→E change now in progress
 - One-finger mini-barre alternative for the A chord — shelved for now. High E string was coming out muted, likely the barre finger drifting onto it. Needs dedicated attention later, not mixed into reps with the working 3-finger method
 
 ## Technique notes specific to this guitar

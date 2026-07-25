@@ -81,7 +81,7 @@ Per-piece detail files in `../../curriculum/classical/pieces/<piece>.md` are cre
 
 Default session: **30–45 minutes**. Build it from these blocks; pick what fits. Every session includes the **mandatory daily core** (~10 min).
 
-**Pick a coaching mode** at session start — `full` / `review-only` / `low-friction` / `recovery` / `bad-day`. Mode table is in `../base.md`. State it before the plan. Each block uses the numbered reflection format (D/A/T/Te scale 1–4, plus the H= hand diagnostic when D or A is 3 or 4). Full format in `../log_templates/daily.md`.
+**Pick a coaching mode** at session start — `full` / `review-only` / `low-friction` / `recovery` / `bad-day`. Mode table is in `../base.md`. State it before the plan. Each block uses the numbered reflection format — **always show the legend** (D–Difficulty 1=easy→4=hard, A–Accuracy 4=clean→1=messy, T–Tension 1=relaxed→4=tight, Te–Tempo 1=steady→4=drifting), plus the H= hand diagnostic when D is 3–4 or A is 1–2. Full format in `../log_templates/daily.md`.
 
 ### Mandatory daily core (~10 min)
 
