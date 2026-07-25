@@ -47,9 +47,14 @@ Coaching modes appear in `#mode/<value>` in the daily log tag block.
 - **Classical** — its own clock. Separate technique tradition (nylon, fingerstyle mechanics, posture); its skills decay independently of the others.
 - **JG-spine (electric OR acoustic)** — one shared clock. Either instrument resets it — they share the JustinGuitar/Stine curriculum and skills transfer heavily.
 
-A day counts for a clock if that track has at least one daily log that day (including backfilled unstructured ones, below).
+A day counts for a clock if that track has at least one daily log that day (including backfilled unstructured ones, below). **A lesson day counts for the clock of its tagged instrument** — a lesson with the teacher is practice. Lesson dates and their instrument live in `journal/lessons.txt` (`YYYY-MM-DD instrument[,instrument]` per line; instruments are `electric`, `acoustic`, `classical`).
 
-At every session start, right after reading the state, compute both streaks from log dates: classical from `logs/classical/`, JG-spine from the **union** of `logs/electric/` and `logs/acoustic/`.
+At every session start, right after reading the state, compute both streaks:
+
+- **Classical clock** = dates in `logs/classical/` **plus** lesson dates tagged `classical`.
+- **JG-spine clock** = the union of `logs/electric/` and `logs/acoustic/` **plus** lesson dates tagged `electric` or `acoustic`.
+
+A lesson tagged with two instruments feeds whichever clocks those instruments belong to (e.g. `electric,acoustic` feeds the JG-spine clock; a hypothetical `classical,electric` would feed both).
 
 **If both clocks are alive (no gap >2 days):** announce them in one line — "Classical: day N · Electric/acoustic: day M" — plus one short motivating line. Tone rules still apply: no cheerleading, tie it to something real (a concrete thing that improved recently). If a track's clock is close to expiring (2 skip days already), say so plainly: "Classical hits day 3 tomorrow — even 10 minutes keeps it alive."
 

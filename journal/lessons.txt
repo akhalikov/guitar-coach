@@ -1,0 +1,16 @@
+# Lessons with teacher — "YYYY-MM-DD instrument[,instrument]" per line. '#' lines ignored.
+# Instruments: electric, acoustic, classical. Multiple = comma-separated (e.g. electric,acoustic).
+# On the heatmap: a gold ring on the day; the instrument sets the fill color on lesson-only days.
+# For streaks: the lesson feeds its instrument's clock (electric/acoustic → JG-spine, classical → classical).
+2026-01-03 electric
+2026-01-10 electric
+2026-03-14 electric
+2026-03-28 electric
+2026-04-11 electric
+2026-04-25 classical
+2026-05-09 classical
+2026-05-23 classical
+2026-06-06 classical
+2026-06-21 classical
+2026-07-11 electric,acoustic
+2026-07-25 electric,acoustic

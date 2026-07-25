@@ -4,22 +4,30 @@
 <title>Guitar Practice — Contribution Graph</title>
 <style>
 :root{--bg:#0d1117;--panel:#161b22;--border:#30363d;--text:#e6edf3;--muted:#7d8590;
---empty:#21262d;--classical:#2f81f7;--acoustic:#3fb950;--electric:#f78166;--multi:#bc8cff;}
+--empty:#21262d;--classical:#2f81f7;--acoustic:#3fb950;--electric:#f78166;--multi:#bc8cff;--accent:#2f81f7;--lesson:#e3b341;}
 *{box-sizing:border-box;}body{margin:0;background:var(--bg);color:var(--text);
 font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;padding:32px 24px;}
-.wrap{max-width:960px;margin:0 auto;}h1{font-size:20px;font-weight:600;margin:0 0 4px;}
+.wrap{max-width:1000px;margin:0 auto;}h1{font-size:20px;font-weight:600;margin:0 0 4px;}
 .sub{color:var(--muted);font-size:13px;margin-bottom:24px;}
 .card{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:20px;margin-bottom:20px;}
 .stats{display:flex;flex-wrap:wrap;gap:28px;}.stat .num{font-size:26px;font-weight:700;}
 .stat .lbl{font-size:12px;color:var(--muted);margin-top:2px;}
+.ytitle{font-size:14px;font-weight:600;margin:0 0 14px;}
+.calrow{display:flex;gap:16px;align-items:flex-start;}
+.calmain{min-width:0;flex:1;}
 .graph-scroll{overflow-x:auto;padding-bottom:6px;}
 table.cal{border-spacing:3px;border-collapse:separate;}table.cal td{width:13px;height:13px;padding:0;}
 .cell{width:13px;height:13px;border-radius:3px;background:var(--empty);outline:1px solid rgba(255,255,255,.04);outline-offset:-1px;}
 .cell.classical{background:var(--classical);}.cell.acoustic{background:var(--acoustic);}
 .cell.electric{background:var(--electric);}.cell.multi{background:var(--multi);}
-.cell.future{background:transparent;outline:none;}
+.cell.lesson{box-shadow:inset 0 0 0 2px var(--lesson);}
+.cell.future{background:transparent;outline:none;box-shadow:none;}
 .daylabel,.monlabel{color:var(--muted);font-size:10px;}
 .daylabel{padding-right:6px;text-align:right;height:13px;}.monlabel{text-align:left;height:14px;font-size:11px;}
+.years{display:flex;flex-direction:column;gap:4px;flex:0 0 auto;}
+button.yr{all:unset;cursor:pointer;padding:6px 16px;border-radius:7px;font-size:13px;color:var(--text);text-align:center;min-width:60px;}
+button.yr:hover{background:#ffffff0d;}
+button.yr.active{background:var(--accent);color:#fff;font-weight:600;}
 .legend{display:flex;align-items:center;gap:16px;margin-top:14px;flex-wrap:wrap;}
 .legend .item{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);}
 .sw{width:12px;height:12px;border-radius:3px;display:inline-block;}
@@ -31,56 +39,103 @@ transition:opacity .08s;transform:translate(-50%,-130%);}
 <div class="wrap"><h1>🎸 Guitar Practice</h1>
 <div class="sub">Contribution graph — one cell per day, colored by instrument. Hover a cell for details.</div>
 <div class="card"><div class="stats" id="stats"></div></div>
-<div class="card"><div class="graph-scroll"><div id="graph"></div></div>
+<div class="card">
+<div class="calrow">
+<div class="calmain">
+<div class="ytitle" id="ytitle"></div>
+<div class="graph-scroll"><div id="graph"></div></div>
 <div class="legend">
 <div class="item"><span class="sw" style="background:var(--classical)"></span> Classical</div>
 <div class="item"><span class="sw" style="background:var(--acoustic)"></span> Acoustic</div>
 <div class="item"><span class="sw" style="background:var(--electric)"></span> Electric</div>
 <div class="item"><span class="sw" style="background:var(--multi)"></span> Multiple</div>
+<div class="item"><span class="sw" style="box-shadow:inset 0 0 0 2px var(--lesson);background:var(--empty)"></span> Lesson with teacher</div>
 <div class="item"><span class="sw" style="background:var(--empty)"></span> No practice</div>
-</div><div class="foot" id="foot"></div></div></div>
+</div>
+<div class="foot" id="foot"></div>
+</div>
+<div class="years" id="years"></div>
+</div></div></div>
 <div class="tt" id="tt"></div>
 <script>
-const PAYLOAD = {"generated": "2026-07-25 17:38 UTC", "days": {"2026-05-20": ["classical"], "2026-05-21": ["classical", "electric"], "2026-05-22": ["electric"], "2026-05-24": ["classical"], "2026-05-25": ["classical"], "2026-05-28": ["classical"], "2026-06-12": ["classical"], "2026-06-17": ["classical"], "2026-06-21": ["classical"], "2026-07-12": ["acoustic"], "2026-07-14": ["classical"], "2026-07-17": ["acoustic"]}};
+const PAYLOAD = {"generated": "2026-07-25 18:27 UTC", "days": {"2026-05-20": ["classical"], "2026-05-21": ["classical", "electric"], "2026-05-22": ["electric"], "2026-05-24": ["classical"], "2026-05-25": ["classical"], "2026-05-28": ["classical"], "2026-06-12": ["classical"], "2026-06-17": ["classical"], "2026-06-21": ["classical"], "2026-07-12": ["acoustic"], "2026-07-14": ["classical"], "2026-07-17": ["acoustic"]}, "lessons": {"2026-01-03": ["electric"], "2026-01-10": ["electric"], "2026-03-14": ["electric"], "2026-03-28": ["electric"], "2026-04-11": ["electric"], "2026-04-25": ["classical"], "2026-05-09": ["classical"], "2026-05-23": ["classical"], "2026-06-06": ["classical"], "2026-06-21": ["classical"], "2026-07-11": ["acoustic", "electric"], "2026-07-25": ["acoustic", "electric"]}};
+const FLOOR_YEAR = 2026;
 const MONTHS=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 const DAYS=["","Mon","","Wed","","Fri",""];const pad=n=>String(n).padStart(2,"0");
 const iso=d=>d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate());
 const parse=s=>{const[y,m,dd]=s.split("-").map(Number);return new Date(y,m-1,dd);};
 const classFor=i=>!i?"":(i.length>1?"multi":i[0]);
-const DATA=PAYLOAD.days||{};const keys=Object.keys(DATA).sort();
-if(keys.length){
-const first=parse(keys[0]),lastLog=parse(keys[keys.length-1]),today=new Date();
-const end=today>lastLog?today:lastLog;
-const START=new Date(first.getFullYear(),first.getMonth(),1);
-const END=new Date(end.getFullYear(),end.getMonth()+1,0);
-const gs=new Date(START);gs.setDate(gs.getDate()-gs.getDay());
-const weeks=[];let cur=new Date(gs);
-while(cur<=END){const w=[];for(let i=0;i<7;i++){w.push(new Date(cur));cur.setDate(cur.getDate()+1);}weeks.push(w);}
-let html='<table class="cal"><tr><td></td>';let lm=-1;
-weeks.forEach(w=>{const f=w[0],m=f.getMonth();
-if(m!==lm&&f<=END&&f.getDate()<=7){html+=`<td class="monlabel">${MONTHS[m]}</td>`;lm=m;}
-else html+='<td class="monlabel"></td>';});html+='</tr>';
-for(let dow=0;dow<7;dow++){html+=`<tr><td class="daylabel">${DAYS[dow]}</td>`;
-weeks.forEach(w=>{const d=w[dow];
-if(d<START||d>END){html+='<td><div class="cell future"></div></td>';return;}
-const k=iso(d),ins=DATA[k],cls=classFor(ins);
-const lab=ins?ins.map(s=>s[0].toUpperCase()+s.slice(1)).join(" + "):"No practice";
-html+=`<td><div class="cell ${cls}" data-date="${k}" data-label="${lab}"></div></td>`;});
-html+='</tr>';}html+='</table>';document.getElementById('graph').innerHTML=html;
-const per={classical:0,acoustic:0,electric:0};keys.forEach(k=>DATA[k].forEach(i=>per[i]++));
-let longest=0,run=0,prev=null;keys.forEach(k=>{const d=parse(k);
-if(prev&&(d-prev)===86400000)run++;else run=1;longest=Math.max(longest,run);prev=d;});
-const stats=[["Total practice days",keys.length],["Classical",per.classical],
-["Acoustic",per.acoustic],["Electric",per.electric],["Longest daily streak",longest]];
-document.getElementById('stats').innerHTML=stats.map(([l,n])=>
-`<div class="stat"><div class="num">${n}</div><div class="lbl">${l}</div></div>`).join("");
-document.getElementById('foot').textContent="Generated "+(PAYLOAD.generated||"");
+const cap=s=>s[0].toUpperCase()+s.slice(1);
+const DATA=PAYLOAD.days||{};
+const LESSONS=PAYLOAD.lessons||{};
+const keys=Object.keys(DATA).sort();
 const tt=document.getElementById('tt');
-document.querySelectorAll('.cell[data-date]').forEach(c=>{
-c.addEventListener('mousemove',e=>{const d=parse(c.dataset.date);
-const p=d.toLocaleDateString(undefined,{weekday:'short',month:'short',day:'numeric',year:'numeric'});
-tt.textContent=`${c.dataset.label} · ${p}`;tt.style.left=e.clientX+'px';
-tt.style.top=e.clientY+'px';tt.style.opacity=1;});
-c.addEventListener('mouseleave',()=>tt.style.opacity=0);});
-}else{document.getElementById('graph').innerHTML="<p style='color:var(--muted)'>No practice logged yet.</p>";}
+
+// Year buttons: FLOOR_YEAR .. max(current year, latest data year), newest first
+const nowY=new Date().getFullYear();
+const dataYears=keys.map(k=>+k.slice(0,4));
+const maxY=Math.max(nowY, ...(dataYears.length?dataYears:[nowY]), FLOOR_YEAR);
+const years=[];for(let y=maxY;y>=FLOOR_YEAR;y--)years.push(y);
+
+function renderYear(year){
+  const START=new Date(year,0,1), END=new Date(year,11,31);
+  const gs=new Date(START);gs.setDate(gs.getDate()-gs.getDay());
+  const weeks=[];let cur=new Date(gs);
+  while(cur<=END){const w=[];for(let i=0;i<7;i++){w.push(new Date(cur));cur.setDate(cur.getDate()+1);}weeks.push(w);}
+  let html='<table class="cal"><tr><td></td>';let lm=-1;
+  weeks.forEach(w=>{const f=w[0],m=f.getMonth();
+    if(f.getFullYear()===year&&m!==lm&&f.getDate()<=7){html+=`<td class="monlabel">${MONTHS[m]}</td>`;lm=m;}
+    else html+='<td class="monlabel"></td>';});
+  html+='</tr>';
+  for(let dow=0;dow<7;dow++){html+=`<tr><td class="daylabel">${DAYS[dow]}</td>`;
+    weeks.forEach(w=>{const d=w[dow];
+      if(d<START||d>END){html+='<td><div class="cell future"></div></td>';return;}
+      const k=iso(d),pins=DATA[k]||[],lins=LESSONS[k],isL=!!lins;
+      const uni=[...new Set([...pins,...(lins||[])])];
+      let cls=classFor(uni.length?uni:null);if(isL)cls+=(cls?' ':'')+'lesson';
+      const names=uni.map(cap).join(" + ");
+      const lab=uni.length?(isL?names+" · Lesson with teacher":names):"No practice";
+      html+=`<td><div class="cell ${cls}" data-date="${k}" data-label="${lab}"></div></td>`;});
+    html+='</tr>';}
+  html+='</table>';
+  document.getElementById('graph').innerHTML=html;
+
+  // Per-year stats
+  const yk=keys.filter(k=>k.slice(0,4)==String(year));
+  const per={classical:0,acoustic:0,electric:0};
+  yk.forEach(k=>DATA[k].forEach(i=>per[i]++));
+  const lk=Object.keys(LESSONS).filter(k=>k.slice(0,4)==String(year));
+  const active=[...new Set([...yk,...lk])].sort();
+  let longest=0,run=0,prev=null;
+  active.forEach(k=>{const d=parse(k);if(prev&&(d-prev)===86400000)run++;else run=1;longest=Math.max(longest,run);prev=d;});
+  const stats=[["Practice days",yk.length],["Lessons",lk.length],["Classical",per.classical],
+    ["Acoustic",per.acoustic],["Electric",per.electric],["Longest daily streak",longest]];
+  document.getElementById('stats').innerHTML=stats.map(([l,n])=>
+    `<div class="stat"><div class="num">${n}</div><div class="lbl">${l}</div></div>`).join("");
+  document.getElementById('ytitle').textContent=`${yk.length} practice day${yk.length===1?'':'s'} in ${year}`;
+
+  // Tooltips
+  document.querySelectorAll('.cell[data-date]').forEach(c=>{
+    c.addEventListener('mousemove',e=>{const d=parse(c.dataset.date);
+      const p=d.toLocaleDateString(undefined,{weekday:'short',month:'short',day:'numeric',year:'numeric'});
+      tt.textContent=`${c.dataset.label} · ${p}`;tt.style.left=e.clientX+'px';
+      tt.style.top=e.clientY+'px';tt.style.opacity=1;});
+    c.addEventListener('mouseleave',()=>tt.style.opacity=0);});
+}
+
+// Build year buttons
+const ybox=document.getElementById('years');
+years.forEach((y,i)=>{
+  const b=document.createElement('button');b.className='yr';b.textContent=y;
+  b.addEventListener('click',()=>{document.querySelectorAll('button.yr').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');renderYear(y);location.hash=y;});
+  ybox.appendChild(b);
+});
+document.getElementById('foot').textContent="Generated "+(PAYLOAD.generated||"");
+
+// Default: hash year if valid, else newest
+const wanted=+location.hash.replace('#','');
+const initial=years.includes(wanted)?wanted:years[0];
+const initBtn=[...ybox.children].find(b=>+b.textContent===initial);
+if(initBtn){initBtn.classList.add('active');renderYear(initial);}
 </script></body></html>
