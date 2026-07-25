@@ -2,10 +2,96 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="refresh" content="0; url=./journal/practice-heatmap.html">
-<title>Guitar Practice</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guitar Coach</title>
+<style>
+  :root{
+    --bg:#0d1117; --panel:#161b22; --border:#30363d; --text:#e6edf3;
+    --muted:#7d8590; --accent:#2f81f7; --accent-soft:#1f6feb33;
+  }
+  *{box-sizing:border-box;}
+  html,body{height:100%;}
+  body{
+    margin:0; background:var(--bg); color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+    display:grid; grid-template-columns:220px 1fr; grid-template-rows:100vh;
+  }
+  aside{
+    border-right:1px solid var(--border); background:var(--panel);
+    padding:22px 16px; display:flex; flex-direction:column; gap:6px; overflow-y:auto;
+  }
+  .brand{font-size:16px; font-weight:700; margin:0 0 4px; padding:0 8px;}
+  .brand .sub{display:block; font-size:11px; color:var(--muted); font-weight:400; margin-top:2px;}
+  nav{display:flex; flex-direction:column; gap:2px; margin-top:12px;}
+  .navlabel{font-size:10px; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); padding:8px 8px 4px;}
+  button.nav{
+    all:unset; cursor:pointer; padding:8px 10px; border-radius:7px; font-size:13px;
+    color:var(--text); display:flex; align-items:center; gap:8px;
+  }
+  button.nav:hover{background:#ffffff0d;}
+  button.nav.active{background:var(--accent-soft); color:#fff;}
+  button.nav .dot{width:8px; height:8px; border-radius:2px; background:var(--accent);}
+  .foot{margin-top:auto; font-size:11px; color:var(--muted); padding:10px 8px 0;}
+  .foot a{color:var(--muted);}
+  main{position:relative;}
+  iframe{border:0; width:100%; height:100%; display:block; background:var(--bg);}
+  .placeholder{
+    display:none; height:100%; align-items:center; justify-content:center;
+    color:var(--muted); font-size:14px; text-align:center; padding:40px;
+  }
+</style>
 </head>
 <body>
-<p>Redirecting to the <a href="./journal/practice-heatmap.html">practice heatmap</a>…</p>
+<aside>
+  <p class="brand">🎸 Guitar Coach<span class="sub">practice dashboard</span></p>
+  <div class="navlabel">Pages</div>
+  <nav id="nav"></nav>
+  <div class="foot">Built from the <code>journal/</code> logs.<br><a href="https://github.com/akhalikov/guitar-coach" target="_blank" rel="noopener">Repository →</a></div>
+</aside>
+<main>
+  <iframe id="frame" title="page"></iframe>
+  <div class="placeholder" id="placeholder"></div>
+</main>
+
+<script>
+// ── Add a page here to grow the dashboard ──────────────────────────────
+// { id, label, dot color, and EITHER src (an html file) OR soon:true (placeholder) }
+const PAGES = [
+  { id:"heatmap", label:"Practice Heatmap", color:"#2f81f7", src:"journal/practice-heatmap.html" },
+  // Examples for the future — flip soon:true → src:"..." when the page exists:
+  // { id:"progress", label:"Progress",   color:"#3fb950", soon:true },
+  // { id:"repertoire", label:"Repertoire", color:"#bc8cff", soon:true },
+];
+// ───────────────────────────────────────────────────────────────────────
+
+const nav = document.getElementById("nav");
+const frame = document.getElementById("frame");
+const placeholder = document.getElementById("placeholder");
+
+function select(p, btn){
+  document.querySelectorAll("button.nav").forEach(b=>b.classList.remove("active"));
+  btn.classList.add("active");
+  if(p.soon){
+    frame.style.display="none";
+    placeholder.style.display="flex";
+    placeholder.textContent = p.label + " — coming soon.";
+  } else {
+    placeholder.style.display="none";
+    frame.style.display="block";
+    if(frame.getAttribute("src") !== p.src) frame.setAttribute("src", p.src);
+    location.hash = p.id;
+  }
+}
+
+PAGES.forEach((p,i)=>{
+  const btn = document.createElement("button");
+  btn.className = "nav";
+  btn.innerHTML = `<span class="dot" style="background:${p.color||'#2f81f7'}"></span>${p.label}`;
+  btn.addEventListener("click", ()=>select(p, btn));
+  nav.appendChild(btn);
+  const wanted = location.hash.replace("#","");
+  if(wanted ? p.id===wanted : i===0) select(p, btn);
+});
+</script>
 </body>
 </html>

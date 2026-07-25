@@ -2,6 +2,8 @@
 
 Artur's practice data for the guitar coaching system: daily logs, progress markers, recordings, and the generated heatmap. The coaching system itself (prompts, curriculum, CLAUDE.md dispatcher) lives at the repo root, one level up.
 
+**Live practice heatmap:** https://akhalikov.github.io/guitar-coach/journal/practice-heatmap.html — published via GitHub Pages, rebuilt from these logs on every push.
+
 ## Layout
 
 ```
