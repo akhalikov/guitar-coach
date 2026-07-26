@@ -7,7 +7,6 @@
 | **Technique** | iconic riff (power-chord intervals on strings 4-3), pick + thumb downstrokes |
 | **Guitar** | Tele SH (bridge HB) or Strat HSS (bridge HB) |
 | **Status** | foundation song (criteria for completion) |
-| **Notion source** | [link](https://www.notion.so/31e06e256dc380ed94a6eb3758207e5a) |
 
 ## 🎸 Guitar and tone
 

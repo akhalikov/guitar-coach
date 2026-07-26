@@ -25,7 +25,7 @@ What's in the rig. Update when something changes.
   - **Position 2** — bridge HB + middle SC
   - **Position 3** — middle SC alone
   - **Position 4** — middle + neck SC (combined, "in-between" tone)
-  - **Position 5 (neck)** — neck single coil. Warm, clean, vocal. Good for: Watching Over Me verse, Zombie verse, About Today, Hurt, ballads.
+  - **Position 5 (neck)** — neck single coil. Warm, clean, vocal. Good for: ballads, clean verses.
 - Strings: (note gauge)
 - Last setup: —
 - Notes: Use **position 5** for clean verses, **position 1** for distorted choruses and riffs. Same guitar covers the dynamic range of most songs.
@@ -48,7 +48,7 @@ Per-song specific settings are documented in each `songs/<song>.md`.
 ### BOSS SD-1 (Super Overdrive)
 
 - **Used when:** pushing the CRUNCH channel into more sustain and grit (Smoke on the Water optional, chorus parts of ballads, Enter Sandman alternative path).
-- **Bypassed for:** clean ballads, Knockin', Stand By Me, Hurt, About Today.
+- **Bypassed for:** clean ballads, Knockin', Stand By Me.
 - **Typical settings when on:** Drive 5–6, Tone 5, Level 5–6 (adjusts per song).
 
 ## Accessories

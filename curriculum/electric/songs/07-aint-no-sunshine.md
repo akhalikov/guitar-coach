@@ -9,7 +9,6 @@
 | **Pentatonic for solo** | E minor pentatonic (position 1) |
 | **Guitar** | Strat HSS neck (pos 5) / Tele SH neck / classical guitar also works beautifully |
 | **Status** | improvisation group |
-| **Notion source** | [link](https://www.notion.so/34406e256dc3812dba1cd935a76534f1) |
 
 ## Why this song is special
 
@@ -71,7 +70,7 @@ You can also play it on a **classical guitar** — nylon strings give a warm, so
 ## 🎶 Improvising over this song
 
 > 💡 **Which pentatonic fits?**
-> The song is in **A minor**. Use **E minor pentatonic** — same position (open) as Hurt, Zombie, and Still Loving You. Withers's voice literally moves along these notes — find his melody on the fretboard.
+> The song is in **A minor**. Use **E minor pentatonic** — same position (open) as Hurt. Withers's voice literally moves along these notes — find his melody on the fretboard.
 
 | String | Frets |
 |---|---|

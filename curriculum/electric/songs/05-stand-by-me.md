@@ -8,7 +8,6 @@
 | **Pentatonic for solo** | E minor pentatonic (relative minor of G) |
 | **Guitar** | Tele SH or Strat HSS — neck pickup |
 | **Status** | foundation song (criteria for completion) |
-| **Notion source** | [link](https://www.notion.so/33b06e256dc38197b41edaa856356207) |
 
 ## Why this song is perfect
 

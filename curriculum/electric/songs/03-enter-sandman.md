@@ -7,7 +7,6 @@
 | **Technique** | palm muting, power chords, alternate picking, gallop rhythm (down-down-up) |
 | **Guitar** | Squier Sonic Strat HSS — bridge HB |
 | **Status** | foundation song (criteria for completion) |
-| **Notion source** | [link](https://www.notion.so/32306e256dc381688eb9c6c185ee9fd2) |
 
 ## Why this song is perfect
 

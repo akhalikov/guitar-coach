@@ -8,7 +8,6 @@
 | **Pentatonic for solo** | E minor pentatonic (relative minor of G) |
 | **Guitar** | Squier Affinity Tele SH — neck pickup |
 | **Status** | foundation song — first target (criteria for completion) |
-| **Notion source** | [link](https://www.notion.so/32306e256dc380f2b202d8cd75cc3622) |
 
 ## Why this song is a perfect starting point
 

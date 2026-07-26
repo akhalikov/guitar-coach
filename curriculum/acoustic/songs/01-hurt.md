@@ -1,15 +1,15 @@
-# 🖤 6. Hurt — Johnny Cash (Nine Inch Nails cover)
+# 🖤 Hurt — Johnny Cash (Nine Inch Nails cover)
 
 | | |
 |---|---|
 | **Key** | A minor |
 | **Tempo** | ~63 BPM |
+| **Tab (local)** | [`tabs/01-hurt-TAB-songsterr.pdf`](tabs/01-hurt-TAB-songsterr.pdf) |
 | **Chords** | Am, C, G, D |
-| **Technique** | arpeggio (fingerpicking or pick), dynamic control |
+| **Technique** | arpeggio (fingerpicking), dynamic control |
 | **Pentatonic for solo** | E minor pentatonic (relative minor of C major; works over Am) |
-| **Guitar** | Tele SH or Strat HSS — neck pickup |
-| **Status** | composition group (after the foundation 5) |
-| **Notion source** | [link](https://www.notion.so/33f06e256dc381f1a728eddcd2e3af46) |
+| **Guitar** | Baton Rouge acoustic — fingerpicked |
+| **Status** | acoustic-exclusive — Maintenance (plays it time to time; **next: add vocals**) |
 
 ## Why this song is special
 
@@ -39,25 +39,7 @@
 
 ## 🎸 Guitar and tone
 
-### Which guitar to use?
-
-**Tele SH or Strat HSS** — neck pickup (position 1 on the neckward side)
-
-Clean, warm, slightly dark tone. Cash played an acoustic, but with an electric on the neck pickup it sounds very close.
-
-### Yamaha THR5 — settings
-
-| Parameter | Setting |
-|---|---|
-| Amp Type | CLEAN |
-| Gain | 1–2 |
-| Master | 3–4 |
-| Tone | 4 (a touch darker than neutral) |
-| Reverb | Medium (3–4) |
-
-### BOSS SD-1
-
-- Not needed — fully clean tone.
+Played on the **Baton Rouge acoustic**, fingerpicked. Cash's version is acoustic, so it sits naturally here — no amp or effects; tone comes entirely from touch and dynamics. Let each arpeggio note ring, and use the soft/loud contrast to carry the emotion.
 
 ## 🎯 Focus when working on it
 
@@ -82,6 +64,7 @@ That's the classic fingerpicking pattern. You can do it with a pick too — one 
 ## Lessons
 
 - [Hurt — Johnny Cash — Songsterr](https://www.songsterr.com)
+- **Full note-by-note tab (local PDF):** [`tabs/01-hurt-TAB-songsterr.pdf`](tabs/01-hurt-TAB-songsterr.pdf)
 
 ## Videos
 

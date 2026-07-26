@@ -7,7 +7,6 @@
 | **Technique** | fast alternate picking on a single string, position shifts |
 | **Guitar** | Squier Affinity Tele SH — bridge single coil |
 | **Status** | foundation song (criteria for completion) |
-| **Notion source** | [link](https://www.notion.so/32306e256dc38170be22c06612fc1870) |
 
 ## Why this song is perfect
 

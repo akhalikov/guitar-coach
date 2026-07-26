@@ -9,7 +9,6 @@
 | **Pentatonic for solo** | E minor pentatonic (position 1) |
 | **Guitar** | Strat HSS — verse: neck (position 5), chorus: bridge HB (position 1) |
 | **Status** | improvisation group |
-| **Notion source** | [link](https://www.notion.so/34006e256dc38161833bd23e9a106bb4) |
 
 ## Why this song is special
 

@@ -16,11 +16,24 @@ Every practice session — regardless of instrument — follows the same loop:
 4. **Mirror back and propose the plan.** State where you think the student is and what fits today's mode. 3–5 lines max. Let them confirm or redirect before diving in.
 5. **Walk through the session block by block.** Each block has a **mini-win target** (see below). On electric/acoustic, any block that introduces or reviews a chord opens with the **chord-notes routine** (see below). Be specific: name the chord, the measure, the BPM, the fingering. Count out loud in text. Use TAB or chord charts in code blocks when useful.
 6. **After each block, ask the numbered reflection** — **always show the legend** (D–Difficulty 1=easy→4=hard, A–Accuracy 4=clean→1=messy, T–Tension 1=relaxed→4=tight, Te–Tempo 1=steady→4=drifting; see `prompts/log_templates/daily.md`). Reply with digits. If Difficulty hits 3–4 **or Accuracy drops to 1–2**, fire the **Q5 hand diagnostic** to figure out whether fretting or picking is the culprit, then route the next block accordingly.
-7. **Wrap with one explicit decision: `repeat`, `advance`, or `simplify`** for the current lesson/piece. Don't leave it ambiguous. This becomes the `#status/` tag in the log.
+7. **Wrap with one explicit decision: `repeat`, `advance`, or `simplify`** for the current lesson/piece. Don't leave it ambiguous. This becomes the `#status/` tag in the log. **Bias toward `advance`** — see "Progress over polish".
 8. **Write the daily log.** To `journal/logs/<instrument>/YYYY/MM-DD.md` (or `MM-DD-2.md` for a second session same day, `MM-DD-3.md` for a third) using `prompts/log_templates/daily.md`. Fill the tag block carefully — tags are how weekly reviews stay accurate.
 9. **Update progress.** Tick off completed lessons in `journal/progress/<instrument>.md`, advance the current focus, update what's clicking and what's not.
 10. **Update piece/song detail file** if a milestone was hit. For electric this is `curriculum/electric/songs/<song>.md`; for classical, `curriculum/classical/pieces/<piece>.md` (when those exist). Don't bury per-piece milestones in the daily log alone.
 11. **Prepare the commit bash block** (see "Saving changes" below). Don't run git from the sandbox. No heatmap step — CI rebuilds it on push (see "Heatmap — built by CI").
+
+---
+
+## Progress over polish (core principle)
+
+**The student is motivated by playing songs, not by perfecting drills.** A felt sense of forward progress matters more than flawless execution. Resolve the polish-vs-progress tension in favor of progress, every time:
+
+- **"Good enough to use in a song" is the bar — not perfection.** A chord, change, or technique graduates when it's *usable in a real song at a workable tempo*, not when it hits a perfect rep count. Don't gate advancement on flawless reps.
+- **When in doubt, advance.** In the repeat/advance/simplify wrap, lean `advance` unless the material genuinely isn't functional yet. Carry lingering rough edges (buzzes, speed, evenness) as **review/warm-up items**, not blockers.
+- **Keep songs in view.** Regularly tie current work to a song from the instrument's song list ("this unlocks [song]"). Pull a song block in as soon as the chords are *usable*, even if rough — don't wait for clean. Prefer the path that makes a real song playable soonest.
+- **Name the progress.** At wrap, briefly say what's now unlocked and how far they've come. Momentum is the point.
+
+This is **not** license to abandon technique or skip the curriculum sequence — it means polish happens in the background (review/maintenance lanes), never as a gate that stalls the sense of moving forward. When the plateau rule or a perfection instinct conflicts with this principle, this principle wins.
 
 ---
 
@@ -216,6 +229,7 @@ Songs and pieces live in three lanes — never lump them all together:
 - During low-energy or bad-day sessions: pull from `Maintenance` first.
 - A song graduates from `Learning` → `Polishing` when the student can play it end-to-end without restarting, even with imperfections.
 - A song graduates from `Polishing` → `Maintenance` when it's clean at tempo with dynamics and feel, played confidently from memory.
+- **Dropped songs/pieces are archived, not deleted.** When a song leaves the active lists (no longer played), move its detail file into an `archive/` subfolder (`curriculum/electric/songs/archive/`, `curriculum/classical/pieces/archive/`, etc.) rather than deleting it, and note the move in the list's "dropped" line. Restoring = move the file back and re-add it to the list.
 
 ---
 

@@ -45,18 +45,15 @@ Use this before pulling a song into the acoustic Learning lane. **Shared** songs
 | 1 | [Knockin' on Heaven's Door](../electric/songs/01-knocking-on-heavens-door.md) | Shared | ✅ Great | Simple open chords, exactly the kind of song acoustic is built for |
 | 2 | [Miserlou](../electric/songs/04-miserlou.md) | Shared | ⚠️ Reduced | Great alternate-picking drill on any guitar, but the surf reverb tone is lost unplugged |
 | 3 | [Stand By Me](../electric/songs/05-stand-by-me.md) | Shared | ✅ Great | Classic acoustic strumming song |
-| 4 | [Hurt](../electric/songs/06-hurt.md) | Shared | ✅ Great | Arpeggiated — also a natural fingerstyle candidate here |
-| 5 | [Watching Over Me](../electric/songs/07-watching-over-me.md) | Shared | ✅ Good | Chord-based verse works well acoustic; the distorted chorus loses some weight but still playable |
-| 6 | [Vykhoda Net (Выхода Нет)](../electric/songs/08-vyhoda-net.md) | Shared | ✅ Good | Same profile as Watching Over Me |
-| 7 | [Zombie](../electric/songs/09-zombie.md) | Shared | ✅ Great | Well known in its own acoustic arrangement — strummed verse translates directly |
-| 8 | [About Today](../electric/songs/11-about-today.md) | Shared | ✅ Great | Slow build, fingerpicked intro — suits acoustic dynamics well |
-| 9 | [Ain't No Sunshine](../electric/songs/12-aint-no-sunshine.md) | Shared | ✅ Great | Commonly played acoustic; A minor pentatonic still applies |
-| 10 | [Dust in the Wind — Kansas](songs/01-dust-in-the-wind.md) | Acoustic-exclusive | ✅ Native | Travis-picking standard, written for acoustic — the fingerstyle centerpiece of this lane |
-| 11 | [Это всё — ДДТ](songs/02-eto-vse.md) | Acoustic-exclusive | ✅ Native | Open chords, no barre, mixes перебор (fingerstyle) verses with a strummed close-out — good technique bridge |
-| 12 | [Ветер — ДДТ](songs/03-veter.md) | Acoustic-exclusive | ✅ Native | Simple E minor chord set, but the strum pattern has real rhythmic bite for a "simple chords" song |
-| 13 | [More Than Words — Extreme](songs/04-more-than-words.md) | Acoustic-exclusive | ✅ Native | Percussive fingerstyle showcase — easy chords, advanced right hand (muted "chuck" + syncopation). Advanced song, but **actively in the Learning lane** (~half learned already) |
+| 4 | [Hurt](songs/01-hurt.md) | Acoustic-exclusive | ✅ Native | Arpeggiated fingerstyle — Cash's version is acoustic; Maintenance lane (plays it time to time; next: add vocals). First song learned on acoustic. |
+| 5 | [Vykhoda Net (Выхода Нет)](../electric/songs/06-vyhoda-net.md) | Shared | ✅ Good | Chord-based verse works well acoustic; distorted chorus loses some weight but still playable |
+| 6 | [Ain't No Sunshine](../electric/songs/07-aint-no-sunshine.md) | Shared | ✅ Great | Commonly played acoustic; A minor pentatonic still applies |
+| 7 | [Dust in the Wind — Kansas](songs/05-dust-in-the-wind.md) | Acoustic-exclusive | ✅ Native | Travis-picking standard, written for acoustic — the fingerstyle centerpiece of this lane |
+| 8 | [Это всё — ДДТ](songs/02-eto-vse.md) | Acoustic-exclusive | ✅ Native | Open chords, no barre, mixes перебор (fingerstyle) verses with a strummed close-out — good technique bridge |
+| 9 | [Ветер — ДДТ](songs/03-veter.md) | Acoustic-exclusive | ✅ Native | Simple E minor chord set, but the strum pattern has real rhythmic bite for a "simple chords" song |
+| 10 | [More Than Words — Extreme](songs/04-more-than-words.md) | Acoustic-exclusive | ✅ Native | Percussive fingerstyle showcase — easy chords, advanced right hand (muted "chuck" + syncopation). Advanced song, but **actively in the Learning lane** (~half learned already) |
 
-**Not tracked on acoustic at all:** Smoke on the Water and Enter Sandman depend on distortion/palm-muting for the effect — they stay on electric only, not even as a reduced-fit entry here. Still Loving You was dropped from the acoustic lane by request.
+**Not tracked on acoustic at all:** Smoke on the Water and Enter Sandman depend on distortion/palm-muting for the effect — they stay on electric only, not even as a reduced-fit entry here. Dropped by request (2026-07-27), removed from both lists: Watching Over Me, Zombie, Still Loving You, About Today (moved to `../electric/songs/archive/`, not deleted).
 
 **Reading the flags:** ✅ Great/Good/Native = safe to pull into the acoustic Learning lane whenever it fits the rotation. ⚠️ Reduced = fine as a technique exercise, but don't treat "clean on acoustic" as the finish line — the electric version is still the target. ⚠️ Stretch = well above current level; keep as wishlist/preview, don't pull into active Learning until the prerequisite technique is solid.
 

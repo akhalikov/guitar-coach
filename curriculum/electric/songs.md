@@ -8,19 +8,26 @@ Three lanes per the repertoire convention (see `../../prompts/base.md` → "Repe
 
 *Actively building, fragile. Needs slow practice and full attention. Pull from here first in normal sessions. Aim for **one** song here at a time.*
 
-— (none yet — first session will pick the first target from the planned order below, almost certainly **Knockin' on Heaven's Door**)
+- **Ain't No Sunshine — Bill Withers** — **current active target** (not started yet; the one to focus on next). A-minor pentatonic vocal-phrasing song.
+- **Enter Sandman** — main riff building; parked right now (not actively played).
+- **Miserlou** — opening riff building; parked right now.
+
+*Active pull = Ain't No Sunshine. Enter Sandman & Miserlou are started-but-parked — per the one-in-Learning guideline, treat Ain't No Sunshine as the focus and rotate the others in as it settles.*
 
 ## Polishing
 
 *Playable end-to-end but rough. Working on consistency, feel, dynamics, memory. The longest-tenure lane — most songs live here for a while.*
 
-— (none yet)
+- **Knockin' on Heaven's Door** — plays it time to time. **Next step: add vocals** while playing.
+- **Vykhoda Net (Выхода Нет)** — needs focused reps to smooth it out.
+- **Smoke on the Water** — main riff; parked right now (not actively played).
+- **Stand By Me** — parked right now (not actively played).
 
 ## Maintenance
 
 *Solid, just keeping it warm. Pull from here in low-friction and bad-day mode.*
 
-— (none yet)
+— (none yet — Hurt moved to the acoustic repertoire 2026-07-27)
 
 ---
 
@@ -36,7 +43,7 @@ Full rules in `../../prompts/base.md` → "Repertoire lanes".
 
 ---
 
-## The planned order (from the original Notion plan)
+## The planned order (from the original plan)
 
 The lanes above are the **active** state. The list below is the **planned sequence** — what song to introduce next when Learning needs filling.
 
@@ -54,28 +61,24 @@ These five songs, played cleanly end-to-end, mean the foundation is laid.
 
 ### 🎼 Composition group (after foundation 5)
 
-| # | Song | Key | New skill |
-|---|---|---|---|
-| 6 | [Hurt — Johnny Cash](songs/06-hurt.md) | A minor | Arpeggio (fingerpicking or pick) |
+*Hurt — Johnny Cash moved to the acoustic repertoire (2026-07-27) — it's a fingerstyle acoustic piece. This group is currently empty.*
 
 ### 🎶 Improvisation group — all in E minor, all under the same Em pentatonic
 
-These six songs share the Em → C → G → D progression (or close) and the same E minor pentatonic position. The goal is **vocal phrasing** improv over backing tracks — finding melodies on the fretboard that imitate the vocal lines.
+These songs share the Em → C → G → D progression (or close) and the same E minor pentatonic position. The goal is **vocal phrasing** improv over backing tracks — finding melodies on the fretboard that imitate the vocal lines.
 
 | # | Song | Key |
 |---|---|---|
-| 7 | [Watching Over Me — Iced Earth](songs/07-watching-over-me.md) | E minor |
-| 8 | [Vykhoda Net (Выхода Нет) — Splean](songs/08-vyhoda-net.md) | E minor |
-| 9 | [Zombie — The Cranberries](songs/09-zombie.md) | E minor |
-| 10 | [Still Loving You — Scorpions](songs/10-still-loving-you.md) | E minor |
-| 11 | [About Today — The National](songs/11-about-today.md) | E minor 🎯 *the song that started it all* |
-| 12 | [Ain't No Sunshine — Bill Withers](songs/12-aint-no-sunshine.md) | A minor (works with Em pentatonic) |
+| 6 | [Vykhoda Net (Выхода Нет) — Splean](songs/06-vyhoda-net.md) | E minor |
+| 7 | [Ain't No Sunshine — Bill Withers](songs/07-aint-no-sunshine.md) | A minor (works with Em pentatonic) |
+
+*Dropped for now (2026-07-27): Watching Over Me (Iced Earth), Zombie (The Cranberries), Still Loving You (Scorpions), About Today (The National). Moved to [`songs/archive/`](songs/archive/) rather than deleted — restore by moving the file back and re-adding it here.*
 
 ---
 
 ## What "foundation laid" means
 
-From the Notion plan, the foundation is laid when you can:
+From the original plan, the foundation is laid when you can:
 
 - Play **Knockin' on Heaven's Door** — cleanly, in time, end to end
 - Play **Stand By Me** — cleanly, in time, end to end

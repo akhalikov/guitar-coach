@@ -11,20 +11,24 @@ Updated after every session. The coach reads this first.
 
 ## Current focus
 
-**JustinGuitar:** Grade 1 → Module 1: First Steps → **A→D LOCKED** (07-25). **E chord** solid. **D→E landed 07-26** — 17-18/20 clean first contact (win). **A→E / A↔E at 60 BPM = 14-15/20 (07-26), NOT locked** — the A-chord 4th-string (D) buzz returns under time pressure; isolation fix reliably clears it (5/5) but needs to hold *during* changes. Next = open with the A-chord isolation drill then A↔E at 60 to 18/20; after that all four Grade 1 changes (A↔D, A↔E, D↔E) are in play.
+**JustinGuitar:** Grade 1 → **advancing to Module 2** (Rhythm & Chord Changes: Em, Am, DDUUDU strum, first riff). Module 1 chords/changes are essentially there — A→D locked, E solid, D→E won (17-18/20). A↔E at 60 = 14-15/20 (A-chord D-string buzz under speed) is **carried as a review/warm-up item, not a gate** — student's call to move on. Next session: start Module 2 (introduce Em + Am), with a short A↔E buzz-check folded into the warm-up rather than leading with it.
 
 **Theory (Stine):** Module 1 — Understanding Notes → completed = 7 prime notes, open string names, sharps & flats, "BE" mnemonic, enharmonics, chromatic scale ascending. **Descending chromatic LOCKED 2026-07-26** — passed cold (A→A♭→G→G♭→F→E) after two tired misses; doing it cold/first worked. Next = half-step / whole-step.
 
-**Songs in rotation:** none yet — pick first song after A, D, E chords are usable
+**Songs in rotation** (full lane state in `curriculum/electric/songs.md`):
+- **Learning:** Ain't No Sunshine (active focus — not started, the one to build next); Enter Sandman + Miserlou (riffs building, parked).
+- **Polishing:** Knockin' on Heaven's Door (**next: add vocals**); Vykhoda Net (needs focus to smooth); Smoke on the Water + Stand By Me (parked).
+- **Maintenance:** — (Hurt moved to the acoustic repertoire 2026-07-27).
+- The growth edge per "Progress over polish": **singing while playing** on Knockin' (electric) and Hurt (now acoustic), and getting Ain't No Sunshine started.
 
 ---
 
 ## JustinGuitar — checklist
 
 ### Grade 1
-- [ ] Module 0: Guitar basics (tuning, posture, parts of guitar, plugging in the electric)
-- [ ] Module 1: First Steps (chord charts, A, D, E, first strumming, anchor finger)
-- [ ] Module 2: Rhythm & Chord Changes (Em, Am, DDUUDU strum, first riff)
+- [x] Module 0: Guitar basics (tuning, posture, parts of guitar, plugging in the electric)
+- [x] Module 1: First Steps (chord charts, A, D, E, first strumming, anchor finger) — advanced 2026-07-26 (A↔E buzz carried as a review item)
+- [ ] Module 2: Rhythm & Chord Changes (Em, Am, DDUUDU strum, first riff) ← **current**
 - [ ] Module 3: More Chords (G, D7, G7, chord perfect)
 - [ ] Module 4: Note Reading String 1 & 2
 - [ ] Module 5: Rhythm Patterns & Dynamics (C chord, counting subdivisions)
@@ -114,7 +118,7 @@ Updated after every session. The coach reads this first.
 
 ## What's not
 
-- **A-chord 4th-string (D) buzz under speed** — returns during A↔E changes at 60 BPM (2026-07-26, Strat). Not string tension (Strat has low action) — a fretting placement/pressure issue; the isolation drill clears it (5/5 clean plucks) but it must hold *during* changes. Open next session with the drill → straight into A↔E at 60, target 18/20
+- **A-chord 4th-string (D) buzz under speed** — returns during A↔E changes at 60 BPM (2026-07-26, Strat). Fretting placement/pressure, not string tension (Strat has low action). **Demoted to a review/warm-up item** (student's call): fold a quick A↔E buzz-check into warm-ups; don't gate Module 2 progress on it.
 - Strum string accuracy — occasionally hits string 5 on D or string 6 on A; needs pause-before-strum habit
 - Chromatic warm-up currently at frets 5–8 (hand span not yet wide enough for frets 1–4)
 

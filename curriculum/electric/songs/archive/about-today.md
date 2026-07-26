@@ -9,7 +9,6 @@
 | **Pentatonic for solo** | E minor pentatonic (position 1) |
 | **Guitar** | Squier Sonic Strat HSS — neck pickup (pos 5) |
 | **Status** | improvisation group — **the song that started it all** 🎯 |
-| **Notion source** | [link](https://www.notion.so/34006e256dc381aca24be9cdaea2e210) |
 
 ## Why this song is special
 
