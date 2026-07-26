@@ -5,13 +5,13 @@ Updated after every acoustic session. The coach reads this first, alongside `pro
 **Status:** Active
 **Started:** 2026-07-12
 **Daily target:** 25 min (matching electric's target for now — revisit after a few more sessions)
-**Sessions completed:** 2
+**Sessions completed:** 3
 
 ---
 
 ## Current focus
 
-**Shared JustinGuitar/Stine position:** see `progress/electric.md` — acoustic applies whatever is current there, doesn't track it separately. As of 2026-07-25: A→D **locked** on this guitar (18+/20 at 60 BPM); **E chord introduced, clean on first contact** (all six strings, no pressure fix needed — E is easier here than A was); A→E change started (>15/20 first contact).
+**Shared JustinGuitar/Stine position:** see `progress/electric.md` — acoustic applies whatever is current there, doesn't track it separately. As of 2026-07-25 (last spine work *on this guitar*): A→D **locked** (18+/20 at 60 BPM); **E chord introduced, clean on first contact** (all six strings, no pressure fix needed — E is easier here than A was); A→E change started (>15/20 first contact). (Note: D→E, A↔E-at-60, and the descending-chromatic lock happened 07-26 on the Strat — see `progress/electric.md`.)
 
 **Repertoire lane state:** see `../guitar-coach/curriculum/acoustic/songs.md` — **More Than Words (Extreme)** in the Learning lane, ~half learned. Advanced right-hand song (percussive "chuck" + syncopation) worked in parallel with the JG spine; doesn't change the shared JG grade position. Coaching focus: right-hand mechanics, well under tempo.
 

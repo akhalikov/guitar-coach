@@ -5,15 +5,15 @@ Updated after every session. The coach reads this first.
 **Status:** Active — Grade 1, Module 1 in progress
 **Started:** December 2025
 **Daily target:** 25 minutes
-**Sessions completed:** 3
+**Sessions completed:** 4
 
 ---
 
 ## Current focus
 
-**JustinGuitar:** Grade 1 → Module 1: First Steps → **A→D LOCKED** 2026-07-25 on acoustic (18+/20 at 60 BPM). **E chord introduced 2026-07-25** — clean on first contact (all six strings, no acoustic pressure fix needed). **A→E change** started same session: >15/20 first contact, rep-count. Next = add D→E, then push A↔E to a 60 BPM metronome pass; A→D no longer needs reps.
+**JustinGuitar:** Grade 1 → Module 1: First Steps → **A→D LOCKED** (07-25). **E chord** solid. **D→E landed 07-26** — 17-18/20 clean first contact (win). **A→E / A↔E at 60 BPM = 14-15/20 (07-26), NOT locked** — the A-chord 4th-string (D) buzz returns under time pressure; isolation fix reliably clears it (5/5) but needs to hold *during* changes. Next = open with the A-chord isolation drill then A↔E at 60 to 18/20; after that all four Grade 1 changes (A↔D, A↔E, D↔E) are in play.
 
-**Theory (Stine):** Module 1 — Understanding Notes → completed = 7 prime notes, open string names, sharps & flats, "BE" mnemonic, enharmonics; chromatic scale ascending confirmed 2026-07-12. **Descending missed twice** (07-17 and 07-25, same errors: A♭-first step, F♭ trap) — both at end-of-session/tired; drill COLD at the start of next session before moving to half-step/whole-step. Correct: A→A♭→G→G♭→F→E.
+**Theory (Stine):** Module 1 — Understanding Notes → completed = 7 prime notes, open string names, sharps & flats, "BE" mnemonic, enharmonics, chromatic scale ascending. **Descending chromatic LOCKED 2026-07-26** — passed cold (A→A♭→G→G♭→F→E) after two tired misses; doing it cold/first worked. Next = half-step / whole-step.
 
 **Songs in rotation:** none yet — pick first song after A, D, E chords are usable
 
@@ -109,10 +109,12 @@ Updated after every session. The coach reads this first.
 - Theory: 7 prime notes, open strings, sharps/flats, "BE" mnemonic, enharmonics — all locked in
 - Chromatic scale concept (ascending) — landed immediately, first tested during the acoustic session 2026-07-12
 - A→D change (Variant B, middle-first) — transferred across guitars on first attempt; chord-change fundamentals are sticking, not just guitar-specific muscle memory
+- D→E change — 17-18/20 clean on first contact (2026-07-26, Strat). E chord spelled correctly (roots E×3, companions B + G♯)
+- Chromatic scale descending — LOCKED cold 2026-07-26 (A→A♭→G→G♭→F→E) after two tired misses; doing it fresh/first was the fix
 
 ## What's not
 
-- A→D change — shape is there, transition speed and eyes-off accuracy still need reps
+- **A-chord 4th-string (D) buzz under speed** — returns during A↔E changes at 60 BPM (2026-07-26, Strat). Not string tension (Strat has low action) — a fretting placement/pressure issue; the isolation drill clears it (5/5 clean plucks) but it must hold *during* changes. Open next session with the drill → straight into A↔E at 60, target 18/20
 - Strum string accuracy — occasionally hits string 5 on D or string 6 on A; needs pause-before-strum habit
 - Chromatic warm-up currently at frets 5–8 (hand span not yet wide enough for frets 1–4)
 
