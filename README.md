@@ -44,7 +44,7 @@ The coach asks how you're feeling (energy / focus / tension / pain, 1–4) to pi
 One repo. The coaching system lives at the root; personal practice data lives in the `journal/` folder:
 
 ```
-~/github/guitar-coach/
+~/guitar-coach/
 ├── prompts/     (coaching logic — base.md + per-instrument SKILL.md + log templates)
 ├── curriculum/  (reference content per instrument — lesson plans, songs/pieces, equipment, books)
 └── journal/     (personal data — daily logs, progress markers, recordings, heatmap)
