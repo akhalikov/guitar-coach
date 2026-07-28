@@ -16,7 +16,7 @@ Updated after every session. The coach reads this first.
 **Theory (Stine):** Module 1 — Understanding Notes → completed = 7 prime notes, open string names, sharps & flats, "BE" mnemonic, enharmonics, chromatic scale ascending. **Descending chromatic LOCKED 2026-07-26** — passed cold (A→A♭→G→G♭→F→E) after two tired misses; doing it cold/first worked. Next = half-step / whole-step.
 
 **Songs in rotation** (full lane state in `curriculum/electric/songs.md`):
-- **Learning:** Ain't No Sunshine (active focus — not started, the one to build next); Enter Sandman + Miserlou (riffs building, parked).
+- **Learning:** **Dance the Night Away (Van Halen) — starting next session** (JustinGuitar Module 1 first song, only A + D, both locked → real playable song now); then Ain't No Sunshine; Enter Sandman + Miserlou parked.
 - **Polishing:** Knockin' on Heaven's Door (**next: add vocals**); Vykhoda Net (needs focus to smooth); Smoke on the Water + Stand By Me (parked).
 - **Maintenance:** — (Hurt moved to the acoustic repertoire 2026-07-27).
 - The growth edge per "Progress over polish": **singing while playing** on Knockin' (electric) and Hurt (now acoustic), and getting Ain't No Sunshine started.

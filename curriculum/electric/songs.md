@@ -8,11 +8,12 @@ Three lanes per the repertoire convention (see `../../prompts/base.md` → "Repe
 
 *Actively building, fragile. Needs slow practice and full attention. Pull from here first in normal sessions. Aim for **one** song here at a time.*
 
-- **Ain't No Sunshine — Bill Withers** — **current active target** (not started yet; the one to focus on next). A-minor pentatonic vocal-phrasing song.
+- **[Dance the Night Away — Van Halen](songs/08-dance-the-night-away.md)** — **starting next session.** The JustinGuitar Module 1 first song; only A and D (both locked), so it's a real playable song right now. Focus: the A↔D change *in a song*, steady strumming, keeping time.
+- **Ain't No Sunshine — Bill Withers** — queued next after Dance the Night Away gets going. A-minor pentatonic vocal-phrasing song.
 - **Enter Sandman** — main riff building; parked right now (not actively played).
 - **Miserlou** — opening riff building; parked right now.
 
-*Active pull = Ain't No Sunshine. Enter Sandman & Miserlou are started-but-parked — per the one-in-Learning guideline, treat Ain't No Sunshine as the focus and rotate the others in as it settles.*
+*Active pull = Dance the Night Away (immediate win, no new chords). Then Ain't No Sunshine. Enter Sandman & Miserlou stay parked. Per "progress over polish", start Dance the Night Away even though A↔E isn't locked yet — a real song matters more than a perfect change.*
 
 ## Polishing
 
